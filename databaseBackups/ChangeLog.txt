@@ -1,0 +1,10 @@
+29 April 2013
+
+Delete all content from the home page.
+Change the home page title to Welcome to Certified Overhead Crane.
+Create a new dynamic content type named "Crane Part" with body, title, and common parts.
+Unselect the Show editor for owner boolean field of the common part.
+Enable the following modules: 
+-Indexing
+-Lucene
+-Search
