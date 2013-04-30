@@ -8,3 +8,7 @@ Enable the following modules: Indexing, Lucene, Search.
 Add a search widget in the BeforeContent zone.
 Add four Crane Part items.
 Change search settings on Content Types: do not index Page types, do index Crane Part types.
+Enable users to create new accounts on the site.
+Add a Dealer role that can access the admin panel.
+Add a new User to the Dealer role: dealer1, dealer1@bigfont.ca, password=password.
+Create a database backup named "CertifiedOverheadCrane_20130429_Fonty.bak"
