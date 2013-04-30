@@ -1,0 +1,12 @@
+Name: Default
+DataProvider: SqlServer
+DataConnectionString: Data Source=.\SQLEXPRESS;Initial Catalog=CertifiedOverheadCrane;Integrated Security=True
+DataPrefix: null
+RequestUrlHost: null
+RequestUrlPrefix: null
+State: Running
+EncryptionAlgorithm: AES
+EncryptionKey: 37EC6564EB85EABEDBC914E329A42523C5D3206B06C7D43458B909E2551DF1C5
+HashAlgorithm: HMACSHA256
+HashKey: A5F677C843A90AD058F4CB2CA86A594748FF96933448D9BEABAFC3996F0A5AD418BFE4FCAB5D5219994CDE8FD940C50F6479D2ABC305FBAAACAF97994894D730
+Themes: 
