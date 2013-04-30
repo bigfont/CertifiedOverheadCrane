@@ -11,4 +11,8 @@ Change search settings on Content Types: do not index Page types, do index Crane
 Enable users to create new accounts on the site.
 Add a Dealer role that can access the admin panel.
 Add a new User to the Dealer role: dealer1, dealer1@bigfont.ca, password=password.
+<<<<<<< HEAD
 Create a database backup named CertifiedOverheadCrane_20130429_Fonty.bak
+=======
+Create a database backup named "CertifiedOverheadCrane_20130429_Fonty.bak"
+>>>>>>> 7415b2922f17d10084bc7fa4e3537b518bce28ec
