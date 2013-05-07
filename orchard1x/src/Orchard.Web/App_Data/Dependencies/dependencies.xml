@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dependencies>
   <Dependency>
+    <ModuleName>Bootstrap</ModuleName>
+    <VirtualPath>~/Themes/Bootstrap/Bootstrap.csproj</VirtualPath>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <References />
+  </Dependency>
+  <Dependency>
     <ModuleName>Common</ModuleName>
     <VirtualPath>~/Core/Common</VirtualPath>
     <LoaderName>CoreExtensionLoader</LoaderName>
@@ -53,6 +59,12 @@
         <VirtualPath>~/Modules/Markdown/bin/MarkdownSharp.dll</VirtualPath>
       </Reference>
     </References>
+  </Dependency>
+  <Dependency>
+    <ModuleName>MyAdmin</ModuleName>
+    <VirtualPath>~/Themes/MyAdmin/MyAdmin.csproj</VirtualPath>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <References />
   </Dependency>
   <Dependency>
     <ModuleName>Navigation</ModuleName>
@@ -151,8 +163,8 @@
   </Dependency>
   <Dependency>
     <ModuleName>Orchard.ContentPermissions</ModuleName>
-    <VirtualPath>~/Modules/Orchard.ContentPermissions/bin/Orchard.ContentPermissions.dll</VirtualPath>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/Orchard.ContentPermissions/Orchard.ContentPermissions.csproj</VirtualPath>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
     <References>
       <Reference>
         <Name>Orchard.Roles</Name>
