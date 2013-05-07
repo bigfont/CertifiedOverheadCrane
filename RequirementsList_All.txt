@@ -1,0 +1,149 @@
+
+Project: Online forum for dealers in crane parts.
+
+Deliverables.
+
+-------------------------------------------
+0 Dealer membership registration.
+-------------------------------------------
+
+-Each dealer can sign up for a membership.
+-Membership has a unique username
+-Membership has an associated email account
+-Membership has a secret password
+-Membership has a preferred way for users to contact dealers, when appropriate
+
+-------------------------------------------
+1 Dealer workspace for creating and managing items.
+-------------------------------------------
+
+-Each dealer has its own online workspace.
+-The workspace is password protected and associated with the dealer membership.
+-The workspace allows dealers to create and submit items.
+-Items describe used & surplus crane parts.
+-Each item has the following fields:
+-item picture(s)
+-item description
+-item model #
+-item part #
+-On submission, a database saves the item and adds a dealer # field.
+-The workspace also allows dealers to read a list of all its existing items.
+-The list of existing items shows all the item fields (eg picture, item #)
+-The workspace allows dealers to edit any of its existing items. 
+-The workspace allows dealers to delete any of its existing items.
+-The online forum has workspaces for up to 50 dealers.
+
+-------------------------------------------
+2 Public interface for searching all items.
+-------------------------------------------
+
+-This is the public access part of the site.
+-Any user can access the search box. 
+-The search box is NOT password protected.
+-The search box allows users to search the items that dealers have created.
+-Users can search by item descriptions.
+-Users can search by model #
+-Users can search by part #. 
+-Search results display a list of all matching items. 
+-The search results show all the item fields (picture, description, etc).
+-Each matching item includes the dealer preferred contact method (eg email, phone)
+
+-------------------------------------------
+END OF PHASE-1 OF PROJECT
+-------------------------------------------
+
+-at this stage membership is free
+-dealers can signin, create, and manage items
+-users can search items and can contact dealers
+-that's all
+
+-------------------------------------------
+3 Business model for billing 
+-------------------------------------------
+
+-Dealer membership levels that allow a certain number of each transaction.
+-Requires definition of transaction types (eg create item, create item request).
+-Example
+-Free account is allowed to create 5 items per month
+-Business account is allowed to create 20 items per month
+-Ultimate account is allowed to create unlimited items per month
+-When dealers reach their free account limit, the site cues them to upgrade. 
+
+-------------------------------------------
+4 Payment system for billing
+-------------------------------------------
+
+-Shopping cart / upgrade interface for purchasing more transactions per month
+-PayPal (this is my recommendation)
+-User account invoice
+-Credit Card especially VISA (is included in PayPal)
+
+Choose a billing system (ie. choose among membership fee, transaction fee, etc).
+-prevent users from cheating the system
+-ideas:
+-track back and forths
+-have them fill a shapping cart before they see where it's coming from
+-possible models: 
+-Property Room
+-BC Bid
+-other surplus sites
+-Kijiji
+-EBay
+-Auto Trader
+
+-------------------------------------------
+END OF PHASE-2 OF PROJECT
+-------------------------------------------
+
+-------------------------------------------
+5 Dealer workspace for creating and managing item requests.
+-------------------------------------------
+
+-The dealer workspace allows dealers to create requests for specific items. 
+-Item requests describe used & surplus crane parts.
+-Each item request has the following fields: 
+-item picture(s)
+-item description
+-item model #
+-item part #
+-On submission, a database saves the item and adds a dealer # field.
+-The workspace allows dealers to read a list of all its existing item requests.
+-THe list of existing item requests shows all the item fields.
+-The workspace allows dealers to edit any of its existing item requests. 
+-The workspace allows dealers to delete any of its existing item requests.
+
+-------------------------------------------
+6 Dealer workspace for viewing part requests.
+-------------------------------------------
+
+-The dealer workspace allows dealers to search item requests that other dealers have made.
+-The search interface allows dealers to create answers to item requests. 
+-Item request answers have these fields:
+-item price
+-item condition rating
+-On submission, a database saves the item request answer and adds a dealer # field
+
+-------------------------------------------
+7 Mechanism for supplementing items with value added offers.
+-------------------------------------------
+
+-offer value added items to complement dealer items
+-training $199
+-refresher course $100
+-online payment for these value added items
+-provide a way to determine which dealer referred the user for the value added item
+
+-------------------------------------------
+8 Leverage existing solutions. 
+-------------------------------------------
+
+-are the existing solution out there that we can leverage.
+-i.e. do not recreate the wheel. 
+-E.g. ebay, kijiji templates
+
+-------------------------------------------
+9 Apps 
+-------------------------------------------
+
+-Create an iPhone app (maybe hire an Apple person to make this app).
+-Create a Windows Phone app. 

@@ -1,0 +1,59 @@
+
+These are the requirements for PHASE-1 of the crane dealer web site.
+
+At the end of PHASE-1, dealers can create and manage items, and users can search items. That's all.
+
+-------------------------------------------
+Must Haves
+-------------------------------------------
+
+Anonymous users are able to register a new Dealer account. Done. (Currently, administrators must approve accounts before they are active).
+
+Dealer accounts have:
+-a unique username. Done.
+-a unique email address.  Done.
+-a secret password.  Done.
+
+Dealers are able to sign in to the web site with the username and password. Done.
+
+The web site can accomodate up to 50 Dealer memberships. Done. (We haven't tested this but the limit is theoretically in the thousands).
+
+Once signed in, a dealer has access the Dealer Dashboard. Done. 
+
+From the Dashboard, a Dealer can create a new product.*****
+
+Dealers can add the following properties to a product:
+-an item title. Done.
+-an item description. Done.
+-up to two item pictures
+-an item model #
+-an item part #
+
+From the Dashboard, a Dealer can view a list of his/her own products.
+
+From the Dashboard, a Dealer can delete only his/her own products. Done.
+
+From the Dashboard, a Dealer can update only his/her own products.  Done.
+
+From the Dashboard, a Dealer can NOT view any other content (eg Pages, other users crane parts).
+
+Anonymous users are able to access a search form to search all Dealer products. Done.
+
+The search enables search by the following properties: 
+-item title
+-item description
+-item model #
+-item part #
+
+Search results display a list of all matching items. Done.
+
+-------------------------------------------
+Should Haves
+-------------------------------------------
+
+Create a field page early on like the ad you create on Kijiji with all of the data and 1 or 2 pics. 
+
+-------------------------------------------
+Nice to Haves
+-------------------------------------------
+
