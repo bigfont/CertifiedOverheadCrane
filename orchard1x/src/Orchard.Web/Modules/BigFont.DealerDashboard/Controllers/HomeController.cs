@@ -11,6 +11,10 @@ using Orchard.UI.Navigation;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Linq;
+using Orchard;
+using Orchard.Core.Contents;
+using Orchard.Localization;
+using Orchard.Core.Containers.Models;
 
 namespace BigFont.DealerDashboard.Controllers
 {
@@ -22,18 +26,22 @@ namespace BigFont.DealerDashboard.Controllers
         private readonly IContentDefinitionManager _contentDefinitionManager;
 
         dynamic Shape { get; set; }
+        public IOrchardServices Services { get; private set; }
+        public Localizer T { get; set; }
 
         public HomeController(
             ISiteService siteService,
             IContentManager contentManager,
             IContentDefinitionManager contentDefinitionManager,
+            IOrchardServices orchardServices,
             IShapeFactory shapeFactory)
         {
             _siteService = siteService;
             _contentManager = contentManager;
             _contentDefinitionManager = contentDefinitionManager;
+            Services = orchardServices;
             Shape = shapeFactory;
-
+            T = NullLocalizer.Instance;
         }
         public ActionResult Index()
         {
@@ -72,7 +80,6 @@ namespace BigFont.DealerDashboard.Controllers
                     break;
             }
 
-
             model.Options.SelectedFilter = model.TypeName;
             model.Options.FilterOptions = GetCreatableTypes(false)
                 .Select(ctd => new KeyValuePair<string, string>(ctd.Name, ctd.DisplayName))
@@ -93,9 +100,39 @@ namespace BigFont.DealerDashboard.Controllers
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
             return View((object)viewModel);
         }
+        public ActionResult Create(string id, int? containerId)
+        {
+            if (string.IsNullOrEmpty(id))
+                return CreatableTypeList(containerId);
+
+            var contentItem = _contentManager.New(id);
+
+            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Cannot create content")))
+                return new HttpUnauthorizedResult();
+
+            if (containerId.HasValue && contentItem.Is<ContainablePart>())
+            {
+                var common = contentItem.As<CommonPart>();
+                if (common != null)
+                {
+                    common.Container = _contentManager.Get(containerId.Value);
+                }
+            }
+
+            dynamic model = _contentManager.BuildEditor(contentItem);
+            // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
+            return View((object)model);
+        }
         private IEnumerable<ContentTypeDefinition> GetCreatableTypes(bool andContainable)
         {
             return _contentDefinitionManager.ListTypeDefinitions().Where(ctd => ctd.Settings.GetModel<ContentTypeSettings>().Creatable && (!andContainable || ctd.Parts.Any(p => p.PartDefinition.Name == "ContainablePart")));
+        }
+        private ActionResult CreatableTypeList(int? containerId)
+        {
+            dynamic viewModel = Shape.ViewModel(ContentTypes: GetCreatableTypes(containerId.HasValue), ContainerId: containerId);
+
+            // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
+            return View("CreatableTypeList", (object)viewModel);
         }
     }
 }

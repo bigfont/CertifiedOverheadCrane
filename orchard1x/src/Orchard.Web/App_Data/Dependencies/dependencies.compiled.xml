@@ -16,7 +16,7 @@
     <ExtensionId>BigFont.DealerDashboard</ExtensionId>
     <LoaderName>DynamicExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/BigFont.DealerDashboard/BigFont.DealerDashboard.csproj</VirtualPath>
-    <Hash>2389c8bcf832d320</Hash>
+    <Hash>2389c8c475a36ca1</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Bootstrap</ExtensionId>
