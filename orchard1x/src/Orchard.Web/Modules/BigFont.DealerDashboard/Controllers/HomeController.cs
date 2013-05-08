@@ -1,32 +1,16 @@
-﻿using System.Web.Mvc;
-using System.Linq;
+﻿using BigFont.DealerDashboard.ViewModels;
+using Orchard.ContentManagement;
+using Orchard.ContentManagement.MetaData;
+using Orchard.ContentManagement.MetaData.Models;
+using Orchard.Core.Common.Models;
+using Orchard.Core.Contents.Settings;
+using Orchard.DisplayManagement;
+using Orchard.Settings;
 using Orchard.Themes;
 using Orchard.UI.Navigation;
-using BigFont.DealerDashboard.ViewModels;
-using Orchard.Settings;
-using Orchard.ContentManagement;
 using System.Collections.Generic;
-using Orchard.DisplayManagement.Shapes;
-using Orchard.ContentManagement.MetaData.Models;
-using Orchard.ContentManagement.MetaData;
-
-using System;
-using System.Reflection;
-using System.Web.Routing;
-using Orchard.ContentManagement.Aspects;
-
-using Orchard.Core.Common.Models;
-using Orchard.Core.Containers.Models;
-using Orchard.Core.Contents.Settings;
-
-using Orchard.Data;
-using Orchard.DisplayManagement;
-using Orchard.Localization;
-using Orchard.Logging;
-using Orchard.Mvc.Extensions;
-using Orchard.Mvc.Html;
-using Orchard.UI.Notify;
-using Orchard.Utility.Extensions;
+using System.Web.Mvc;
+using System.Linq;
 
 namespace BigFont.DealerDashboard.Controllers
 {
