@@ -53,6 +53,10 @@ namespace BigFont.DealerDashboard.Controllers
 
             var query = _contentManager.Query(VersionOptions.Latest, GetCreatableTypes(false).Select(ctd => ctd.Name).ToArray());
 
+            #region TODO Turn this code block into its own method
+            GetOwnedContentItems(query);
+            #endregion
+
             if (!string.IsNullOrEmpty(model.TypeName))
             {
                 var contentTypeDefinition = _contentDefinitionManager.GetTypeDefinition(model.TypeName);
@@ -133,6 +137,13 @@ namespace BigFont.DealerDashboard.Controllers
 
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
             return View("CreatableTypeList", (object)viewModel);
+        }
+        private IContentQuery<ContentItem> GetOwnedContentItems(IContentQuery<ContentItem> query)
+        {
+            // limit the content items to those that the current user owns
+            Orchard.Security.IUser currentUser = Services.WorkContext.CurrentUser;
+            query = query.Where<CommonPartRecord>(cpr => cpr.OwnerId == currentUser.Id);
+            return query;
         }
     }
 }
