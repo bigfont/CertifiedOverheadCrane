@@ -53,9 +53,7 @@ namespace BigFont.DealerDashboard.Controllers
 
             var query = _contentManager.Query(VersionOptions.Latest, GetCreatableTypes(false).Select(ctd => ctd.Name).ToArray());
 
-            #region TODO Turn this code block into its own method
             GetOwnedContentItems(query);
-            #endregion
 
             if (!string.IsNullOrEmpty(model.TypeName))
             {
@@ -127,16 +125,25 @@ namespace BigFont.DealerDashboard.Controllers
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
             return View((object)model);
         }
-        private IEnumerable<ContentTypeDefinition> GetCreatableTypes(bool andContainable)
-        {
-            return _contentDefinitionManager.ListTypeDefinitions().Where(ctd => ctd.Settings.GetModel<ContentTypeSettings>().Creatable && (!andContainable || ctd.Parts.Any(p => p.PartDefinition.Name == "ContainablePart")));
-        }
         private ActionResult CreatableTypeList(int? containerId)
         {
-            dynamic viewModel = Shape.ViewModel(ContentTypes: GetCreatableTypes(containerId.HasValue), ContainerId: containerId);
+            dynamic viewModel = Shape.ViewModel(ContentTypes: GetDealerDashboardTypes(containerId.HasValue), ContainerId: containerId);
 
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
             return View("CreatableTypeList", (object)viewModel);
+        }
+        private IEnumerable<ContentTypeDefinition> GetDealerDashboardTypes(bool andContainable)
+        {
+            IEnumerable<ContentTypeDefinition> creatableTypes = GetCreatableTypes(andContainable);
+            IEnumerable<ContentTypeDefinition> dealerDashboardTypes = creatableTypes.Where(ctd => ctd.Name.Contains("Crane"));
+            return dealerDashboardTypes;
+        }
+        private IEnumerable<ContentTypeDefinition> GetCreatableTypes(bool andContainable)
+        {
+            return _contentDefinitionManager.ListTypeDefinitions().Where(ctd => 
+                ctd.Settings.GetModel<ContentTypeSettings>().Creatable && 
+                (!andContainable || ctd.Parts.Any(p => p.PartDefinition.Name == "ContainablePart")) &&
+                ctd.Name.Contains("Crane"));
         }
         private IContentQuery<ContentItem> GetOwnedContentItems(IContentQuery<ContentItem> query)
         {
