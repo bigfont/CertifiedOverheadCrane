@@ -14,9 +14,9 @@
   </Dependency>
   <Dependency>
     <ExtensionId>BigFont.DealerDashboard</ExtensionId>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/BigFont.DealerDashboard.dll</VirtualPath>
-    <Hash>49197a5eddcc50f0</Hash>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/BigFont.DealerDashboard/BigFont.DealerDashboard.csproj</VirtualPath>
+    <Hash>2389c8bcf832d320</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Bootstrap</ExtensionId>
@@ -35,12 +35,6 @@
     <LoaderName>DynamicExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/DotLess/DotLess.csproj</VirtualPath>
     <Hash>b4f889d4e025000f</Hash>
-  </Dependency>
-  <Dependency>
-    <ExtensionId>HelloWorld</ExtensionId>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
-    <VirtualPath>~/Modules/HelloWorld/HelloWorld.csproj</VirtualPath>
-    <Hash>da922e5fc96eab6e</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Lucene</ExtensionId>

@@ -87,9 +87,13 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Routes.cs" />
+    <Compile Include="ViewModels\ListContentsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\HelloWorld.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\List.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
