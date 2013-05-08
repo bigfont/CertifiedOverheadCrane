@@ -164,6 +164,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contrib.ImageField", "Orcha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigFont.DashboardUsability", "Orchard.Web\Modules\BigFont.DashboardUsability\BigFont.DashboardUsability.csproj", "{BC874179-369D-41BB-A56A-4D68EB468D0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigFont.DealerDashboard", "Orchard.Web\Modules\BigFont.DealerDashboard\BigFont.DealerDashboard.csproj", "{30D13DBE-B43E-4291-84DA-5934D8C3D4D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CodeCoverage|Any CPU = CodeCoverage|Any CPU
@@ -173,6 +175,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30D13DBE-B43E-4291-84DA-5934D8C3D4D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D13DBE-B43E-4291-84DA-5934D8C3D4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D13DBE-B43E-4291-84DA-5934D8C3D4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D13DBE-B43E-4291-84DA-5934D8C3D4D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{50B779EA-EC00-4699-84C0-03B395C365D2}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
 		{50B779EA-EC00-4699-84C0-03B395C365D2}.CodeCoverage|Any CPU.Build.0 = Release|Any CPU
 		{50B779EA-EC00-4699-84C0-03B395C365D2}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
@@ -997,5 +1003,6 @@ Global
 		{94E694A2-D140-468D-A277-C5FCE1D13E9B} = {3E10BF6D-ADA5-417D-B36C-EBB0660B475E}
 		{34BE9011-A5A9-49DD-9E53-C3D5CA7D7CE3} = {3E10BF6D-ADA5-417D-B36C-EBB0660B475E}
 		{AC4402A1-61C4-4229-B840-FB1777DAE10C} = {3E10BF6D-ADA5-417D-B36C-EBB0660B475E}
+		{30D13DBE-B43E-4291-84DA-5934D8C3D4D5} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 	EndGlobalSection
 EndGlobal
