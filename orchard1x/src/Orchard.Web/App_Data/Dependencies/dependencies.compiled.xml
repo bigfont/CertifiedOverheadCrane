@@ -34,7 +34,7 @@
     <ExtensionId>MyAdmin</ExtensionId>
     <LoaderName>DynamicExtensionLoader</LoaderName>
     <VirtualPath>~/Themes/MyAdmin/MyAdmin.csproj</VirtualPath>
-    <Hash>91b7ab0b59537ed7</Hash>
+    <Hash>91b7ab212d77aecc</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Orchard.Alias</ExtensionId>
