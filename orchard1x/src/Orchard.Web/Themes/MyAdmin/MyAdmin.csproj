@@ -90,7 +90,7 @@
     <Folder Include="Zones\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Index.cshtml" />
+    <Content Include="Views\Dashboard\Admin\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
