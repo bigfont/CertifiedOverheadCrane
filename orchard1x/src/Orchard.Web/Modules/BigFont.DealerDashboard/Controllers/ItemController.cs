@@ -5,6 +5,7 @@ using Orchard.Localization;
 using Orchard.Mvc;
 using Orchard.Themes;
 using Orchard;
+using Orchard.Core.Contents;
 
 namespace BigFont.DealerDashboard.Controllers
 {

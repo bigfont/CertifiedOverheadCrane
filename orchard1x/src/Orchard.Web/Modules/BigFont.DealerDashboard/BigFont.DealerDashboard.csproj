@@ -87,8 +87,6 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
-    <Compile Include="DynamicPermissions.cs" />
-    <Compile Include="Permissions.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="ViewModels\ListContentsViewModel.cs" />
   </ItemGroup>

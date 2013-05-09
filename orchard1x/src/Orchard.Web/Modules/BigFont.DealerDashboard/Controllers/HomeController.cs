@@ -27,6 +27,7 @@ using Orchard;
 using Orchard.Mvc.Routes;
 using Orchard.Themes;
 using BigFont.DealerDashboard.ViewModels;
+using Orchard.Core.Contents;
 
 namespace BigFont.DealerDashboard.Controllers
 {
