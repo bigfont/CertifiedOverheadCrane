@@ -8,9 +8,9 @@
   </Dependency>
   <Dependency>
     <ExtensionId>BigFont.DealerDashboard</ExtensionId>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/BigFont.DealerDashboard.dll</VirtualPath>
-    <Hash>49197b5fe3d13ec2</Hash>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/BigFont.DealerDashboard/BigFont.DealerDashboard.csproj</VirtualPath>
+    <Hash>2389cccd81674c50</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Bootstrap</ExtensionId>

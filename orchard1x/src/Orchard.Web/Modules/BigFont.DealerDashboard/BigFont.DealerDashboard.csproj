@@ -87,9 +87,7 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Routes.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\HelloWorld.cshtml" />
+    <Compile Include="Services\DealerDashboardNavigationProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\List.cshtml" />

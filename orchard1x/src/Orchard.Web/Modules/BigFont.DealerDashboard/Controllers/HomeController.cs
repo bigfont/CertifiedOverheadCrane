@@ -60,10 +60,6 @@ namespace BigFont.DealerDashboard.Controllers
             Shape = shapeFactory;
             T = NullLocalizer.Instance;
         }
-        public ActionResult Index()
-        {
-            return View("HelloWorld");
-        }
         public ActionResult List(ListContentsViewModel model, PagerParameters pagerParameters)
         {
             Pager pager = new Pager(_siteService.GetSiteSettings(), pagerParameters);

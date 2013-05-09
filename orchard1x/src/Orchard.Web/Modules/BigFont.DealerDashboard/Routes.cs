@@ -24,21 +24,6 @@ namespace BigFont.DealerDashboard
                         new RouteValueDictionary {
                             {"area", "BigFont.DealerDashboard"},
                             {"controller", "Home"},
-                            {"action", "Index"}
-                        },
-                        new RouteValueDictionary(),
-                        new RouteValueDictionary {
-                            {"area", "BigFont.DealerDashboard"}
-                        },
-                        new MvcRouteHandler())
-                },
-                new RouteDescriptor {
-                    Priority = 5,
-                    Route = new Route(
-                        "DealerDashboard/List",
-                        new RouteValueDictionary {
-                            {"area", "BigFont.DealerDashboard"},
-                            {"controller", "Home"},
                             {"action", "List"}
                         },
                         new RouteValueDictionary(),
@@ -46,7 +31,7 @@ namespace BigFont.DealerDashboard
                             {"area", "BigFont.DealerDashboard"}
                         },
                         new MvcRouteHandler())
-                                },
+                },
                 new RouteDescriptor {
                     Priority = 5,
                     Route = new Route(
