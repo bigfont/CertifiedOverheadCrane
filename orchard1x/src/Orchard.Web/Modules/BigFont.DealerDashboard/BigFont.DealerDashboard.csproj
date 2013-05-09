@@ -86,9 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Routes.cs" />
-    <Compile Include="ViewModels\ListContentsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\HelloWorld.cshtml" />
