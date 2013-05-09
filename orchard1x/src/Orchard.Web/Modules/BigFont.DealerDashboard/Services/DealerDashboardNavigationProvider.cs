@@ -7,6 +7,7 @@ using Orchard.Localization;
 using Orchard.UI.Navigation;
 using Orchard.Mvc.Routes;
 using System.Collections.Generic;
+using Orchard.Security.Permissions;
 
 namespace BigFont.DealerDashboard.Services
 {
@@ -15,7 +16,8 @@ namespace BigFont.DealerDashboard.Services
         private readonly IContentManager _contentManager;
         public Localizer T { get; set; }
 
-        public DealerDashboardMenuProvider(IContentManager contentManager)
+        public DealerDashboardMenuProvider(
+            IContentManager contentManager)
         {
             _contentManager = contentManager;
             T = NullLocalizer.Instance;
@@ -23,7 +25,10 @@ namespace BigFont.DealerDashboard.Services
 
         public void GetMenu(IContent menu, NavigationBuilder builder)
         {
-            builder.Add(T("Dealers"), "1", subMenu => subMenu.Url("~/DealerDashboard"));
+            builder.Add(T("Dealers"), "2", subMenu => subMenu
+                .Url("~/Dealers")
+                // TODO Add permissions once we know how they work.
+                // .Permission(Orchard.Core.Contents.Permissions.EditOwnContent));
         }
     }
 }

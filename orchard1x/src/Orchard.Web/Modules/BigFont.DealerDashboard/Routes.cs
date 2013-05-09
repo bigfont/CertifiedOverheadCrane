@@ -20,7 +20,7 @@ namespace BigFont.DealerDashboard
                     Name = "DealerDashboard",
                     Priority = 5,
                     Route = new Route(
-                        "DealerDashboard",
+                        "Dealers",
                         new RouteValueDictionary {
                             {"area", "BigFont.DealerDashboard"},
                             {"controller", "Home"},
