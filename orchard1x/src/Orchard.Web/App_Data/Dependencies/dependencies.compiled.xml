@@ -10,7 +10,7 @@
     <ExtensionId>BigFont.DealerDashboard</ExtensionId>
     <LoaderName>DynamicExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/BigFont.DealerDashboard/BigFont.DealerDashboard.csproj</VirtualPath>
-    <Hash>fdfa18d5e3f82f9f</Hash>
+    <Hash>fdfa18d8a08ffe24</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Bootstrap</ExtensionId>
