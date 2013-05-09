@@ -2,14 +2,8 @@
 <Dependencies>
   <Dependency>
     <ModuleName>BigFont.CraneProduct</ModuleName>
-    <VirtualPath>~/Modules/BigFont.CraneProduct/BigFont.CraneProduct.csproj</VirtualPath>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
-    <References />
-  </Dependency>
-  <Dependency>
-    <ModuleName>BigFont.DashboardUsability</ModuleName>
-    <VirtualPath>~/Modules/BigFont.DashboardUsability/BigFont.DashboardUsability.csproj</VirtualPath>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/BigFont.CraneProduct/bin/BigFont.CraneProduct.dll</VirtualPath>
+    <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <References />
   </Dependency>
   <Dependency>
@@ -20,8 +14,8 @@
   </Dependency>
   <Dependency>
     <ModuleName>Bootstrap</ModuleName>
-    <VirtualPath>~/Themes/Bootstrap/Bootstrap.csproj</VirtualPath>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Themes/Bootstrap/bin/Bootstrap.dll</VirtualPath>
+    <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <References />
   </Dependency>
   <Dependency>
@@ -169,8 +163,8 @@
   </Dependency>
   <Dependency>
     <ModuleName>Orchard.Blogs</ModuleName>
-    <VirtualPath>~/Modules/Orchard.Blogs/Orchard.Blogs.csproj</VirtualPath>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/Orchard.Blogs/bin/Orchard.Blogs.dll</VirtualPath>
+    <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <References>
       <Reference>
         <Name>Orchard.ContentPicker</Name>
@@ -205,8 +199,8 @@
   </Dependency>
   <Dependency>
     <ModuleName>Orchard.ContentPermissions</ModuleName>
-    <VirtualPath>~/Modules/Orchard.ContentPermissions/Orchard.ContentPermissions.csproj</VirtualPath>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/Orchard.ContentPermissions/bin/Orchard.ContentPermissions.dll</VirtualPath>
+    <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <References>
       <Reference>
         <Name>Orchard.Roles</Name>

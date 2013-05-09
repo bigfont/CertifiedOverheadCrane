@@ -10,13 +10,14 @@ namespace BigFont.DealerDashboard
         public void GetRoutes(ICollection<RouteDescriptor> routes)
         {
             foreach (var routeDescriptor in GetRoutes())
-                routes.Add(routeDescriptor);
+                routes.Add(routeDescriptor);            
         }
 
         public IEnumerable<RouteDescriptor> GetRoutes()
         {
             return new[] {
                 new RouteDescriptor {
+                    Name = "DealerDashboard",
                     Priority = 5,
                     Route = new Route(
                         "DealerDashboard",
@@ -49,7 +50,7 @@ namespace BigFont.DealerDashboard
                 new RouteDescriptor {
                     Priority = 5,
                     Route = new Route(
-                        "DealerDashboard/Create",
+                        "DealerDashboard/Create/{id}",
                         new RouteValueDictionary {
                             {"area", "BigFont.DealerDashboard"},
                             {"controller", "Home"},

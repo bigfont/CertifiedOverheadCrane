@@ -1,29 +1,44 @@
-﻿using BigFont.DealerDashboard.ViewModels;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Web.Mvc;
+using System.Web.Routing;
 using Orchard.ContentManagement;
+using Orchard.ContentManagement.Aspects;
 using Orchard.ContentManagement.MetaData;
 using Orchard.ContentManagement.MetaData.Models;
 using Orchard.Core.Common.Models;
-using Orchard.Core.Contents.Settings;
-using Orchard.DisplayManagement;
-using Orchard.Settings;
-using Orchard.Themes;
-using Orchard.UI.Navigation;
-using System.Collections.Generic;
-using System.Web.Mvc;
-using System.Linq;
-using Orchard;
-using Orchard.Core.Contents;
-using Orchard.Localization;
 using Orchard.Core.Containers.Models;
+using Orchard.Core.Contents.Settings;
+using Orchard.Core.Contents.ViewModels;
+using Orchard.Data;
+using Orchard.DisplayManagement;
+using Orchard.Localization;
+using Orchard.Logging;
+using Orchard.Mvc.Extensions;
+using Orchard.Mvc.Html;
+using Orchard.UI.Navigation;
+using Orchard.UI.Notify;
+using Orchard.Settings;
+using Orchard.Utility.Extensions;
+// We need to resolve this for the [Themed] attribute on the class.
+using Orchard.Themes;
+// These are namespaces that we have to resolve here
+// but that we do not need to resolve if we are already in Orchard.Core.Content.Controllers
+using Orchard;
+using Orchard.Mvc.Routes;
 
 namespace BigFont.DealerDashboard.Controllers
 {
     [Themed]
-    public class HomeController : Controller
+    [ValidateInput(false)]
+    public class HomeController : Controller, IUpdateModel
     {
         private readonly ISiteService _siteService;
         private readonly IContentManager _contentManager;
         private readonly IContentDefinitionManager _contentDefinitionManager;
+        private readonly ITransactionManager _transactionManager;
 
         dynamic Shape { get; set; }
         public IOrchardServices Services { get; private set; }
@@ -33,12 +48,14 @@ namespace BigFont.DealerDashboard.Controllers
             ISiteService siteService,
             IContentManager contentManager,
             IContentDefinitionManager contentDefinitionManager,
+            ITransactionManager transactionManager,
             IOrchardServices orchardServices,
             IShapeFactory shapeFactory)
         {
             _siteService = siteService;
             _contentManager = contentManager;
             _contentDefinitionManager = contentDefinitionManager;
+            _transactionManager = transactionManager;
             Services = orchardServices;
             Shape = shapeFactory;
             T = NullLocalizer.Instance;
@@ -125,6 +142,49 @@ namespace BigFont.DealerDashboard.Controllers
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
             return View((object)model);
         }
+        [HttpPost, ActionName("Create")]
+        [FormValueRequired("submit.Save")]
+        public ActionResult CreatePOST(string id, string returnUrl)
+        {
+            return CreatePOST(id, returnUrl, contentItem =>
+            {
+                if (!contentItem.Has<IPublishingControlAspect>() && !contentItem.TypeDefinition.Settings.GetModel<ContentTypeSettings>().Draftable)
+                    _contentManager.Publish(contentItem);
+            });
+        }
+        private ActionResult CreatePOST(string id, string returnUrl, Action<ContentItem> conditionallyPublish)
+        {
+            var contentItem = _contentManager.New(id);
+            
+            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Couldn't create content")))
+                return new HttpUnauthorizedResult();
+
+            _contentManager.Create(contentItem, VersionOptions.Draft);
+
+            dynamic model = _contentManager.UpdateEditor(contentItem, this);
+            if (!ModelState.IsValid)
+            {
+                _transactionManager.Cancel();
+                // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
+                return View((object)model);
+            }
+
+            conditionallyPublish(contentItem);
+
+            Services.Notifier.Information(string.IsNullOrWhiteSpace(contentItem.TypeDefinition.DisplayName)
+                ? T("Your content has been created.")
+                : T("Your {0} has been created.", contentItem.TypeDefinition.DisplayName));
+            if (!string.IsNullOrEmpty(returnUrl))
+            {
+                return this.RedirectLocal(returnUrl);
+            }
+           
+            //var adminRouteValues = _contentManager.GetItemMetadata(contentItem).AdminRouteValues;
+            //return RedirectToRoute(adminRouteValues);
+
+            var redirectRoute = new Routes().GetRoutes().First<RouteDescriptor>(rd => rd.Name.Equals("DealerDashboard"));
+            return RedirectToRoute(redirectRoute);
+        }
         private ActionResult CreatableTypeList(int? containerId)
         {
             dynamic viewModel = Shape.ViewModel(ContentTypes: GetDealerDashboardTypes(containerId.HasValue), ContainerId: containerId);
@@ -151,6 +211,30 @@ namespace BigFont.DealerDashboard.Controllers
             Orchard.Security.IUser currentUser = Services.WorkContext.CurrentUser;
             query = query.Where<CommonPartRecord>(cpr => cpr.OwnerId == currentUser.Id);
             return query;
+        }
+        bool IUpdateModel.TryUpdateModel<TModel>(TModel model, string prefix, string[] includeProperties, string[] excludeProperties)
+        {
+            return TryUpdateModel(model, prefix, includeProperties, excludeProperties);
+        }
+        void IUpdateModel.AddModelError(string key, LocalizedString errorMessage)
+        {
+            ModelState.AddModelError(key, errorMessage.ToString());
+        }
+    }
+
+    public class FormValueRequiredAttribute : ActionMethodSelectorAttribute
+    {
+        private readonly string _submitButtonName;
+
+        public FormValueRequiredAttribute(string submitButtonName)
+        {
+            _submitButtonName = submitButtonName;
+        }
+
+        public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
+        {
+            var value = controllerContext.HttpContext.Request.Form[_submitButtonName];
+            return !string.IsNullOrEmpty(value);
         }
     }
 }
