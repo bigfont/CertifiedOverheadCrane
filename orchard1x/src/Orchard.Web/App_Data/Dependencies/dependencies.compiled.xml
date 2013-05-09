@@ -2,33 +2,27 @@
 <Dependencies>
   <Dependency>
     <ExtensionId>BigFont.CraneProduct</ExtensionId>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <VirtualPath>~/Modules/BigFont.CraneProduct/bin/BigFont.CraneProduct.dll</VirtualPath>
-    <Hash>491122a74c1921fe</Hash>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/BigFont.CraneProduct/BigFont.CraneProduct.csproj</VirtualPath>
+    <Hash>6c518c5f87e422bf</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>BigFont.DealerDashboard</ExtensionId>
     <LoaderName>DynamicExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/BigFont.DealerDashboard/BigFont.DealerDashboard.csproj</VirtualPath>
-    <Hash>fdfa18d8a08ffe24</Hash>
+    <Hash>fdfa1a38378654a2</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Bootstrap</ExtensionId>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <VirtualPath>~/Themes/Bootstrap/bin/Bootstrap.dll</VirtualPath>
-    <Hash>48ef0a852fa0db2d</Hash>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Themes/Bootstrap/Bootstrap.csproj</VirtualPath>
+    <Hash>48ef0b20c1f0beaa</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Contrib.ImageField</ExtensionId>
     <LoaderName>DynamicExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Contrib.ImageField/Contrib.ImageField.csproj</VirtualPath>
     <Hash>6388b90c310f2615</Hash>
-  </Dependency>
-  <Dependency>
-    <ExtensionId>DotLess</ExtensionId>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
-    <VirtualPath>~/Modules/DotLess/DotLess.csproj</VirtualPath>
-    <Hash>b4f889d4e025000f</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Lucene</ExtensionId>
@@ -86,9 +80,9 @@
   </Dependency>
   <Dependency>
     <ExtensionId>Orchard.ContentPermissions</ExtensionId>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <VirtualPath>~/Modules/Orchard.ContentPermissions/bin/Orchard.ContentPermissions.dll</VirtualPath>
-    <Hash>927465a0cfc5038b</Hash>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/Orchard.ContentPermissions/Orchard.ContentPermissions.csproj</VirtualPath>
+    <Hash>63a70fbb5ffd6359</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Orchard.ContentPicker</ExtensionId>
