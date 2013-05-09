@@ -11,7 +11,6 @@ using Orchard.ContentManagement.MetaData.Models;
 using Orchard.Core.Common.Models;
 using Orchard.Core.Containers.Models;
 using Orchard.Core.Contents.Settings;
-using Orchard.Core.Contents.ViewModels;
 using Orchard.Data;
 using Orchard.DisplayManagement;
 using Orchard.Localization;
@@ -22,12 +21,12 @@ using Orchard.UI.Navigation;
 using Orchard.UI.Notify;
 using Orchard.Settings;
 using Orchard.Utility.Extensions;
-// We need to resolve this for the [Themed] attribute on the class.
-using Orchard.Themes;
 // These are namespaces that we have to resolve here
 // but that we do not need to resolve if we are already in Orchard.Core.Content.Controllers
 using Orchard;
 using Orchard.Mvc.Routes;
+using Orchard.Themes;
+using BigFont.DealerDashboard.ViewModels;
 
 namespace BigFont.DealerDashboard.Controllers
 {
@@ -108,7 +107,8 @@ namespace BigFont.DealerDashboard.Controllers
             var pageOfContentItems = query.Slice(pager.GetStartIndex(), pager.PageSize).ToList();
 
             var list = Shape.List();
-            list.AddRange(pageOfContentItems.Select(ci => _contentManager.BuildDisplay(ci, "SummaryAdmin")));
+            list.AddRange(pageOfContentItems.Select(ci => 
+                _contentManager.BuildDisplay(ci, "SummaryAdmin")));
 
             dynamic viewModel = Shape.ViewModel()
                 .ContentItems(list)
@@ -184,6 +184,20 @@ namespace BigFont.DealerDashboard.Controllers
 
             var redirectRoute = new Routes().GetRoutes().First<RouteDescriptor>(rd => rd.Name.Equals("DealerDashboard"));
             return RedirectToRoute(redirectRoute);
+        }
+        public ActionResult Edit(int id)
+        {
+            var contentItem = _contentManager.Get(id, VersionOptions.Latest);
+
+            if (contentItem == null)
+                return HttpNotFound();
+
+            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Cannot edit content")))
+                return new HttpUnauthorizedResult();
+
+            dynamic model = _contentManager.BuildEditor(contentItem);
+            // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
+            return View((object)model);
         }
         private ActionResult CreatableTypeList(int? containerId)
         {

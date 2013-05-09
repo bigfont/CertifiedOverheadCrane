@@ -89,15 +89,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Views\EditorTemplates\Fields\" />
+    <Folder Include="Views\EditorTemplates\Items\" />
+    <Folder Include="Views\Fields\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="placement.info" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Parts\CraneProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Items\Content-CraneProduct.SummaryAdmin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts\CraneProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="placement.info" />
+    <Content Include="Views\Items\Content-CraneProduct.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

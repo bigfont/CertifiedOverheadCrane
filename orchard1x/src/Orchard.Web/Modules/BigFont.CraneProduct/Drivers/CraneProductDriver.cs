@@ -13,7 +13,14 @@ namespace BigFont.CraneProduct.Drivers
         protected override DriverResult Display(
             CraneProductPart part, string displayType, dynamic shapeHelper)
         {
-            return ContentShape("Parts_CraneProduct", () => shapeHelper.Parts_CraneProduct());
+            return ContentShape("Parts_CraneProduct_Publish_SummaryAdmin", () => shapeHelper.Parts_CraneProduct_Publish_SummaryAdmin());
+            //return Combined(
+                //ContentShape("Parts_CraneProduct", () => shapeHelper.Parts_CraneProduct())
+                //,ContentShape("Parts_CraneProduct_Publish", () => shapeHelper.Parts_CraneProduct_Publish())
+                //,ContentShape("Parts_CraneProduct_Publish_Summary", () => shapeHelper.Parts_CraneProduct_Publish_Summary())
+                //,ContentShape("Parts_CraneProduct_Publish_SummaryAdmin", () => shapeHelper.Parts_CraneProduct_Publish_SummaryAdmin())
+                //,ContentShape("Parts_CraneProduct_Clone_SummaryAdmin", () => shapeHelper.Parts_CraneProduct_Clone_SummaryAdmin())
+                //);
         }
         //GET
         protected override DriverResult Editor(
