@@ -199,6 +199,60 @@ namespace BigFont.DealerDashboard.Controllers
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
             return View((object)model);
         }
+        [HttpPost, ActionName("Edit")]
+        [FormValueRequired("submit.Save")]
+        public ActionResult EditPOST(int id, string returnUrl)
+        {
+            return EditPOST(id, returnUrl, contentItem =>
+            {
+                if (!contentItem.Has<IPublishingControlAspect>() && !contentItem.TypeDefinition.Settings.GetModel<ContentTypeSettings>().Draftable)
+                    _contentManager.Publish(contentItem);
+            });
+        }
+        private ActionResult EditPOST(int id, string returnUrl, Action<ContentItem> conditionallyPublish)
+        {
+            var contentItem = _contentManager.Get(id, VersionOptions.DraftRequired);
+
+            if (contentItem == null)
+                return HttpNotFound();
+
+            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Couldn't edit content")))
+                return new HttpUnauthorizedResult();
+
+            string previousRoute = null;
+            if (contentItem.Has<IAliasAspect>()
+                && !string.IsNullOrWhiteSpace(returnUrl)
+                && Request.IsLocalUrl(returnUrl)
+                // only if the original returnUrl is the content itself
+                && String.Equals(returnUrl, Url.ItemDisplayUrl(contentItem), StringComparison.OrdinalIgnoreCase)
+                )
+            {
+                previousRoute = contentItem.As<IAliasAspect>().Path;
+            }
+
+            dynamic model = _contentManager.UpdateEditor(contentItem, this);
+            if (!ModelState.IsValid)
+            {
+                _transactionManager.Cancel();
+                // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
+                return View("Edit", (object)model);
+            }
+
+            conditionallyPublish(contentItem);
+
+            if (!string.IsNullOrWhiteSpace(returnUrl)
+                && previousRoute != null
+                && !String.Equals(contentItem.As<IAliasAspect>().Path, previousRoute, StringComparison.OrdinalIgnoreCase))
+            {
+                returnUrl = Url.ItemDisplayUrl(contentItem);
+            }
+
+            Services.Notifier.Information(string.IsNullOrWhiteSpace(contentItem.TypeDefinition.DisplayName)
+                ? T("Your content has been saved.")
+                : T("Your {0} has been saved.", contentItem.TypeDefinition.DisplayName));
+
+            return this.RedirectLocal(returnUrl, () => RedirectToAction("Edit", new RouteValueDictionary { { "Id", contentItem.Id } }));
+        }
         private ActionResult CreatableTypeList(int? containerId)
         {
             dynamic viewModel = Shape.ViewModel(ContentTypes: GetDealerDashboardTypes(containerId.HasValue), ContainerId: containerId);
