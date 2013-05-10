@@ -8,14 +8,17 @@ using Orchard.Core.Contents.Extensions;
 using Orchard.Data.Migration;
 using BigFont.CraneProduct.Models;
 
-namespace BigFont.CraneProduct {
-    public class Migrations : DataMigrationImpl {
+namespace BigFont.CraneProduct
+{
+    public class Migrations : DataMigrationImpl
+    {
 
-        public int Create() {
-			// Creating table CraneProductRecord
-			SchemaBuilder.CreateTable("CraneProductRecord", table => table
-				.ContentPartRecord()
-			);
+        public int Create()
+        {
+            // Creating table CraneProductRecord
+            SchemaBuilder.CreateTable("CraneProductRecord", table => table
+                .ContentPartRecord()
+            );
 
             ContentDefinitionManager.AlterPartDefinition(
                 typeof(CraneProductPart).Name, cfg => cfg
@@ -33,10 +36,17 @@ namespace BigFont.CraneProduct {
                     .WithSetting("DateEditorSettings.ShowDateEditor", "false"))
 
                 .WithPart("BodyPart")
-                .WithPart("TitlePart")                
+                .WithPart("TitlePart")
                 .Creatable());
 
             return 1;
+        }
+
+        public int UpdateFrom1()
+        {
+            ContentDefinitionManager.AlterTypeDefinition("CraneProduct", cfg => cfg
+                .Draftable());
+            return 2;
         }
     }
 }

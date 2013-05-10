@@ -12,7 +12,9 @@
 }
 
 <div class="manage">
-    @Html.ActionLink(createLinkText.Text, "Create", new { Area = "BigFont.DealerDashboard", Id = (string)Model.Options.SelectedFilter }, new { @class = "button primaryAction" })
+
+    @Html.Action("CreatableTypeList")
+
 </div>
 @using (Html.BeginFormAntiForgeryPost()) {
     <fieldset class="bulk-actions">

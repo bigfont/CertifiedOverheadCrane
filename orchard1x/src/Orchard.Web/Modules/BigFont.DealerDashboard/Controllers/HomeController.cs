@@ -250,12 +250,13 @@ namespace BigFont.DealerDashboard.Controllers
 
             return this.RedirectLocal(returnUrl, () => RedirectToAction("Edit", new RouteValueDictionary { { "Id", contentItem.Id } }));
         }
-        private ActionResult CreatableTypeList(int? containerId)
+        [ChildActionOnly]
+        public ActionResult CreatableTypeList(int? containerId)
         {
             dynamic viewModel = Shape.ViewModel(ContentTypes: GetDealerDashboardTypes(containerId.HasValue), ContainerId: containerId);
 
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
-            return View("CreatableTypeList", (object)viewModel);
+            return PartialView("CreatableTypeList", (object)viewModel);
         }
         private IEnumerable<ContentTypeDefinition> GetDealerDashboardTypes(bool andContainable)
         {

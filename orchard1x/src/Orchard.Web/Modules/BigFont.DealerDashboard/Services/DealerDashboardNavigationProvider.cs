@@ -28,7 +28,8 @@ namespace BigFont.DealerDashboard.Services
             builder.Add(T("Dealers"), "2", subMenu => subMenu
                 .Url("~/Dealers")
                 // TODO Add permissions once we know how they work.
-                // .Permission(Orchard.Core.Contents.Permissions.EditOwnContent));
+                // .Permission(Orchard.Core.Contents.Permissions.EditOwnContent)
+                );
         }
     }
 }

@@ -1,5 +1,12 @@
 @{ Layout.Title = T("Create New Content").ToString(); }
 
 @foreach (var type in Model.ContentTypes) {
-    <p>@Html.ActionLink((string)type.DisplayName, "Create", new { Area = "BigFont.DealerDashboard", Id = (string)type.Name, ContainerId = Model.ContainerId, ReturnUrl = Request.QueryString["ReturnUrl"] })</p>
+    <p>@Html.ActionLink((string)type.DisplayName, "Create", 
+            new { 
+                Area = "BigFont.DealerDashboard", 
+                Id = (string)type.Name, 
+                ContainerId = Model.ContainerId, 
+                ReturnUrl = Request.QueryString["ReturnUrl"] 
+            },
+             new { @class = "button primaryAction" })</p>
 }
