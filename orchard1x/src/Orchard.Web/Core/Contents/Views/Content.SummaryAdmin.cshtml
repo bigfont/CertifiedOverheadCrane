@@ -22,7 +22,8 @@
             @Html.ItemEditLink(T("Edit").Text, contentItem)@T(" | ")
         }
         @if (Authorizer.Authorize(Permissions.DeleteContent, contentItem)) {
-            @Html.Link(T("Delete").Text, Url.ItemRemoveUrl(contentItem, new {returnUrl}), new {itemprop = "RemoveUrl UnsafeUrl"})
+            @Html.Link(T("Delete").Text, Url.ItemRemoveUrl(contentItem, new {returnUrl}), 
+                new {itemprop = "RemoveUrl UnsafeUrl"})            
         }
     </div>
     @if (Model.Content != null) {

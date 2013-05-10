@@ -1,7 +1,7 @@
 @{ Layout.Title = T("Create New Content").ToString(); }
 
 @foreach (var type in Model.ContentTypes) {
-    <p>@Html.ActionLink((string)type.DisplayName, "Create", 
+    <p>@Html.ActionLink(String.Format("Create new {0}", (string)type.DisplayName), "Create", 
             new { 
                 Area = "BigFont.DealerDashboard", 
                 Id = (string)type.Name, 

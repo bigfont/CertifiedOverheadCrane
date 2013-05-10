@@ -42,18 +42,12 @@ namespace BigFont.CraneProduct.Handlers
                 {"Action", "Edit"},
                 {"id", context.ContentItem.Id}
             };
-            //context.Metadata.EditorRouteValues = new RouteValueDictionary {
-            //    {"Area", "Orchard.Blogs"},
-            //    {"Controller", "BlogAdmin"},
-            //    {"Action", "Edit"},
-            //    {"blogId", context.ContentItem.Id}
-            //};
-            //context.Metadata.RemoveRouteValues = new RouteValueDictionary {
-            //    {"Area", "Orchard.Blogs"},
-            //    {"Controller", "BlogAdmin"},
-            //    {"Action", "Remove"},
-            //    {"blogId", context.ContentItem.Id}
-            //};
+            context.Metadata.RemoveRouteValues = new RouteValueDictionary {
+                {"Area", "BigFont.DealerDashboard"},
+                {"Controller", "Home"},
+                {"Action", "Remove"},
+                {"id", context.ContentItem.Id}
+            };
             //context.Metadata.AdminRouteValues = new RouteValueDictionary {
             //    {"Area", "Orchard.Blogs"},
             //    {"Controller", "BlogAdmin"},

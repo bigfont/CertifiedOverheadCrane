@@ -116,6 +116,14 @@ namespace BigFont.DealerDashboard.Controllers
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
             return View((object)viewModel);
         }
+        [ChildActionOnly]
+        public ActionResult CreatableTypeList(int? containerId)
+        {
+            dynamic viewModel = Shape.ViewModel(ContentTypes: GetDealerDashboardTypes(containerId.HasValue), ContainerId: containerId);
+
+            // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
+            return PartialView("CreatableTypeList", (object)viewModel);
+        }
         public ActionResult Create(string id, int? containerId)
         {
             if (string.IsNullOrEmpty(id))
@@ -206,6 +214,25 @@ namespace BigFont.DealerDashboard.Controllers
                     _contentManager.Publish(contentItem);
             });
         }
+        // [HttpPost]
+        public ActionResult Remove(int id, string returnUrl)
+        {
+            var contentItem = _contentManager.Get(id, VersionOptions.Latest);
+
+            if (!Services.Authorizer.Authorize(Permissions.DeleteContent, contentItem, T("Couldn't remove content")))
+                return new HttpUnauthorizedResult();
+
+            if (contentItem != null)
+            {
+                _contentManager.Remove(contentItem);
+                Services.Notifier.Information(string.IsNullOrWhiteSpace(contentItem.TypeDefinition.DisplayName)
+                    ? T("That content has been removed.")
+                    : T("That {0} has been removed.", contentItem.TypeDefinition.DisplayName));
+            }
+
+            return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
+        }
+
         private ActionResult EditPOST(int id, string returnUrl, Action<ContentItem> conditionallyPublish)
         {
             var contentItem = _contentManager.Get(id, VersionOptions.DraftRequired);
@@ -250,14 +277,7 @@ namespace BigFont.DealerDashboard.Controllers
 
             return this.RedirectLocal(returnUrl, () => RedirectToAction("Edit", new RouteValueDictionary { { "Id", contentItem.Id } }));
         }
-        [ChildActionOnly]
-        public ActionResult CreatableTypeList(int? containerId)
-        {
-            dynamic viewModel = Shape.ViewModel(ContentTypes: GetDealerDashboardTypes(containerId.HasValue), ContainerId: containerId);
 
-            // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
-            return PartialView("CreatableTypeList", (object)viewModel);
-        }
         private IEnumerable<ContentTypeDefinition> GetDealerDashboardTypes(bool andContainable)
         {
             IEnumerable<ContentTypeDefinition> creatableTypes = GetCreatableTypes(andContainable);
