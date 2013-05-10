@@ -68,7 +68,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot view content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Cannot view content")))
             {
                 return new HttpUnauthorizedResult();
             }
@@ -88,12 +88,12 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot preview content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Cannot preview content")))
             {
                 return new HttpUnauthorizedResult();
             }
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot preview content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Cannot preview content")))
             {
                 return new HttpUnauthorizedResult();
             }
@@ -105,9 +105,13 @@ namespace BigFont.DealerDashboard.Controllers
 
         public ActionResult List(ListContentsViewModel model, PagerParameters pagerParameters)
         {
+
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, T("Cannot list dealer products.")))
+                return new HttpUnauthorizedResult();
+
             Pager pager = new Pager(_siteService.GetSiteSettings(), pagerParameters);
 
-            var query = _contentManager.Query(VersionOptions.Latest, GetCreatableTypes(false).Select(ctd => ctd.Name).ToArray());
+            var query = _contentManager.Query(VersionOptions.Latest, GetDealerDashboardTypes().Select(ctd => ctd.Name).ToArray());
 
             GetOwnedContentItems(query);
 
@@ -139,7 +143,7 @@ namespace BigFont.DealerDashboard.Controllers
             }
 
             model.Options.SelectedFilter = model.TypeName;
-            model.Options.FilterOptions = GetCreatableTypes(false)
+            model.Options.FilterOptions = GetDealerDashboardTypes()
                 .Select(ctd => new KeyValuePair<string, string>(ctd.Name, ctd.DisplayName))
                 .ToList().OrderBy(kvp => kvp.Value);
 
@@ -162,7 +166,7 @@ namespace BigFont.DealerDashboard.Controllers
         [ChildActionOnly]
         public ActionResult CreatableTypeList(int? containerId)
         {
-            dynamic viewModel = Shape.ViewModel(ContentTypes: GetDealerDashboardTypes(containerId.HasValue), ContainerId: containerId);
+            dynamic viewModel = Shape.ViewModel(ContentTypes: GetDealerDashboardTypes(), ContainerId: containerId);
 
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
             return PartialView("CreatableTypeList", (object)viewModel);
@@ -174,7 +178,7 @@ namespace BigFont.DealerDashboard.Controllers
 
             var contentItem = _contentManager.New(id);
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot create content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Cannot create content")))
                 return new HttpUnauthorizedResult();
 
             if (containerId.HasValue && contentItem.Is<ContainablePart>())
@@ -209,7 +213,7 @@ namespace BigFont.DealerDashboard.Controllers
             // pass a dummy content to the authorization check to check for "own" variations
             var dummyContent = _contentManager.New(id);
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, dummyContent, T("Couldn't create content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, dummyContent, T("Couldn't create content")))
                 return new HttpUnauthorizedResult();
 
             return CreatePOST(id, returnUrl, contentItem => _contentManager.Publish(contentItem));
@@ -219,7 +223,7 @@ namespace BigFont.DealerDashboard.Controllers
         {
             var contentItem = _contentManager.New(id);
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't create content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Couldn't create content")))
                 return new HttpUnauthorizedResult();
 
             _contentManager.Create(contentItem, VersionOptions.Draft);
@@ -255,7 +259,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot edit content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Cannot edit content")))
                 return new HttpUnauthorizedResult();
 
             dynamic model = _contentManager.BuildEditor(contentItem);
@@ -282,7 +286,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (content == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, content, T("Couldn't publish content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, content, T("Couldn't publish content")))
                 return new HttpUnauthorizedResult();
 
             return EditPOST(id, returnUrl, contentItem => _contentManager.Publish(contentItem));
@@ -293,7 +297,7 @@ namespace BigFont.DealerDashboard.Controllers
         {
             var contentItem = _contentManager.Get(id, VersionOptions.Latest);
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't remove content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Couldn't remove content")))
                 return new HttpUnauthorizedResult();
 
             if (contentItem != null)
@@ -314,7 +318,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't publish content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Couldn't publish content")))
                 return new HttpUnauthorizedResult();
 
             _contentManager.Publish(contentItem);
@@ -331,7 +335,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't unpublish content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Couldn't unpublish content")))
                 return new HttpUnauthorizedResult();
 
             _contentManager.Unpublish(contentItem);
@@ -348,7 +352,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't edit content")))
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Couldn't edit content")))
                 return new HttpUnauthorizedResult();
 
             string previousRoute = null;
@@ -385,19 +389,11 @@ namespace BigFont.DealerDashboard.Controllers
 
             return this.RedirectLocal(returnUrl, () => RedirectToAction("Edit", new RouteValueDictionary { { "Id", contentItem.Id } }));
         }
-
-        private IEnumerable<ContentTypeDefinition> GetDealerDashboardTypes(bool andContainable)
+        private IEnumerable<ContentTypeDefinition> GetDealerDashboardTypes()
         {
-            IEnumerable<ContentTypeDefinition> creatableTypes = GetCreatableTypes(andContainable);
-            IEnumerable<ContentTypeDefinition> dealerDashboardTypes = creatableTypes.Where(ctd => ctd.Name.Contains("Crane"));
+            IEnumerable<ContentTypeDefinition> dealerDashboardTypes = 
+                _contentDefinitionManager.ListTypeDefinitions().Where(ctd => ctd.Name.Equals("DealerProduct"));
             return dealerDashboardTypes;
-        }
-        private IEnumerable<ContentTypeDefinition> GetCreatableTypes(bool andContainable)
-        {
-            return _contentDefinitionManager.ListTypeDefinitions().Where(ctd => 
-                ctd.Settings.GetModel<ContentTypeSettings>().Creatable && 
-                (!andContainable || ctd.Parts.Any(p => p.PartDefinition.Name == "ContainablePart")) &&
-                ctd.Name.Contains("Crane"));
         }
         private IContentQuery<ContentItem> GetOwnedContentItems(IContentQuery<ContentItem> query)
         {

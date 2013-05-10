@@ -29,7 +29,7 @@ namespace BigFont.DealerDashboard.Services
         public void GetMenu(IContent menu, NavigationBuilder builder)
         {           
             /*
-             * TODO Add this menu item in code.
+             * TODO Add this menu item in code instead of through the UI.
              * Currently, we are additing it as follows:
              * 1 Install and enable content item permissions
              * 2 Navigation > Add > Custom Link > to Main Menu

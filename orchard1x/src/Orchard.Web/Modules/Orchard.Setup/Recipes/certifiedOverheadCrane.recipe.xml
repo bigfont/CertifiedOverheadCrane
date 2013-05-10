@@ -1,0 +1,70 @@
+﻿<?xml version="1.0"?>
+<Orchard>
+  <Recipe>
+    <Name>Certified Overhead Crane</Name>
+    <Description>The default recipe for an Orchard site that includes pages, blogs, custom content types, comments, tags, widgets and basic navigation.</Description>
+    <Author>The Orchard Team</Author>
+    <WebSite>http://orchardproject.net</WebSite>
+    <Tags></Tags>
+    <Version>1.0</Version>
+  </Recipe>
+
+  <Module packageId="Orchard.Module.Contrib.RoleCommands" />
+  <Module packageId="Orchard.Module.Contrib.ImageField" />
+
+  <Theme packageId="Orchard.Theme.Bootstrap" current="true" />
+  
+  <Feature enable="Orchard.Alias,Orchard.Autoroute,
+                   TinyMce,Orchard.Media,Orchard.MediaPicker,Orchard.ContentPicker,Orchard.PublishLater,
+                   Orchard.jQuery,Orchard.Widgets,Orchard.Widgets.PageLayerHinting,Orchard.ContentTypes,
+                   Orchard.Scripting,Orchard.Scripting.Lightweight,
+                   PackagingServices,Orchard.Packaging,Orchard.Warmup,Orchard.Projections,Orchard.Fields, TheThemeMachine, 
+                   BigFont.DealerDashboard, Orchard.ImportExport, Contrib.RoleCommands, Orchard.ContentPermissions, Contrib.ImageField" />
+
+  <Metadata>
+    <Types>
+      <Page ContentTypeSettings.Draftable="True" TypeIndexing.Indexes="Search">
+        <TagsPart />
+        <LocalizationPart />
+        <TitlePart/>
+        <AutoroutePart />
+      </Page>
+    </Types>
+    <Parts>
+      <BodyPart BodyPartSettings.FlavorDefault="html" />
+    </Parts>
+  </Metadata>
+
+  <Settings />
+
+  <Migration features="*" />
+
+  <Command>
+    layer create Default /LayerRule:"true" /Description:"The widgets in this layer are displayed on all pages"
+    layer create Authenticated /LayerRule:"authenticated" /Description:"The widgets in this layer are displayed when the user is authenticated"
+    layer create Anonymous /LayerRule:"not authenticated" /Description:"The widgets in this layer are displayed when the user is anonymous"
+    layer create Disabled /LayerRule:"false" /Description:"The widgets in this layer are never displayed"
+    layer create TheHomepage /LayerRule:"url '~/'" /Description:"The widgets in this layer are displayed on the home page"
+    widget create HtmlWidget /Title:"First Leader Aside" /Zone:"TripelFirst" /Position:"5" /Layer:"TheHomepage" /Identity:"SetupHtmlWidget1" /UseLoremIpsumText:true
+    widget create HtmlWidget /Title:"Second Leader Aside" /Zone:"TripelSecond" /Position:"5" /Layer:"TheHomepage" /Identity:"SetupHtmlWidget2" /UseLoremIpsumText:true
+    widget create HtmlWidget /Title:"Third Leader Aside" /Zone:"TripelThird" /Position:"5" /Layer:"TheHomepage" /Identity:"SetupHtmlWidget3" /UseLoremIpsumText:true
+    site setting set baseurl
+    menu create /MenuName:"Main Menu"
+    page create /Slug:"welcome-to-orchard" /Title:"Welcome to Orchard!" /Path:"welcome-to-orchard" /Homepage:true /Publish:true /UseWelcomeText:true /MenuText:"Home" /MenuName:"Main Menu"
+    widget create MenuWidget /Title:"Main Menu" /RenderTitle:false /Zone:"Navigation" /Position:"1" /Layer:"Default" /Identity:"MenuWidget1" /MenuName:"Main Menu"
+    <!--Additional commands-->
+    menuitem create /MenuPosition:2 /MenuText:"Dealers" /Url:"~/Dealers" /MenuName:"Main Menu"
+    role create Dealer
+    user create /UserName:dealer1 /Password:password /Email:dealer1@bigfont.ca
+    role add permission Dealer Delete_DealerProduct
+    role add permission Dealer DeleteOwn_DealerProduct
+    role add permission Dealer Edit_DealerProduct
+    role add permission Dealer EditOwn_DealerProduct
+    role add permission Dealer Publish_DealerProduct
+    role add permission Dealer PublishOwn_DealerProduct
+    role add permission Dealer View_DealerProduct
+    role add permission Dealer ViewOwn_DealerProduct
+    user add role dealer1 Dealer
+
+  </Command>
+</Orchard>

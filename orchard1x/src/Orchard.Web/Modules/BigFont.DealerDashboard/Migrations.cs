@@ -37,16 +37,11 @@ namespace BigFont.DealerDashboard
 
                 .WithPart("BodyPart")
                 .WithPart("TitlePart")
+                // .WithPart("ContentPermissionsPart")
+                .Draftable()
                 .Creatable());
 
             return 1;
-        }
-
-        public int UpdateFrom1()
-        {
-            ContentDefinitionManager.AlterTypeDefinition("DealerProduct", cfg => cfg
-                .Draftable());
-            return 2;
         }
     }
 }

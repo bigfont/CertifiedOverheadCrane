@@ -1,0 +1,5 @@
+<RecipeJournal>
+  <Status>Failed</Status>
+  <Message>Executing step Theme.</Message>
+  <Message>Recipe execution with id 81cd5e04a02046879cd0dbbd68ef90d2 was cancelled because the "Theme" step failed to execute. The following exception was thrown: Theme Bootstrap was not found in the specified location.. Refer to the error logs for more information.</Message>
+</RecipeJournal>

@@ -12,6 +12,5 @@ namespace BigFont.DealerDashboard.Models
     }
     public class DealerProductPart : ContentPart<DealerProductRecord>
     { 
-    
     }
 }
