@@ -157,6 +157,21 @@ namespace BigFont.DealerDashboard.Controllers
                     _contentManager.Publish(contentItem);
             });
         }
+
+        [HttpPost, ActionName("Create")]
+        [FormValueRequired("submit.Publish")]
+        public ActionResult CreateAndPublishPOST(string id, string returnUrl)
+        {
+
+            // pass a dummy content to the authorization check to check for "own" variations
+            var dummyContent = _contentManager.New(id);
+
+            if (!Services.Authorizer.Authorize(Permissions.PublishContent, dummyContent, T("Couldn't create content")))
+                return new HttpUnauthorizedResult();
+
+            return CreatePOST(id, returnUrl, contentItem => _contentManager.Publish(contentItem));
+        }
+
         private ActionResult CreatePOST(string id, string returnUrl, Action<ContentItem> conditionallyPublish)
         {
             var contentItem = _contentManager.New(id);
@@ -214,6 +229,22 @@ namespace BigFont.DealerDashboard.Controllers
                     _contentManager.Publish(contentItem);
             });
         }
+
+        [HttpPost, ActionName("Edit")]
+        [FormValueRequired("submit.Publish")]
+        public ActionResult EditAndPublishPOST(int id, string returnUrl)
+        {
+            var content = _contentManager.Get(id, VersionOptions.Latest);
+
+            if (content == null)
+                return HttpNotFound();
+
+            if (!Services.Authorizer.Authorize(Permissions.PublishContent, content, T("Couldn't publish content")))
+                return new HttpUnauthorizedResult();
+
+            return EditPOST(id, returnUrl, contentItem => _contentManager.Publish(contentItem));
+        }
+
         // [HttpPost]
         public ActionResult Remove(int id, string returnUrl)
         {
@@ -229,6 +260,40 @@ namespace BigFont.DealerDashboard.Controllers
                     ? T("That content has been removed.")
                     : T("That {0} has been removed.", contentItem.TypeDefinition.DisplayName));
             }
+
+            return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
+        }
+
+        [HttpPost]
+        public ActionResult Publish(int id, string returnUrl)
+        {
+            var contentItem = _contentManager.GetLatest(id);
+            if (contentItem == null)
+                return HttpNotFound();
+
+            if (!Services.Authorizer.Authorize(Permissions.PublishContent, contentItem, T("Couldn't publish content")))
+                return new HttpUnauthorizedResult();
+
+            _contentManager.Publish(contentItem);
+
+            Services.Notifier.Information(string.IsNullOrWhiteSpace(contentItem.TypeDefinition.DisplayName) ? T("That content has been published.") : T("That {0} has been published.", contentItem.TypeDefinition.DisplayName));
+
+            return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
+        }
+
+        [HttpPost]
+        public ActionResult Unpublish(int id, string returnUrl)
+        {
+            var contentItem = _contentManager.GetLatest(id);
+            if (contentItem == null)
+                return HttpNotFound();
+
+            if (!Services.Authorizer.Authorize(Permissions.PublishContent, contentItem, T("Couldn't unpublish content")))
+                return new HttpUnauthorizedResult();
+
+            _contentManager.Unpublish(contentItem);
+
+            Services.Notifier.Information(string.IsNullOrWhiteSpace(contentItem.TypeDefinition.DisplayName) ? T("That content has been unpublished.") : T("That {0} has been unpublished.", contentItem.TypeDefinition.DisplayName));
 
             return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
         }
