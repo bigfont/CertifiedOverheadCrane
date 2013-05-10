@@ -88,6 +88,7 @@
     <Content Include="Views\EditorTemplates\Parts\DealerProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\DealerDashboardCommands.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Drivers\DealerProductDriver.cs" />
     <Compile Include="Handlers\DealerProductHandler.cs" />

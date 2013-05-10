@@ -65,6 +65,6 @@
     role add permission Dealer View_DealerProduct
     role add permission Dealer ViewOwn_DealerProduct
     user add role dealer1 Dealer
+  </Command>  
 
-  </Command>
 </Orchard>
