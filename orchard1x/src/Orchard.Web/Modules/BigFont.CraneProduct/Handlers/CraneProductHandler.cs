@@ -19,41 +19,35 @@ namespace BigFont.CraneProduct.Handlers
 
         protected override void GetItemMetadata(GetContentItemMetadataContext context)
         {
-            var blog = context.ContentItem.As<CraneProductPart>();
+            var cranePart = context.ContentItem.As<CraneProductPart>();
 
-            if (blog == null)
+            if (cranePart == null)
                 return;
 
-
-            //context.Metadata.DisplayRouteValues = new RouteValueDictionary {
-            //    {"Area", "Orchard.Blogs"},
-            //    {"Controller", "Blog"},
-            //    {"Action", "Item"},
-            //    {"blogId", context.ContentItem.Id}
-            //};
-            //context.Metadata.CreateRouteValues = new RouteValueDictionary {
-            //    {"Area", "Orchard.Blogs"},
-            //    {"Controller", "BlogAdmin"},
-            //    {"Action", "Create"}
-            //};
-            context.Metadata.EditorRouteValues = new RouteValueDictionary {
-                {"Area", "BigFont.DealerDashboard"},
-                {"Controller", "Home"},
-                {"Action", "Edit"},
-                {"id", context.ContentItem.Id}
-            };
-            context.Metadata.RemoveRouteValues = new RouteValueDictionary {
-                {"Area", "BigFont.DealerDashboard"},
-                {"Controller", "Home"},
-                {"Action", "Remove"},
-                {"id", context.ContentItem.Id}
-            };
-            //context.Metadata.AdminRouteValues = new RouteValueDictionary {
-            //    {"Area", "Orchard.Blogs"},
-            //    {"Controller", "BlogAdmin"},
-            //    {"Action", "Item"},
-            //    {"blogId", context.ContentItem.Id}
-            //};
+                context.Metadata.CreateRouteValues = new RouteValueDictionary {
+                    {"Area", "BigFont.DealerDashboard"},
+                    {"Controller", "Home"}, // this one was Admin
+                    {"Action", "Create"},
+                    {"Id", context.ContentItem.ContentType}
+                };          
+                context.Metadata.EditorRouteValues = new RouteValueDictionary {
+                    {"Area", "BigFont.DealerDashboard"},
+                    {"Controller", "Home"}, // this one was Admin
+                    {"Action", "Edit"},
+                    {"Id", context.ContentItem.Id}
+                };
+                context.Metadata.DisplayRouteValues = new RouteValueDictionary {
+                    {"Area", "BigFont.DealerDashboard"},
+                    {"Controller", "Home"}, // this one was Item
+                    {"Action", "Display"},
+                    {"Id", context.ContentItem.Id}
+                };           
+                context.Metadata.RemoveRouteValues = new RouteValueDictionary {
+                    {"Area", "BigFont.DealerDashboard"},
+                    {"Controller", "Home"}, // this one was Admin
+                    {"Action", "Remove"},
+                    {"Id", context.ContentItem.Id}
+                };            
         }
     }
 }

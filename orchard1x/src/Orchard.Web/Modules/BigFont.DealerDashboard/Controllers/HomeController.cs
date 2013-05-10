@@ -60,6 +60,49 @@ namespace BigFont.DealerDashboard.Controllers
             Shape = shapeFactory;
             T = NullLocalizer.Instance;
         }
+
+        public ActionResult Display(int id)
+        {
+            var contentItem = _contentManager.Get(id, VersionOptions.Published);
+
+            if (contentItem == null)
+                return HttpNotFound();
+
+            if (!Services.Authorizer.Authorize(Permissions.ViewContent, contentItem, T("Cannot view content")))
+            {
+                return new HttpUnauthorizedResult();
+            }
+
+            dynamic model = _contentManager.BuildDisplay(contentItem);
+            return View((object)model);
+        }
+
+        public ActionResult Preview(int id, int? version)
+        {
+            var versionOptions = VersionOptions.Latest;
+
+            if (version != null)
+                versionOptions = VersionOptions.Number((int)version);
+
+            var contentItem = _contentManager.Get(id, versionOptions);
+            if (contentItem == null)
+                return HttpNotFound();
+
+            if (!Services.Authorizer.Authorize(Permissions.ViewContent, contentItem, T("Cannot preview content")))
+            {
+                return new HttpUnauthorizedResult();
+            }
+
+            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Cannot preview content")))
+            {
+                return new HttpUnauthorizedResult();
+            }
+
+            dynamic model = _contentManager.BuildDisplay(contentItem);
+            return View((object)model);
+        }
+
+
         public ActionResult List(ListContentsViewModel model, PagerParameters pagerParameters)
         {
             Pager pager = new Pager(_siteService.GetSiteSettings(), pagerParameters);
