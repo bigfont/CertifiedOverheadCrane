@@ -1,9 +1,11 @@
 ﻿@using Orchard.Core.Contents.ViewModels;
+@using BigFont.DealerDashboard;
 @{
     var typeDisplayName = Model.TypeDisplayName;
     var pageTitle = T("Manage Content");
     var createLinkText = T("Create New Content");
-    if (!string.IsNullOrWhiteSpace(typeDisplayName)) {
+    if (!string.IsNullOrWhiteSpace(typeDisplayName))
+    {
         pageTitle = T("Manage {0} Content", typeDisplayName);
         createLinkText = T("Create New {0}", typeDisplayName);
     }
@@ -11,12 +13,17 @@
     Layout.Title = pageTitle;
 }
 
+@{
+    Style.Include("Temp");
+}
+
 <div class="manage">
 
     @Html.Action("CreatableTypeList")
 
 </div>
-@using (Html.BeginFormAntiForgeryPost()) {
+@using (Html.BeginFormAntiForgeryPost())
+{
     <fieldset class="bulk-actions">
         <label for="publishActions">@T("Actions:")</label>
         <select id="publishActions" name="Options.BulkAction">
@@ -31,7 +38,8 @@
         <label for="filterResults" class="bulk-filter">@T("Show")</label>
         <select id="filterResults" name="Options.SelectedFilter">
             @Html.SelectOption((string)Model.Options.SelectedFilter, "", T("any (show all)").ToString())
-            @foreach(var filterOption in Model.Options.FilterOptions) {
+            @foreach (var filterOption in Model.Options.FilterOptions)
+            {
                 @Html.SelectOption((string)Model.Options.SelectedFilter, (string)filterOption.Key, (string)filterOption.Value)
             }
         </select>
@@ -44,7 +52,10 @@
         <button type="submit" name="submit.Filter" value="yes please">@T("Apply")</button>
     </fieldset>
     <fieldset class="contentItems bulk-items">
-@Display(Model.ContentItems)
+        @Display(Model.ContentItems)
     </fieldset>
-@Display(Model.Pager)
+    @Display(Model.Pager)
 }
+
+
+
