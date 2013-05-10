@@ -2,33 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using BigFont.CraneProduct.Models;
+using BigFont.DealerDashboard.Models;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Drivers;
 
-namespace BigFont.CraneProduct.Drivers
+namespace BigFont.DealerDashboard
 {
-    public class CraneProductDriver : ContentPartDriver<CraneProductPart>
+    public class DealerProduct : ContentPartDriver<DealerProductPart>
     {        
         protected override DriverResult Display(
-            CraneProductPart part, string displayType, dynamic shapeHelper)
+            DealerProductPart part, string displayType, dynamic shapeHelper)
         {
-            return ContentShape("Parts_CraneProduct_Publish_SummaryAdmin", () => shapeHelper.Parts_CraneProduct_Publish_SummaryAdmin());
+            return ContentShape("Parts_DealerProduct_Publish_SummaryAdmin", () => shapeHelper.Parts_DealerProduct_Publish_SummaryAdmin());
         }
         //GET
         protected override DriverResult Editor(
-            CraneProductPart part, dynamic shapeHelper)
+            DealerProductPart part, dynamic shapeHelper)
         {
 
-            return ContentShape("Parts_CraneProduct_Edit",
+            return ContentShape("Parts_DealerProduct_Edit",
                 () => shapeHelper.EditorTemplate(
-                    TemplateName: "Parts/CraneProduct",
+                    TemplateName: "Parts/DealerProduct",
                     Model: part,
                     Prefix: Prefix));
         }
         //POST
         protected override DriverResult Editor(
-            CraneProductPart part, IUpdateModel updater, dynamic shapeHelper)
+            DealerProductPart part, IUpdateModel updater, dynamic shapeHelper)
         {
 
             updater.TryUpdateModel(part, Prefix, null, null);

@@ -5,23 +5,23 @@ using System.Web;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Handlers;
 using Orchard.Data;
-using BigFont.CraneProduct.Models;
+using BigFont.DealerDashboard.Models;
 using System.Web.Routing;
 
-namespace BigFont.CraneProduct.Handlers
+namespace BigFont.DealerDashboard
 {
-    public class CraneProductHandler : ContentHandler
+    public class DealerProductHandler : ContentHandler
     {
-        public CraneProductHandler(IRepository<CraneProductRecord> repository)
+        public DealerProductHandler(IRepository<DealerProductRecord> repository)
         {
             Filters.Add(StorageFilter.For(repository));
         }
 
         protected override void GetItemMetadata(GetContentItemMetadataContext context)
         {
-            var cranePart = context.ContentItem.As<CraneProductPart>();
+            var dealerPart = context.ContentItem.As<DealerProductPart>();
 
-            if (cranePart == null)
+            if (dealerPart == null)
                 return;
 
                 context.Metadata.CreateRouteValues = new RouteValueDictionary {

@@ -4,13 +4,13 @@
     <ExtensionId>BigFont.CraneProduct</ExtensionId>
     <LoaderName>DynamicExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/BigFont.CraneProduct/BigFont.CraneProduct.csproj</VirtualPath>
-    <Hash>6c518e55f47e27ca</Hash>
+    <Hash>b521aab8c4f792e1</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>BigFont.DealerDashboard</ExtensionId>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/BigFont.DealerDashboard.dll</VirtualPath>
-    <Hash>49197b863940c84f</Hash>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/BigFont.DealerDashboard/BigFont.DealerDashboard.csproj</VirtualPath>
+    <Hash>d86a74a5794d683e</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Bootstrap</ExtensionId>

@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BigFont.CraneProduct.Models
+namespace BigFont.DealerDashboard.Models
 {
-    public class CraneProductRecord : ContentPartRecord
+    public class DealerProductRecord : ContentPartRecord
     {
     }
-    public class CraneProductPart : ContentPart<CraneProductRecord>
+    public class DealerProductPart : ContentPart<DealerProductRecord>
     { 
     
     }

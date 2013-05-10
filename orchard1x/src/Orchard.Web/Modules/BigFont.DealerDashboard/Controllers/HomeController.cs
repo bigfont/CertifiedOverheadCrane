@@ -68,7 +68,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.ViewContent, contentItem, T("Cannot view content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot view content")))
             {
                 return new HttpUnauthorizedResult();
             }
@@ -88,12 +88,12 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.ViewContent, contentItem, T("Cannot preview content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot preview content")))
             {
                 return new HttpUnauthorizedResult();
             }
 
-            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Cannot preview content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot preview content")))
             {
                 return new HttpUnauthorizedResult();
             }
@@ -174,7 +174,7 @@ namespace BigFont.DealerDashboard.Controllers
 
             var contentItem = _contentManager.New(id);
 
-            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Cannot create content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot create content")))
                 return new HttpUnauthorizedResult();
 
             if (containerId.HasValue && contentItem.Is<ContainablePart>())
@@ -209,7 +209,7 @@ namespace BigFont.DealerDashboard.Controllers
             // pass a dummy content to the authorization check to check for "own" variations
             var dummyContent = _contentManager.New(id);
 
-            if (!Services.Authorizer.Authorize(Permissions.PublishContent, dummyContent, T("Couldn't create content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, dummyContent, T("Couldn't create content")))
                 return new HttpUnauthorizedResult();
 
             return CreatePOST(id, returnUrl, contentItem => _contentManager.Publish(contentItem));
@@ -218,8 +218,8 @@ namespace BigFont.DealerDashboard.Controllers
         private ActionResult CreatePOST(string id, string returnUrl, Action<ContentItem> conditionallyPublish)
         {
             var contentItem = _contentManager.New(id);
-            
-            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Couldn't create content")))
+
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't create content")))
                 return new HttpUnauthorizedResult();
 
             _contentManager.Create(contentItem, VersionOptions.Draft);
@@ -255,7 +255,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Cannot edit content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Cannot edit content")))
                 return new HttpUnauthorizedResult();
 
             dynamic model = _contentManager.BuildEditor(contentItem);
@@ -282,7 +282,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (content == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.PublishContent, content, T("Couldn't publish content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, content, T("Couldn't publish content")))
                 return new HttpUnauthorizedResult();
 
             return EditPOST(id, returnUrl, contentItem => _contentManager.Publish(contentItem));
@@ -293,7 +293,7 @@ namespace BigFont.DealerDashboard.Controllers
         {
             var contentItem = _contentManager.Get(id, VersionOptions.Latest);
 
-            if (!Services.Authorizer.Authorize(Permissions.DeleteContent, contentItem, T("Couldn't remove content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't remove content")))
                 return new HttpUnauthorizedResult();
 
             if (contentItem != null)
@@ -314,7 +314,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.PublishContent, contentItem, T("Couldn't publish content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't publish content")))
                 return new HttpUnauthorizedResult();
 
             _contentManager.Publish(contentItem);
@@ -331,7 +331,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.PublishContent, contentItem, T("Couldn't unpublish content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't unpublish content")))
                 return new HttpUnauthorizedResult();
 
             _contentManager.Unpublish(contentItem);
@@ -348,7 +348,7 @@ namespace BigFont.DealerDashboard.Controllers
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.EditContent, contentItem, T("Couldn't edit content")))
+            if (!Services.Authorizer.Authorize(Permissions.SomePermission, contentItem, T("Couldn't edit content")))
                 return new HttpUnauthorizedResult();
 
             string previousRoute = null;

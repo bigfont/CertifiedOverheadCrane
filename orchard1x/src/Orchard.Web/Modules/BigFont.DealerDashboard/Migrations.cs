@@ -6,22 +6,22 @@ using Orchard.ContentManagement.MetaData;
 using Orchard.ContentManagement.MetaData.Builders;
 using Orchard.Core.Contents.Extensions;
 using Orchard.Data.Migration;
-using BigFont.CraneProduct.Models;
+using BigFont.DealerDashboard.Models;
 
-namespace BigFont.CraneProduct
+namespace BigFont.DealerDashboard
 {
     public class Migrations : DataMigrationImpl
     {
 
         public int Create()
         {
-            // Creating table CraneProductRecord
-            SchemaBuilder.CreateTable("CraneProductRecord", table => table
+            // Creating table DealerProductRecord
+            SchemaBuilder.CreateTable("DealerProductRecord", table => table
                 .ContentPartRecord()
             );
 
             ContentDefinitionManager.AlterPartDefinition(
-                typeof(CraneProductPart).Name, cfg => cfg
+                typeof(DealerProductPart).Name, cfg => cfg
                     .Attachable()
                     .WithField("Image 1", field => field.OfType("ImageField"))
                     .WithField("Image 2", field => field.OfType("ImageField"))
@@ -29,8 +29,8 @@ namespace BigFont.CraneProduct
                     .WithField("Model #", field => field.OfType("TextField"))
                     );
 
-            ContentDefinitionManager.AlterTypeDefinition("CraneProduct", cfg => cfg
-                .WithPart("CraneProductPart")
+            ContentDefinitionManager.AlterTypeDefinition("DealerProduct", cfg => cfg
+                .WithPart("DealerProductPart")
                 .WithPart("CommonPart", cp => cp
                     .WithSetting("OwnerEditorSettings.ShowOwnerEditor", "false")
                     .WithSetting("DateEditorSettings.ShowDateEditor", "false"))
@@ -44,7 +44,7 @@ namespace BigFont.CraneProduct
 
         public int UpdateFrom1()
         {
-            ContentDefinitionManager.AlterTypeDefinition("CraneProduct", cfg => cfg
+            ContentDefinitionManager.AlterTypeDefinition("DealerProduct", cfg => cfg
                 .Draftable());
             return 2;
         }

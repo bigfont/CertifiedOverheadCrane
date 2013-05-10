@@ -85,10 +85,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Content Include="Views\EditorTemplates\Parts\DealerProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Drivers\DealerProductDriver.cs" />
+    <Compile Include="Handlers\DealerProductHandler.cs" />
+    <Compile Include="Migrations.cs" />
+    <Compile Include="Models\DealerProduct.cs" />
+    <Compile Include="Permissions.cs" />
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="Services\DealerDashboardNavigationProvider.cs" />
@@ -104,6 +109,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Display.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Preview.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\DealerProduct.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="placement.info" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
