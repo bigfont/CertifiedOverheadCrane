@@ -2,9 +2,9 @@
 <Dependencies>
   <Dependency>
     <ExtensionId>BigFont.DealerDashboard</ExtensionId>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/BigFont.DealerDashboard.dll</VirtualPath>
-    <Hash>49197c31539d4bf1</Hash>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/BigFont.DealerDashboard/BigFont.DealerDashboard.csproj</VirtualPath>
+    <Hash>213a968a29e1a74f</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Bing.Maps</ExtensionId>
@@ -286,7 +286,7 @@
     <ExtensionId>Orchard.Setup</ExtensionId>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Orchard.Setup/bin/Orchard.Setup.dll</VirtualPath>
-    <Hash>6e4e35c5bdd40a37</Hash>
+    <Hash>6e4e366dc8dfe533</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Orchard.Tags</ExtensionId>
