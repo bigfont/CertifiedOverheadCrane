@@ -83,6 +83,10 @@
       <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
       <Name>Orchard.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Contrib.ImageField\Contrib.ImageField.csproj">
+      <Project>{079deede-eda1-4810-9304-a71642fadf01}</Project>
+      <Name>Contrib.ImageField</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts\DealerProduct.cshtml" />
@@ -127,7 +131,10 @@
     <Content Include="Views\Content.DealerDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Parts\DealerProduct.DealerDashboard.cshtml" />
+    <Content Include="Views\Parts\DealerProduct.Clone.DealerDashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\DealerProduct.Publish.DealerDashboard.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
