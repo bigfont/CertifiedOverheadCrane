@@ -37,10 +37,9 @@ namespace BigFont.DealerDashboard
 
                 .WithPart("BodyPart")
                 .WithPart("TitlePart")
-                // .WithPart("ContentPermissionsPart")
-                .Draftable()
-                .Creatable());
-
+                 .Draftable()
+                 .Creatable()); // createable is necessary to leverage the existing Contents Feature pemissions and views
+                
             return 1;
         }
     }
