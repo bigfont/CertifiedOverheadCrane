@@ -60,7 +60,6 @@ namespace BigFont.DealerDashboard.Controllers
             Shape = shapeFactory;
             T = NullLocalizer.Instance;
         }
-
         public ActionResult Display(int id)
         {
             var contentItem = _contentManager.Get(id, VersionOptions.Published);
@@ -76,7 +75,6 @@ namespace BigFont.DealerDashboard.Controllers
             dynamic model = _contentManager.BuildDisplay(contentItem);
             return View((object)model);
         }
-
         public ActionResult Preview(int id, int? version)
         {
             var versionOptions = VersionOptions.Latest;
@@ -101,8 +99,6 @@ namespace BigFont.DealerDashboard.Controllers
             dynamic model = _contentManager.BuildDisplay(contentItem);
             return View((object)model);
         }
-
-
         public ActionResult List(ListContentsViewModel model, PagerParameters pagerParameters)
         {
 
@@ -152,7 +148,7 @@ namespace BigFont.DealerDashboard.Controllers
 
             var list = Shape.List();
             list.AddRange(pageOfContentItems.Select(ci => 
-                _contentManager.BuildDisplay(ci, "SummaryAdmin")));
+                _contentManager.BuildDisplay(ci, "DealerDashboard")));
 
             dynamic viewModel = Shape.ViewModel()
                 .ContentItems(list)
@@ -204,7 +200,6 @@ namespace BigFont.DealerDashboard.Controllers
                     _contentManager.Publish(contentItem);
             });
         }
-
         [HttpPost, ActionName("Create")]
         [FormValueRequired("submit.Publish")]
         public ActionResult CreateAndPublishPOST(string id, string returnUrl)
@@ -218,7 +213,6 @@ namespace BigFont.DealerDashboard.Controllers
 
             return CreatePOST(id, returnUrl, contentItem => _contentManager.Publish(contentItem));
         }
-
         private ActionResult CreatePOST(string id, string returnUrl, Action<ContentItem> conditionallyPublish)
         {
             var contentItem = _contentManager.New(id);
@@ -276,7 +270,6 @@ namespace BigFont.DealerDashboard.Controllers
                     _contentManager.Publish(contentItem);
             });
         }
-
         [HttpPost, ActionName("Edit")]
         [FormValueRequired("submit.Publish")]
         public ActionResult EditAndPublishPOST(int id, string returnUrl)
@@ -291,7 +284,6 @@ namespace BigFont.DealerDashboard.Controllers
 
             return EditPOST(id, returnUrl, contentItem => _contentManager.Publish(contentItem));
         }
-
         // [HttpPost]
         public ActionResult Remove(int id, string returnUrl)
         {
@@ -310,8 +302,7 @@ namespace BigFont.DealerDashboard.Controllers
 
             return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
         }
-
-        [HttpPost]
+        // [HttpPost]
         public ActionResult Publish(int id, string returnUrl)
         {
             var contentItem = _contentManager.GetLatest(id);
@@ -327,8 +318,7 @@ namespace BigFont.DealerDashboard.Controllers
 
             return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
         }
-
-        [HttpPost]
+        // [HttpPost]
         public ActionResult Unpublish(int id, string returnUrl)
         {
             var contentItem = _contentManager.GetLatest(id);
@@ -344,7 +334,36 @@ namespace BigFont.DealerDashboard.Controllers
 
             return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
         }
+        // [HttpPost]
+        public ActionResult Clone(int id, string returnUrl)
+        {
+            // Mostly taken from: http://orchard.codeplex.com/discussions/396664
+            var contentItem = _contentManager.GetLatest(id);
 
+            if (contentItem == null)
+                return HttpNotFound();
+
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, contentItem, T("Couldn't clone content")))
+                return new HttpUnauthorizedResult();
+
+            var importContentSession = new ImportContentSession(_contentManager);
+
+            var element = _contentManager.Export(contentItem);
+            var elementId = element.Attribute("Id");
+            var copyId = elementId.Value + "-copy";
+            elementId.SetValue(copyId);
+            var status = element.Attribute("Status");
+            if (status != null) status.SetValue("Draft"); // So the copy is always a draft.
+
+            importContentSession.Set(copyId, element.Name.LocalName);
+
+            _contentManager.Import(element, importContentSession);
+
+            Services.Notifier.Information(T("Successfully cloned. The clone was saved as a draft."));
+
+            return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
+        }
+        #region Private Methods
         private ActionResult EditPOST(int id, string returnUrl, Action<ContentItem> conditionallyPublish)
         {
             var contentItem = _contentManager.Get(id, VersionOptions.DraftRequired);
@@ -410,6 +429,7 @@ namespace BigFont.DealerDashboard.Controllers
         {
             ModelState.AddModelError(key, errorMessage.ToString());
         }
+        #endregion
     }
 
     public class FormValueRequiredAttribute : ActionMethodSelectorAttribute

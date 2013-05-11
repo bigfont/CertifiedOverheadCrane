@@ -9,11 +9,17 @@ using Orchard.ContentManagement.Drivers;
 namespace BigFont.DealerDashboard
 {
     public class DealerProduct : ContentPartDriver<DealerProductPart>
-    {        
+    {
         protected override DriverResult Display(
             DealerProductPart part, string displayType, dynamic shapeHelper)
         {
-            return ContentShape("Parts_DealerProduct_Publish_SummaryAdmin", () => shapeHelper.Parts_DealerProduct_Publish_SummaryAdmin());
+            return Combined(
+                    ContentShape("Parts_DealerProduct", 
+                        () => shapeHelper.Parts_DealerProduct()),
+                    ContentShape("Parts_DealerProduct_Publish_DealerDashboard",
+                        () => shapeHelper.Parts_DealerProduct_Publish_DealerDashboard()),
+                    ContentShape("Parts_DealerProduct_Clone_DealerDashboard",
+                        () => shapeHelper.Parts_DealerProduct_Clone_DealerDashboard()));
         }
         //GET
         protected override DriverResult Editor(
@@ -30,7 +36,6 @@ namespace BigFont.DealerDashboard
         protected override DriverResult Editor(
             DealerProductPart part, IUpdateModel updater, dynamic shapeHelper)
         {
-
             updater.TryUpdateModel(part, Prefix, null, null);
             return Editor(part, shapeHelper);
         }
