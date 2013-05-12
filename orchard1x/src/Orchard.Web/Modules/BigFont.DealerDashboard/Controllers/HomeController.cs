@@ -296,8 +296,9 @@ namespace BigFont.DealerDashboard.Controllers
             {
                 _contentManager.Remove(contentItem);
                 Services.Notifier.Information(string.IsNullOrWhiteSpace(contentItem.TypeDefinition.DisplayName)
-                    ? T("That content has been removed.")
-                    : T("That {0} has been removed.", contentItem.TypeDefinition.DisplayName));
+                    ? T("That content has been removed")
+                    : T("That {0} has been removed!!!", contentItem.TypeDefinition.DisplayName));
+                    // TODO Determine why this message!!! renders twice on delete.
             }
 
             return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
