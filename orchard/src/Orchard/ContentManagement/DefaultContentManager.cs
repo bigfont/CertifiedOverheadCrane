@@ -10,6 +10,7 @@ using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.SqlCommand;
 using NHibernate.Transform;
+using Orchard.Caching;
 using Orchard.ContentManagement.Handlers;
 using Orchard.ContentManagement.MetaData;
 using Orchard.ContentManagement.MetaData.Builders;
@@ -27,10 +28,13 @@ namespace Orchard.ContentManagement {
         private readonly IRepository<ContentItemRecord> _contentItemRepository;
         private readonly IRepository<ContentItemVersionRecord> _contentItemVersionRepository;
         private readonly IContentDefinitionManager _contentDefinitionManager;
+        private readonly ICacheManager _cacheManager;
         private readonly Func<IContentManagerSession> _contentManagerSession;
         private readonly Lazy<IContentDisplay> _contentDisplay;
         private readonly Lazy<ISessionLocator> _sessionLocator; 
         private readonly Lazy<IEnumerable<IContentHandler>> _handlers;
+        private readonly Lazy<IEnumerable<IIdentityResolverSelector>> _identityResolverSelectors;
+
         private const string Published = "Published";
         private const string Draft = "Draft";
 
@@ -40,16 +44,20 @@ namespace Orchard.ContentManagement {
             IRepository<ContentItemRecord> contentItemRepository,
             IRepository<ContentItemVersionRecord> contentItemVersionRepository,
             IContentDefinitionManager contentDefinitionManager,
+            ICacheManager cacheManager,
             Func<IContentManagerSession> contentManagerSession,
             Lazy<IContentDisplay> contentDisplay,
             Lazy<ISessionLocator> sessionLocator,
-            Lazy<IEnumerable<IContentHandler>> handlers) {
+            Lazy<IEnumerable<IContentHandler>> handlers,
+            Lazy<IEnumerable<IIdentityResolverSelector>> identityResolverSelectors) {
             _context = context;
             _contentTypeRepository = contentTypeRepository;
             _contentItemRepository = contentItemRepository;
             _contentItemVersionRepository = contentItemVersionRepository;
             _contentDefinitionManager = contentDefinitionManager;
+            _cacheManager = cacheManager;
             _contentManagerSession = contentManagerSession;
+            _identityResolverSelectors = identityResolverSelectors;
             _handlers = handlers;
             _contentDisplay = contentDisplay;
             _sessionLocator = sessionLocator;
@@ -349,6 +357,10 @@ namespace Orchard.ContentManagement {
             // invoke handlers to acquire state, or at least establish lazy loading callbacks
             Handlers.Invoke(handler => handler.Publishing(context), Logger);
 
+            if(context.Cancel) {
+                return;
+            }
+
             if (previous != null) {
                 previous.Published = false;
             }
@@ -458,7 +470,7 @@ namespace Orchard.ContentManagement {
                 // produce root record to determine the model id
                 contentItem.VersionRecord = new ContentItemVersionRecord {
                     ContentItemRecord = new ContentItemRecord {
-                        ContentType = AcquireContentTypeRecord(contentItem.ContentType)
+                        
                     },
                     Number = 1,
                     Latest = true,
@@ -482,14 +494,18 @@ namespace Orchard.ContentManagement {
             _contentItemRepository.Create(contentItem.Record);
             _contentItemVersionRepository.Create(contentItem.VersionRecord);
 
-
             // build a context with the initialized instance to create
             var context = new CreateContentContext(contentItem);
 
-
             // invoke handlers to add information to persistent stores
             Handlers.Invoke(handler => handler.Creating(context), Logger);
+            
+            // deferring the assignment of ContentType as loading a Record might force NHibernate to AutoFlush 
+            // the ContentPart, and needs the ContentItemRecord to be created before (created in previous statement)
+            contentItem.VersionRecord.ContentItemRecord.ContentType = AcquireContentTypeRecord(contentItem.ContentType);
+
             Handlers.Invoke(handler => handler.Created(context), Logger);
+
 
             if (options.IsPublished) {
                 var publishContext = new PublishContentContext(contentItem, null);
@@ -502,6 +518,42 @@ namespace Orchard.ContentManagement {
             }
         }
 
+        /// <summary>
+        /// Lookup for a content item based on a <see cref="ContentIdentity"/>. If multiple 
+        /// resolvers can give a result, the one with the highest priority is used. As soon as 
+        /// only one content item is returned from resolvers, it is returned as the result.
+        /// </summary>
+        /// <param name="contentIdentity">The <see cref="ContentIdentity"/> instance to lookup</param>
+        /// <returns>The <see cref="ContentItem"/> instance represented by the identity object.</returns>
+        public ContentItem ResolveIdentity(ContentIdentity contentIdentity) {
+            var resolvers = _identityResolverSelectors.Value
+                .Select(x => x.GetResolver(contentIdentity))
+                .Where(x => x != null)
+                .OrderByDescending(x => x.Priority);
+
+            if (!resolvers.Any())
+                return null;
+
+            IEnumerable<ContentItem> contentItems = null;
+            foreach (var resolver in resolvers) {
+                var resolved = resolver.Resolve(contentIdentity).ToArray();
+                
+                // first pass
+                if (contentItems == null) {
+                    contentItems = resolved;
+                }
+                else { // subsquent passes means we need to intersect 
+                    contentItems = contentItems.Intersect(resolved).ToArray();
+                }
+
+                if (contentItems.Count() == 1) {
+                    return contentItems.First();
+                }
+            }
+
+            return contentItems.FirstOrDefault();
+        }
+        
         public ContentItemMetadata GetItemMetadata(IContent content) {
             var context = new GetContentItemMetadataContext {
                 ContentItem = content.ContentItem,
@@ -579,9 +631,14 @@ namespace Orchard.ContentManagement {
             }
 
             var identity = elementId.Value;
+
+            if (String.IsNullOrWhiteSpace(identity)) {
+                return;
+            }
+
             var status = element.Attribute("Status");
 
-            var item = importContentSession.Get(identity, XmlConvert.DecodeName(element.Name.LocalName));
+            var item = importContentSession.Get(identity, VersionOptions.Latest, XmlConvert.DecodeName(element.Name.LocalName));
             if (item == null) {
                 item = New(XmlConvert.DecodeName(element.Name.LocalName));
                 if (status != null && status.Value == "Draft") {
@@ -613,7 +670,7 @@ namespace Orchard.ContentManagement {
                 contentHandler.Imported(context);
             }
 
-            var savedItem = Get(item.Id, VersionOptions.DraftRequired);
+            var savedItem = Get(item.Id, VersionOptions.Latest);
 
             // the item has been pre-created in the first pass of the import, create it in db
             if(savedItem == null) {
@@ -652,18 +709,20 @@ namespace Orchard.ContentManagement {
             return context.Data;
         }
 
-        public void Flush() {
-            _contentItemRepository.Flush();
-        }
-
         private ContentTypeRecord AcquireContentTypeRecord(string contentType) {
-            var contentTypeRecord = _contentTypeRepository.Get(x => x.Name == contentType);
-            if (contentTypeRecord == null) {
-                //TEMP: this is not safe... ContentItem types could be created concurrently?
-                contentTypeRecord = new ContentTypeRecord { Name = contentType };
-                _contentTypeRepository.Create(contentTypeRecord);
-            }
-            return contentTypeRecord;
+            var contentTypeId = _cacheManager.Get(contentType + "_Record", ctx => {
+                var contentTypeRecord = _contentTypeRepository.Get(x => x.Name == contentType);
+
+                if (contentTypeRecord == null) {
+                    //TEMP: this is not safe... ContentItem types could be created concurrently?
+                    contentTypeRecord = new ContentTypeRecord { Name = contentType };
+                    _contentTypeRepository.Create(contentTypeRecord);
+                }
+
+                return contentTypeRecord.Id;
+            });
+
+            return _contentTypeRepository.Get(contentTypeId);
         }
 
         public void Index(ContentItem contentItem, IDocumentIndex documentIndex) {

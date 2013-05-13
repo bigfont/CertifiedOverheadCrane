@@ -210,6 +210,10 @@ namespace Orchard.Tests.Modules.Media.Services {
                 SavedStreams = new List<string>();
             }
 
+            public bool FileExists(string path) {
+                throw new NotImplementedException();
+            }
+
             public string GetPublicUrl(string path) {
                 return FileSystemStorageProvider.GetPublicUrl(path);
             }
@@ -219,6 +223,10 @@ namespace Orchard.Tests.Modules.Media.Services {
             }
 
             public IEnumerable<IStorageFile> ListFiles(string path) {
+                throw new NotImplementedException();
+            }
+
+            public bool FolderExists(string path) {
                 throw new NotImplementedException();
             }
 
@@ -262,6 +270,16 @@ namespace Orchard.Tests.Modules.Media.Services {
 
             public void SaveStream(string path, Stream inputStream) {
                 SavedStreams.Add(path);
+            }
+
+
+            public string GetLocalPath(string url) {
+                throw new NotImplementedException();
+            }
+
+
+            public string GetRelativePath(string path) {
+                throw new NotImplementedException();
             }
         }
 

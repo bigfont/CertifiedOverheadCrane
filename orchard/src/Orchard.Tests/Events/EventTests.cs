@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Autofac;
 using NUnit.Framework;
@@ -20,8 +21,15 @@ namespace Orchard.Tests.Events {
             var builder = new ContainerBuilder();
             builder.RegisterType<DefaultOrchardEventBus>().As<IEventBus>();
             builder.RegisterType<StubExceptionPolicy>().As<IExceptionPolicy>();
-            builder.RegisterType<StubEventHandler2>().As<IEventHandler>();
-            builder.RegisterInstance(_eventHandler).As<IEventHandler>();
+
+            builder.RegisterType<StubEventHandler2>()
+                .Named(typeof(ITestEventHandler).Name, typeof(IEventHandler))
+                .Named(typeof(IEventHandler).Name, typeof(IEventHandler))
+                .WithMetadata("Interfaces", typeof(StubEventHandler2).GetInterfaces().ToDictionary(i => i.Name));
+            builder.RegisterInstance(_eventHandler)
+                .Named(typeof(ITestEventHandler).Name, typeof(IEventHandler))
+                .Named(typeof(IEventHandler).Name, typeof(IEventHandler))
+                .WithMetadata("Interfaces", typeof(StubEventHandler).GetInterfaces().ToDictionary(i => i.Name));
 
             _container = builder.Build();
             _eventBus = _container.Resolve<IEventBus>();
@@ -162,8 +170,7 @@ namespace Orchard.Tests.Events {
             Assert.That(results, Has.Some.EqualTo("alpha"));
             Assert.That(results, Has.Some.EqualTo("[42,alpha]"));
         }
-
-
+        
         public interface ITestEventHandler : IEventHandler {
             void Increment();
             void Sum(int a);

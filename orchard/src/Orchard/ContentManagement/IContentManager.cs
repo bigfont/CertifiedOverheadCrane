@@ -10,7 +10,6 @@ namespace Orchard.ContentManagement {
     public interface IContentManager : IDependency {
         IEnumerable<ContentTypeDefinition> GetContentTypeDefinitions();
 
-
         /// <summary>
         /// Instantiates a new content item with the specified type
         /// </summary>
@@ -74,11 +73,6 @@ namespace Orchard.ContentManagement {
         void Import(XElement element, ImportContentSession importContentSession);
 
         /// <summary>
-        /// Flushes all pending content items to the persistance layer
-        /// </summary>
-        void Flush();
-        
-        /// <summary>
         /// Clears the current referenced content items
         /// </summary>
         void Clear();
@@ -95,6 +89,7 @@ namespace Orchard.ContentManagement {
         GroupInfo GetEditorGroupInfo(IContent contentItem, string groupInfoId);
         GroupInfo GetDisplayGroupInfo(IContent contentItem, string groupInfoId);
 
+        ContentItem ResolveIdentity(ContentIdentity contentIdentity);
 
         /// <summary>
         /// Builds the display shape of the specified content item

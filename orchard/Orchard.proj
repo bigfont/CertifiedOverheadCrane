@@ -133,7 +133,7 @@
   <Target Name ="Test">
     <!-- TeamCity support -->
     <ItemGroup>
-      <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.6.0.*" />
+      <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.5.2.*" />
     </ItemGroup>
     <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(LibFolder)\nunit\addins" />
 
@@ -148,7 +148,7 @@
   <Target Name ="Spec" DependsOnTargets="Package-Stage">
     <!-- TeamCity support -->
     <ItemGroup>
-      <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.6.0.*" />
+      <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.5.2.*" />
     </ItemGroup>
     <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(LibFolder)\nunit\addins" />
 
@@ -271,10 +271,6 @@
 
     <XmlDelete XmlFileName="$(StageFolder)\Config\log4net.config"
       XPath="/log4net/root/appender-ref[@ref='debug-file']" />
-
-    <!-- disable dynamic compilation loader -->
-    <Move SourceFiles="$(StageFolder)\Config\Sample.HostComponents.config"
-    DestinationFiles="$(StageFolder)\Config\HostComponents.config"/>
 
     <XmlUpdate XmlFileName="$(StageFolder)\Config\HostComponents.config"
       XPath="/HostComponents/Components/Component[@Type='Orchard.Environment.Extensions.Loaders.DynamicExtensionLoader']/Properties/Property/@Value"
