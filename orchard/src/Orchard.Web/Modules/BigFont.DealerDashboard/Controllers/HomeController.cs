@@ -40,11 +40,9 @@ namespace BigFont.DealerDashboard.Controllers
         private readonly IContentManager _contentManager;
         private readonly IContentDefinitionManager _contentDefinitionManager;
         private readonly ITransactionManager _transactionManager;
-
         dynamic Shape { get; set; }
         public IOrchardServices Services { get; private set; }
         public Localizer T { get; set; }
-
         public HomeController(
             ISiteService siteService,
             IContentManager contentManager,
@@ -101,9 +99,8 @@ namespace BigFont.DealerDashboard.Controllers
             return View((object)model);
         }
         public ActionResult List(ListContentsViewModel model, PagerParameters pagerParameters)
-        {
-
-            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, T("Cannot list dealer products.")))
+        {            
+            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, T("Cannot list dealer products")))
                 return new HttpUnauthorizedResult();
 
             Pager pager = new Pager(_siteService.GetSiteSettings(), pagerParameters);
@@ -217,7 +214,6 @@ namespace BigFont.DealerDashboard.Controllers
 
             return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
         }
-
         public ActionResult Create(string id, int? containerId)
         {
             var contentItem = _contentManager.New(id);
@@ -480,16 +476,13 @@ namespace BigFont.DealerDashboard.Controllers
         }
         #endregion
     }
-
     public class FormValueRequiredAttribute : ActionMethodSelectorAttribute
     {
         private readonly string _submitButtonName;
-
         public FormValueRequiredAttribute(string submitButtonName)
         {
             _submitButtonName = submitButtonName;
         }
-
         public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
         {
             var value = controllerContext.HttpContext.Request.Form[_submitButtonName];
