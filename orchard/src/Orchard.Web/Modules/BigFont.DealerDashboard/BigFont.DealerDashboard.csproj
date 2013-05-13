@@ -110,9 +110,6 @@
     <Content Include="Views\Home\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\CreatableTypeList.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Home\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -242,22 +242,7 @@ namespace BigFont.DealerDashboard.Controllers {
             return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
         }
 
-        //We removed the ActionResult CreatableTypeList(int? containerId) method
-        //because we do not need a separate view for this.
-        //ActionResult CreatableTypeList(int? containerId) {
-        //    dynamic viewModel = Shape.ViewModel(ContentTypes: GetCreatableTypes(containerId.HasValue), ContainerId: containerId);
-
-        //    // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
-        //    return View("CreatableTypeList", (object)viewModel);
-        //}
-
-
         public ActionResult Create(string id, int? containerId) {
-
-            //We removed this
-            //because we expect that there will always be an id
-            //if (string.IsNullOrEmpty(id))
-            //    return CreatableTypeList(containerId);
 
             var contentItem = _contentManager.New(id);
 
