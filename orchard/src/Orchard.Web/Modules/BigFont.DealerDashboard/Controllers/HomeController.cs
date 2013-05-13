@@ -160,6 +160,64 @@ namespace BigFont.DealerDashboard.Controllers
             // Casting to avoid invalid (under medium trust) reflection over the protected View method and force a static invocation.
             return View((object)viewModel);
         }
+        [HttpPost, ActionName("List")]
+        [FormValueRequired("submit.BulkEdit")]
+        public ActionResult ListPOST(ContentOptions options, IEnumerable<int> itemIds, string returnUrl)
+        {
+            if (itemIds != null)
+            {
+                var checkedContentItems = _contentManager.GetMany<ContentItem>(itemIds, VersionOptions.Latest, QueryHints.Empty);
+                switch (options.BulkAction)
+                {
+                    case ContentsBulkAction.None:
+                        break;
+                    case ContentsBulkAction.PublishNow:
+                        foreach (var item in checkedContentItems)
+                        {
+                            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, item, T("Couldn't publish selected content.")))
+                            {
+                                _transactionManager.Cancel();
+                                return new HttpUnauthorizedResult();
+                            }
+
+                            _contentManager.Publish(item);
+                        }
+                        Services.Notifier.Information(T("Content successfully published."));
+                        break;
+                    case ContentsBulkAction.Unpublish:
+                        foreach (var item in checkedContentItems)
+                        {
+                            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, item, T("Couldn't unpublish selected content.")))
+                            {
+                                _transactionManager.Cancel();
+                                return new HttpUnauthorizedResult();
+                            }
+
+                            _contentManager.Unpublish(item);
+                        }
+                        Services.Notifier.Information(T("Content successfully unpublished."));
+                        break;
+                    case ContentsBulkAction.Remove:
+                        foreach (var item in checkedContentItems)
+                        {
+                            if (!Services.Authorizer.Authorize(Permissions.ManageDealerDashboard, item, T("Couldn't remove selected content.")))
+                            {
+                                _transactionManager.Cancel();
+                                return new HttpUnauthorizedResult();
+                            }
+
+                            _contentManager.Remove(item);
+                        }
+                        Services.Notifier.Information(T("Content successfully removed."));
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+
+            return this.RedirectLocal(returnUrl, () => RedirectToAction("List"));
+        }
+
         public ActionResult Create(string id, int? containerId)
         {
             var contentItem = _contentManager.New(id);
