@@ -1,0 +1,16 @@
+﻿Name: BigFont.OpenDashboard
+AntiForgery: enabled
+Author: Shaun @ BigFont
+Website: http://www.bigfont.ca
+Version: 1.0
+OrchardVersion: 1.x
+Description: Provides a simplified dashboard that permits users, who have AccessOpenDashboard permission, to create specified content types and to read, update, and delete their own content items.
+Features:
+    BigFont.OpenDashboard:
+		Name: Open Dashboard
+		Category: Content
+	BigFont.OpenDashboard.OpenTypes
+		Name: Open Types
+		Description: Provides some useful content types that users, who have AccessOpenDashboard permission, can create.
+		Category: Content
+		Dependencies: BigFont.OpenDashboard
