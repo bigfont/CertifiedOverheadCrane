@@ -67,8 +67,8 @@ namespace BigFont.OpenDashboard {
          */
         public int UpdateFrom2() {
 
-            // CONTENT TYPE - OverstockProduct
-            ContentDefinitionManager.AlterTypeDefinition("OverstockProduct",
+            // CONTENT TYPE - DemoProduct
+            ContentDefinitionManager.AlterTypeDefinition("DemoProduct",
                 cfg => cfg
                     .WithPart("OpenDashboardContentPart") // required for display in the OpenDashboard
                     .WithPart("ProductCodesPart")
