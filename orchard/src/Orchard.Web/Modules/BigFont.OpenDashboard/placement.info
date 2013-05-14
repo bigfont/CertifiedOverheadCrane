@@ -1,0 +1,8 @@
+﻿<Placement>
+  <Match DisplayType="OpenDashboard">
+    <Place Content_OpenDashboard="Content:1" />
+    <Place Parts_OpenDashboardContent_Publish_OpenDashboard="Actions:5" />
+    <Place Parts_OpenDashboardContent_Clone_OpenDashboard="Actions:6" />
+    <Place Parts_Common_Body_Summary="-" />
+  </Match>
+</Placement>

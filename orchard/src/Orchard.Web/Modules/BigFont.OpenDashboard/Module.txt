@@ -13,4 +13,4 @@ Features:
 		Name: Open Types
 		Description: Provides some useful content types that users, who have AccessOpenDashboard permission, can create.
 		Category: Content
-		Dependencies: BigFont.OpenDashboard
+		Dependencies: BigFont.OpenDashboard, Contrib.ImageField

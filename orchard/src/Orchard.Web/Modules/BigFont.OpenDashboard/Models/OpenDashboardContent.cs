@@ -11,16 +11,16 @@ namespace BigFont.OpenDashboard.Models {
     }
     public class OpenDashboardContentPart : ContentPart<OpenDashboardContentRecord> {
     }
-    [OrchardFeature("BigFont.OpenDashboard.StandardContentTypes")]
+    [OrchardFeature("BigFont.OpenDashboard.OpenTypes")]
     public class ProductCodesRecord : ContentPartRecord {
     }
-    [OrchardFeature("BigFont.OpenDashboard.StandardContentTypes")]
+    [OrchardFeature("BigFont.OpenDashboard.OpenTypes")]
     public class ProductCodesPart : ContentPart<ProductCodesRecord> {
     }
-    [OrchardFeature("BigFont.OpenDashboard.StandardContentTypes")]
+    [OrchardFeature("BigFont.OpenDashboard.OpenTypes")]
     public class ProductImagesRecord : ContentPartRecord {
     }
-    [OrchardFeature("BigFont.OpenDashboard.StandardContentTypes")]
+    [OrchardFeature("BigFont.OpenDashboard.OpenTypes")]
     public class ProductImagesPart : ContentPart<ProductImagesRecord> {
     }
 }

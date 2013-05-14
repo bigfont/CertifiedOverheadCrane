@@ -1,6 +1,7 @@
 ﻿@using Orchard.ContentManagement;
-@using Orchard.Core.Contents;
+@*@using Orchard.Core.Contents;*@
 @using Orchard.Utility.Extensions;
+@using BigFont.OpenDashboard;
 
 @{
     Script.Require("ShapesBase");
@@ -16,13 +17,13 @@
     @Html.Link(T("Publish Draft").Text, Url.Action("Publish", targetController, new { area = targetArea, id = contentPart.ContentItem.Id, returnUrl = Request.ToUrlString() }), new { itemprop = "UnsafeUrl" })
     @T(" | ")
 
-        if (Authorizer.Authorize(Permissions.PublishContent, contentPart)) {
+        if (Authorizer.Authorize(Permissions.ManageOpenDashboard, contentPart)) {
     @Html.ActionLink(T("Preview").Text, "Preview", targetController, new { area = targetArea, id = ((ContentItem)Model.ContentPart.ContentItem).Id }, new { })
     @T(" | ")
         }
     }
 
-    if (Authorizer.Authorize(Permissions.PublishContent, contentPart)) {
+    if (Authorizer.Authorize(Permissions.ManageOpenDashboard, contentPart)) {
     @Html.Link(T("Unpublish").Text, Url.Action("Unpublish", targetController, new { area = targetArea, id = contentPart.ContentItem.Id, returnUrl = Request.ToUrlString() }), new { itemprop = "UnsafeUrl" })
     @T(" | ")
     }
@@ -33,7 +34,7 @@ else {
     @T(" | ")
     }
 
-    if (Authorizer.Authorize(Permissions.PublishContent, contentPart)) {
+    if (Authorizer.Authorize(Permissions.ManageOpenDashboard, contentPart)) {
     @Html.Link(T("Publish").Text, Url.Action("Publish", targetController, new { area = targetArea, id = contentPart.ContentItem.Id, returnUrl = Request.ToUrlString() }), new { itemprop = "UnsafeUrl" })
     @T(" | ")
     }

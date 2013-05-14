@@ -167,7 +167,7 @@ namespace BigFont.OpenDashboard.Controllers {
         private IEnumerable<ContentTypeDefinition> GetOpenDashboardTypes() {
 
             IEnumerable<ContentTypeDefinition> openDashboardTypes = _contentDefinitionManager.ListTypeDefinitions()
-                 .Where(ctd => ctd.Settings.GetModel<ContentTypeSettings>().Creatable && ctd.Parts.Any(p => p.PartDefinition.Name == "OpenDashboardPart"));                 
+                 .Where(ctd => ctd.Settings.GetModel<ContentTypeSettings>().Creatable && ctd.Parts.Any(p => p.PartDefinition.Name == "OpenDashboardContentPart"));                 
                 
             return openDashboardTypes;
         }
