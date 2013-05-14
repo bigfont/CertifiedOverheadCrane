@@ -105,11 +105,11 @@ namespace BigFont.DealerDashboard.Controllers {
 
             Pager pager = new Pager(_siteService.GetSiteSettings(), pagerParameters);
 
-            // get dealer dashboard types instead of creatable types
+            // get dealer dashboard types (instead of creatable types)
             var query = _contentManager.Query(VersionOptions.Latest, GetDealerDashboardTypes().Select(ctd => ctd.Name).ToArray());
 
-            // then also filter on ownership
-            GetOwnedContentItems(query);
+            // also filter on ownership
+            RestrictQueryToOwnedContentItems(query);
 
             if (!string.IsNullOrEmpty(model.TypeName)) {
                 var contentTypeDefinition = _contentDefinitionManager.GetTypeDefinition(model.TypeName);
@@ -124,14 +124,12 @@ namespace BigFont.DealerDashboard.Controllers {
 
             switch (model.Options.OrderBy) {
                 case ContentsOrder.Modified:
-                    //query = query.OrderByDescending<ContentPartRecord, int>(ci => ci.ContentItemRecord.Versions.Single(civr => civr.Latest).Id);
                     query = query.OrderByDescending<CommonPartRecord>(cr => cr.ModifiedUtc);
                     break;
                 case ContentsOrder.Published:
                     query = query.OrderByDescending<CommonPartRecord>(cr => cr.PublishedUtc);
                     break;
                 case ContentsOrder.Created:
-                    //query = query.OrderByDescending<ContentPartRecord, int>(ci => ci.Id);
                     query = query.OrderByDescending<CommonPartRecord>(cr => cr.CreatedUtc);
                     break;
             }
@@ -163,13 +161,15 @@ namespace BigFont.DealerDashboard.Controllers {
         // retrieve just the types that Dealers can manage
         // instead of retrieving all creatable types
         private IEnumerable<ContentTypeDefinition> GetDealerDashboardTypes() {
-            IEnumerable<ContentTypeDefinition> dealerDashboardTypes =
-                _contentDefinitionManager.ListTypeDefinitions().Where(ctd => ctd.Name.Equals("DealerProduct"));
+
+            IEnumerable<ContentTypeDefinition> dealerDashboardTypes = _contentDefinitionManager.ListTypeDefinitions()
+                 .Where(ctd => ctd.Settings.GetModel<ContentTypeSettings>().Creatable && ctd.Parts.Any(p => p.PartDefinition.Name == "DealerProductPart"));                 
+                
             return dealerDashboardTypes;
         }
 
         // retrieve just those content items that the user owns
-        private IContentQuery<ContentItem> GetOwnedContentItems(IContentQuery<ContentItem> query) {
+        private IContentQuery<ContentItem> RestrictQueryToOwnedContentItems(IContentQuery<ContentItem> query) {
             // limit the content items to those that the current user owns
             Orchard.Security.IUser currentUser = Services.WorkContext.CurrentUser;
             query = query.Where<CommonPartRecord>(cpr => cpr.OwnerId == currentUser.Id);
