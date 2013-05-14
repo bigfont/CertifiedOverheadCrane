@@ -105,33 +105,45 @@ namespace BigFont.DealerDashboard.Controllers {
 
             Pager pager = new Pager(_siteService.GetSiteSettings(), pagerParameters);
 
+            var list = Shape.List();
+            var pagerShape = Shape.Pager(pager);
+
             // get dealer dashboard types (instead of creatable types)
-            var query = _contentManager.Query(VersionOptions.Latest, GetDealerDashboardTypes().Select(ctd => ctd.Name).ToArray());
+            string[] contentTypeNames = GetDealerDashboardTypes().Select(ctd => ctd.Name).ToArray();
 
-            // also filter on ownership
-            RestrictQueryToOwnedContentItems(query);
+            if (contentTypeNames.Length > 0) {
+                var query = _contentManager.Query(VersionOptions.Latest, contentTypeNames);
+                RestrictQueryToOwnedContentItems(query);
 
-            if (!string.IsNullOrEmpty(model.TypeName)) {
-                var contentTypeDefinition = _contentDefinitionManager.GetTypeDefinition(model.TypeName);
-                if (contentTypeDefinition == null)
-                    return HttpNotFound();
+                if (!string.IsNullOrEmpty(model.TypeName)) {
+                    var contentTypeDefinition = _contentDefinitionManager.GetTypeDefinition(model.TypeName);
+                    if (contentTypeDefinition == null)
+                        return HttpNotFound();
 
-                model.TypeDisplayName = !string.IsNullOrWhiteSpace(contentTypeDefinition.DisplayName)
-                                            ? contentTypeDefinition.DisplayName
-                                            : contentTypeDefinition.Name;
-                query = query.ForType(model.TypeName);
-            }
+                    model.TypeDisplayName = !string.IsNullOrWhiteSpace(contentTypeDefinition.DisplayName)
+                                                ? contentTypeDefinition.DisplayName
+                                                : contentTypeDefinition.Name;
+                    query = query.ForType(model.TypeName);
+                }
 
-            switch (model.Options.OrderBy) {
-                case ContentsOrder.Modified:
-                    query = query.OrderByDescending<CommonPartRecord>(cr => cr.ModifiedUtc);
-                    break;
-                case ContentsOrder.Published:
-                    query = query.OrderByDescending<CommonPartRecord>(cr => cr.PublishedUtc);
-                    break;
-                case ContentsOrder.Created:
-                    query = query.OrderByDescending<CommonPartRecord>(cr => cr.CreatedUtc);
-                    break;
+                switch (model.Options.OrderBy) {
+                    case ContentsOrder.Modified:
+                        query = query.OrderByDescending<CommonPartRecord>(cr => cr.ModifiedUtc);
+                        break;
+                    case ContentsOrder.Published:
+                        query = query.OrderByDescending<CommonPartRecord>(cr => cr.PublishedUtc);
+                        break;
+                    case ContentsOrder.Created:
+                        query = query.OrderByDescending<CommonPartRecord>(cr => cr.CreatedUtc);
+                        break;
+                }
+
+                pagerShape = Shape.Pager(pager).TotalItemCount(query.Count());
+                var pageOfContentItems = query.Slice(pager.GetStartIndex(), pager.PageSize).ToList();
+
+                // create a display type called DealerDashboard instead of SummaryAdmin
+                list.AddRange(pageOfContentItems.Select(ci => _contentManager.BuildDisplay(ci, "DealerDashboard")));
+
             }
 
             // again, retrieve just dealer dashboard types not all creatable types
@@ -139,14 +151,6 @@ namespace BigFont.DealerDashboard.Controllers {
             model.Options.FilterOptions = GetDealerDashboardTypes()
                 .Select(ctd => new KeyValuePair<string, string>(ctd.Name, ctd.DisplayName))
                 .ToList().OrderBy(kvp => kvp.Value);
-
-            var pagerShape = Shape.Pager(pager).TotalItemCount(query.Count());
-            var pageOfContentItems = query.Slice(pager.GetStartIndex(), pager.PageSize).ToList();
-
-            var list = Shape.List();
-
-            // create a display type called DealerDashboard instead of SummaryAdmin
-            list.AddRange(pageOfContentItems.Select(ci => _contentManager.BuildDisplay(ci, "DealerDashboard")));
 
             dynamic viewModel = Shape.ViewModel()
                 .ContentItems(list)

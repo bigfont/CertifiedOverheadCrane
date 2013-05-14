@@ -4,8 +4,7 @@
     var typeDisplayName = Model.TypeDisplayName;
     var pageTitle = T("Manage Content");
     var createLinkText = T("Create New Content");
-    if (!string.IsNullOrWhiteSpace(typeDisplayName))
-    {
+    if (!string.IsNullOrWhiteSpace(typeDisplayName)) {
         pageTitle = T("Manage {0} Content", typeDisplayName);
         createLinkText = T("Create New {0}", typeDisplayName);
     }
@@ -15,10 +14,10 @@
 
 
 <script type="text/javascript">
-//<![CDATA[
-var confirmRemoveMessage = 'Are you sure you want to remove this element ?';
-//]]>
-</script> 
+    //<![CDATA[
+    var confirmRemoveMessage = 'Are you sure you want to remove this element ?';
+    //]]>
+</script>
 @{
     Style.Include("Temp");
     Script.Include("~/Themes/TheAdmin/scripts/admin.js").AtFoot(); // for the delete warning
@@ -27,19 +26,20 @@ var confirmRemoveMessage = 'Are you sure you want to remove this element ?';
 <div class="manage">
 
     @foreach (KeyValuePair<string, string> pair in Model.Options.FilterOptions) {
-    <p>@Html.ActionLink(String.Format("Create new {0}", (string)pair.Value), "Create", 
-            new { 
-                Area = "BigFont.DealerDashboard", 
-                Id = (string)pair.Key, 
-                ContainerId = Model.ContainerId, 
-                ReturnUrl = Request.QueryString["ReturnUrl"] 
+        <p>@Html.ActionLink(String.Format("Create new {0}", (string)pair.Value), "Create",
+            new
+            {
+                Area = "BigFont.DealerDashboard",
+                Id = (string)pair.Key,
+                ContainerId = Model.ContainerId,
+                ReturnUrl = Request.QueryString["ReturnUrl"]
             },
-             new { @class = "button primaryAction" })</p>
-}
+             new { @class = "button primaryAction" })
+        </p>
+    }
 
 </div>
-@using (Html.BeginFormAntiForgeryPost())
-{
+@using (Html.BeginFormAntiForgeryPost()) {
     <fieldset class="bulk-actions">
         <label for="publishActions">@T("Actions:")</label>
         <select id="publishActions" name="Options.BulkAction">
@@ -54,8 +54,7 @@ var confirmRemoveMessage = 'Are you sure you want to remove this element ?';
         <label for="filterResults" class="bulk-filter">@T("Show")</label>
         <select id="filterResults" name="Options.SelectedFilter">
             @Html.SelectOption((string)Model.Options.SelectedFilter, "", T("any (show all)").ToString())
-            @foreach (var filterOption in Model.Options.FilterOptions)
-            {
+            @foreach (var filterOption in Model.Options.FilterOptions) {
                 @Html.SelectOption((string)Model.Options.SelectedFilter, (string)filterOption.Key, (string)filterOption.Value)
             }
         </select>

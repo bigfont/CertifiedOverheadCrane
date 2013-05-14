@@ -23,22 +23,22 @@ namespace BigFont.DealerDashboard
             ContentDefinitionManager.AlterPartDefinition(
                 typeof(DealerProductPart).Name, cfg => cfg
                     .Attachable()
-                    .WithField("Image 1", field => field.OfType("ImageField"))
-                    .WithField("Image 2", field => field.OfType("ImageField"))
-                    .WithField("Part #", field => field.OfType("TextField"))
-                    .WithField("Model #", field => field.OfType("TextField"))
+                    //.WithField("Image 1", field => field.OfType("ImageField"))
+                    //.WithField("Image 2", field => field.OfType("ImageField"))
+                    //.WithField("Part #", field => field.OfType("TextField"))
+                    //.WithField("Model #", field => field.OfType("TextField"))
                     );
 
-            ContentDefinitionManager.AlterTypeDefinition("DealerProduct", cfg => cfg
-                .WithPart("DealerProductPart")
-                .WithPart("CommonPart", cp => cp
-                    .WithSetting("OwnerEditorSettings.ShowOwnerEditor", "false")
-                    .WithSetting("DateEditorSettings.ShowDateEditor", "false"))
+            //ContentDefinitionManager.AlterTypeDefinition("DealerProduct", cfg => cfg
+            //    .WithPart("DealerProductPart")
+            //    .WithPart("CommonPart", cp => cp
+            //        .WithSetting("OwnerEditorSettings.ShowOwnerEditor", "false")
+            //        .WithSetting("DateEditorSettings.ShowDateEditor", "false"))
 
-                .WithPart("BodyPart")
-                .WithPart("TitlePart")
-                    .Draftable()
-                    .Creatable()); // createable is necessary to leverage the existing Contents Feature pemissions and views
+            //    .WithPart("BodyPart")
+            //    .WithPart("TitlePart")
+            //        .Draftable()
+            //        .Creatable()); // createable is necessary to leverage the existing Contents Feature pemissions and views
                 
             return 1;
         }
