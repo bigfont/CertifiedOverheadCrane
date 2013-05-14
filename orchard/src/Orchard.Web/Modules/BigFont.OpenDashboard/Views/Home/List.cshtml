@@ -19,8 +19,11 @@
     //]]>
 </script>
 @{
-    Style.Include("Temp"); // for developing the CSS
-    Script.Include("~/Themes/TheAdmin/scripts/admin.js").AtFoot(); // for the delete warning
+    Style.Include("OpenDashboard");
+
+    // for the confirmation message on delete
+    // can we include this with the resourceManifest?
+    Script.Include("~/Themes/TheAdmin/scripts/admin.js").AtFoot(); 
 }
 
 <div class="manage">

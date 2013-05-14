@@ -87,9 +87,12 @@
     <Compile Include="Handlers\OpenDashboardContentHandler.cs" />
     <Compile Include="Models\OpenDashboardContent.cs" />
     <Compile Include="Permissions.cs" />
+    <Compile Include="ResourceManifest.cs" />
     <Compile Include="Routes.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Parts\OpenDashboardContent.Clone.OpenDashboard.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Create.cshtml" />
   </ItemGroup>
@@ -104,6 +107,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Preview.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\OpenDashboardContent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\OpenDashboardContent.Publish.OpenDashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\EditorTemplates\Parts\OpenDashboardContent.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
