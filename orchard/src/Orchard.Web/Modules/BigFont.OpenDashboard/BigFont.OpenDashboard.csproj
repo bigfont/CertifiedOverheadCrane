@@ -85,6 +85,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Drivers\OpenDashboardContentDriver.cs" />
     <Compile Include="Handlers\OpenDashboardContentHandler.cs" />
+    <Compile Include="Migrations.cs" />
     <Compile Include="Models\OpenDashboardContent.cs" />
     <Compile Include="Permissions.cs" />
     <Compile Include="ResourceManifest.cs" />
