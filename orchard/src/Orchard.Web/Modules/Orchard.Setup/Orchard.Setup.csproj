@@ -82,8 +82,9 @@
   <ItemGroup>
     <Content Include="Content\synchronizing.gif" />
     <Content Include="Recipes\blog.recipe.xml" />
-    <Content Include="Recipes\certifiedOverheadCrane.recipe.xml" />
-    <Content Include="Recipes\certifiedOverheadCrane_addenda.recipe.xml" />
+    <Content Include="Recipes\certifiedOverheadCrane.recipe.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Recipes\default.recipe.xml" />
     <Content Include="Recipes\core.recipe.xml">
       <SubType>Designer</SubType>

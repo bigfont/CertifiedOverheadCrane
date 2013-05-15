@@ -9,17 +9,19 @@
     <Version>1.0</Version>
   </Recipe>
 
-  <Module packageId="Orchard.Module.Contrib.RoleCommands" />
   <Module packageId="Orchard.Module.Contrib.ImageField" />
+  <Module packageId="Orchard.Module.BigFont.OpenDashboard" />
 
+  <!--Use the Bootstrap theme-->
   <Theme packageId="Orchard.Theme.Bootstrap" current="true" />
   
   <Feature enable="Orchard.Alias,Orchard.Autoroute,
                    TinyMce,Orchard.Media,Orchard.MediaPicker,Orchard.ContentPicker,Orchard.PublishLater,
                    Orchard.jQuery,Orchard.Widgets,Orchard.Widgets.PageLayerHinting,Orchard.ContentTypes,
                    Orchard.Scripting,Orchard.Scripting.Lightweight,
-                   PackagingServices,Orchard.Packaging,Orchard.Warmup,Orchard.Projections,Orchard.Fields, TheThemeMachine, 
-                   BigFont.DealerDashboard, Orchard.ImportExport, Contrib.RoleCommands, Orchard.ContentPermissions, Contrib.ImageField" />
+                   PackagingServices,Orchard.Packaging,Orchard.Warmup,Orchard.Projections,Orchard.Fields, TheThemeMachine,                    
+                   BigFont.OpenDashboard, BigFont.OpenDashboard.OpenTypes, 
+                   Orchard.ImportExport, Contrib.ImageField" />
 
   <Metadata>
     <Types>
@@ -52,19 +54,14 @@
     menu create /MenuName:"Main Menu"
     page create /Slug:"welcome-to-orchard" /Title:"Welcome to Orchard!" /Path:"welcome-to-orchard" /Homepage:true /Publish:true /UseWelcomeText:true /MenuText:"Home" /MenuName:"Main Menu"
     widget create MenuWidget /Title:"Main Menu" /RenderTitle:false /Zone:"Navigation" /Position:"1" /Layer:"Default" /Identity:"MenuWidget1" /MenuName:"Main Menu"
-    <!--Additional commands-->
-    menuitem create /MenuPosition:2 /MenuText:"Dealers" /Url:"~/Dealers" /MenuName:"Main Menu"
-    role create Dealer
+    <!--Add a menu item for the open dashboard-->
+    menuitem create /MenuPosition:2 /MenuText:"Dashboard" /Url:"~/Dashboard" /MenuName:"Main Menu"
+    <!--Add to demo users and populate their dashboard with 30 items; first one is admin-->
+    openDashboard populate 
     user create /UserName:dealer1 /Password:password /Email:dealer1@bigfont.ca
-    role add permission Dealer Delete_DealerProduct
-    role add permission Dealer DeleteOwn_DealerProduct
-    role add permission Dealer Edit_DealerProduct
-    role add permission Dealer EditOwn_DealerProduct
-    role add permission Dealer Publish_DealerProduct
-    role add permission Dealer PublishOwn_DealerProduct
-    role add permission Dealer View_DealerProduct
-    role add permission Dealer ViewOwn_DealerProduct
-    user add role dealer1 Dealer
+    openDashboard populate /Owner:dealer1
+    user create /UserName:dealer2 /Password:password /Email:dealer2@bigfont.ca
+    openDashboard populate /Owner:dealer2
   </Command>  
 
 </Orchard>

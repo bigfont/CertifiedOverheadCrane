@@ -64,6 +64,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Orchard_PopulateFieldsInBulk.sql" />
     <Content Include="Styles\open-dashboard.css" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />

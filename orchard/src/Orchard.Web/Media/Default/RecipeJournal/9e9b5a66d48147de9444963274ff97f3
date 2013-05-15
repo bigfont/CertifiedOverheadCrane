@@ -1,0 +1,8 @@
+<RecipeJournal>
+  <Status>Failed</Status>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Theme.</Message>
+  <Message>Executing step Feature.</Message>
+  <Message>Recipe execution with id 9e9b5a66d48147de9444963274ff97f3 was cancelled because the "Feature" step failed to execute. The following exception was thrown: Could not enable feature BigFont.DealerDashboard.StandardProducts because it was not found.. Refer to the error logs for more information.</Message>
+</RecipeJournal>

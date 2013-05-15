@@ -1,9 +1,0 @@
-﻿<Placement>
-  <Match DisplayType="DealerDashboard">
-    <Place Content_DealerDashboard="Content:1" />
-    <Place Parts_DealerProduct_Publish_DealerDashboard="Actions:5" />
-    <Place Parts_DealerProduct_Clone_DealerDashboard="Actions:6" />
-    <Place Parts_Common_Body_Summary="-" />
-  </Match>
-
-</Placement>

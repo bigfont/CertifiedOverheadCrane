@@ -25,11 +25,9 @@ using Orchard.DisplayManagement;
 using Orchard.Localization;
 using Orchard.Environment.Extensions;
 
-namespace BigFont.OpenDashboard.Commands
-{
+namespace BigFont.OpenDashboard.Commands {
     [OrchardFeature("BigFont.OpenDashboard.OpenTypes")]
-    public class OpenDashboardCommands : DefaultOrchardCommandHandler
-    {
+    public class OpenDashboardCommands : DefaultOrchardCommandHandler {
         private readonly ISiteService _siteService;
         private readonly IContentManager _contentManager;
         private readonly IContentDefinitionManager _contentDefinitionManager;
@@ -45,8 +43,7 @@ namespace BigFont.OpenDashboard.Commands
             ITransactionManager transactionManager,
             IOrchardServices orchardServices,
             IShapeFactory shapeFactory,
-            IMembershipService membershipService)
-        {
+            IMembershipService membershipService) {
             _siteService = siteService;
             _contentManager = contentManager;
             _contentDefinitionManager = contentDefinitionManager;
@@ -65,8 +62,7 @@ namespace BigFont.OpenDashboard.Commands
         [CommandName("openDashboard populate")]
         [CommandHelp("openDashboard populate [/Owner:<username>] [/Amount:<integer>] \r\n\t" + "Creates specified Amount (default is 30) of content items for the Owner (default is admin)")]
         [OrchardSwitches("Owner,Amount")]
-        public void Create()
-        {
+        public void Create() {
             if (String.IsNullOrEmpty(Owner)) {
                 Owner = _siteService.GetSiteSettings().SuperUser;
             }
@@ -77,31 +73,37 @@ namespace BigFont.OpenDashboard.Commands
                 return;
             }
 
+            // Add two fields to the OpenDashboardContentPart
+            _contentDefinitionManager.AlterPartDefinition(
+                typeof(OpenDashboardContentPart).Name, cfg => cfg
+                    .WithField("Part #", field => field.OfType("TextField"))
+                    .WithField("Model #", field => field.OfType("TextField"))
+                    .WithField("Image 1", field => field.OfType("ImageField"))
+                    .WithField("Image 2", field => field.OfType("ImageField")));
+
             var amount = Amount > 0 ? Amount : 30;
 
             // create a schwack of DemoProduct
-            for (int i = 0; i < amount; ++i)
-            {
-                // make a new DealerProduct
+            for (int i = 0; i < amount; ++i) {
+                // make a new DemoProduct
                 var demoContent = _contentManager.New("DemoProduct");
 
-                // populate the owner
-                demoContent.As<ICommonPart>().Owner = owner;
+                // get the owner, title, and body
+                ICommonPart commonPart = demoContent.As<ICommonPart>();
+                TitlePart titlePart = demoContent.As<TitlePart>();
+                BodyPart bodyPart = demoContent.As<BodyPart>();
 
-                // populate the title
-                demoContent.As<TitlePart>().Title = "My Demo Product " + i.ToString();
+                // populate the owner, title, and body
+                commonPart.Owner = owner;
+                titlePart.Title = string.Format("Demo Product {0} for {1} at {2}", i.ToString(), owner.UserName, DateTime.Now);
+                bodyPart.Text = "This is some demo body text.";
 
-                // try to populate a simple text field - doesn't work
-                //DealerProductPart dealerProductPart =
-                //    dealerProduct.As<DealerProductPart>();
-                //TextField partNum =
-                //    (TextField)dealerProductPart.Get(typeof(TextField), "Part #");
-                //partNum.Value = "123";
+                // TODO Populate fields here, though this seems non-trivial for now
 
                 // create the new DealerProduct
                 _contentManager.Create(demoContent);
             }
-            Context.Output.WriteLine(T("{0} DemoProduct created successfully for owner {1}", amount.ToString(), owner.UserName));
+            Context.Output.WriteLine(T("{0} DemoProducts created successfully for owner {1}", amount.ToString(), owner.UserName));
         }
     }
 }

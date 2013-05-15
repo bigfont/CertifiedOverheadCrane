@@ -8,12 +8,12 @@
       <Reference>
         <Name>ClaySharp</Name>
         <LoaderName>PrecompiledExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/ClaySharp.dll</VirtualPath>
+        <VirtualPath>~/Modules/Orchard.Media/bin/ClaySharp.dll</VirtualPath>
       </Reference>
       <Reference>
         <Name>Ionic.Zip</Name>
         <LoaderName>PrecompiledExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/Ionic.Zip.dll</VirtualPath>
+        <VirtualPath>~/Modules/BigFont.OpenDashboard/bin/Ionic.Zip.dll</VirtualPath>
       </Reference>
     </References>
   </Dependency>
@@ -25,7 +25,7 @@
       <Reference>
         <Name>Ionic.Zip</Name>
         <LoaderName>PrecompiledExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/Ionic.Zip.dll</VirtualPath>
+        <VirtualPath>~/Modules/BigFont.OpenDashboard/bin/Ionic.Zip.dll</VirtualPath>
       </Reference>
       <Reference>
         <Name>Orchard.Media</Name>
@@ -35,15 +35,10 @@
     </References>
   </Dependency>
   <Dependency>
-    <ModuleName>BigFont.DealerDashboard</ModuleName>
-    <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/BigFont.DealerDashboard.dll</VirtualPath>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
+    <ModuleName>BigFont.OpenDashboard</ModuleName>
+    <VirtualPath>~/Modules/BigFont.OpenDashboard/BigFont.OpenDashboard.csproj</VirtualPath>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
     <References>
-      <Reference>
-        <Name>ClaySharp</Name>
-        <LoaderName>PrecompiledExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/ClaySharp.dll</VirtualPath>
-      </Reference>
       <Reference>
         <Name>Contrib.ImageField</Name>
         <LoaderName>PrecompiledExtensionLoader</LoaderName>
@@ -52,7 +47,7 @@
       <Reference>
         <Name>Ionic.Zip</Name>
         <LoaderName>PrecompiledExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/BigFont.DealerDashboard/bin/Ionic.Zip.dll</VirtualPath>
+        <VirtualPath>~/Modules/BigFont.OpenDashboard/bin/Ionic.Zip.dll</VirtualPath>
       </Reference>
       <Reference>
         <Name>Orchard.Media</Name>
@@ -84,35 +79,6 @@
     <VirtualPath>~/Core/Contents</VirtualPath>
     <LoaderName>CoreExtensionLoader</LoaderName>
     <References />
-  </Dependency>
-  <Dependency>
-    <ModuleName>Orchard.Roles</ModuleName>
-    <VirtualPath>~/Modules/Orchard.Roles/Orchard.Roles.csproj</VirtualPath>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
-    <References />
-  </Dependency>
-  <Dependency>
-    <ModuleName>Orchard.Users</ModuleName>
-    <VirtualPath>~/Modules/Orchard.Users/Orchard.Users.csproj</VirtualPath>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
-    <References />
-  </Dependency>
-  <Dependency>
-    <ModuleName>Contrib.RoleCommands</ModuleName>
-    <VirtualPath>~/Modules/Contrib.RoleCommands/Contrib.RoleCommands.csproj</VirtualPath>
-    <LoaderName>DynamicExtensionLoader</LoaderName>
-    <References>
-      <Reference>
-        <Name>Orchard.Roles</Name>
-        <LoaderName>DynamicExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/Orchard.Roles/Orchard.Roles.csproj</VirtualPath>
-      </Reference>
-      <Reference>
-        <Name>Orchard.Users</Name>
-        <LoaderName>DynamicExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/Orchard.Users/Orchard.Users.csproj</VirtualPath>
-      </Reference>
-    </References>
   </Dependency>
   <Dependency>
     <ModuleName>Dashboard</ModuleName>
@@ -238,6 +204,12 @@
         <VirtualPath>~/Modules/Orchard.Tokens/Orchard.Tokens.csproj</VirtualPath>
       </Reference>
     </References>
+  </Dependency>
+  <Dependency>
+    <ModuleName>Orchard.Roles</ModuleName>
+    <VirtualPath>~/Modules/Orchard.Roles/Orchard.Roles.csproj</VirtualPath>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <References />
   </Dependency>
   <Dependency>
     <ModuleName>Orchard.ContentPermissions</ModuleName>
@@ -646,6 +618,12 @@
   <Dependency>
     <ModuleName>Orchard.TaskLease</ModuleName>
     <VirtualPath>~/Modules/Orchard.TaskLease/Orchard.TaskLease.csproj</VirtualPath>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <References />
+  </Dependency>
+  <Dependency>
+    <ModuleName>Orchard.Users</ModuleName>
+    <VirtualPath>~/Modules/Orchard.Users/Orchard.Users.csproj</VirtualPath>
     <LoaderName>DynamicExtensionLoader</LoaderName>
     <References />
   </Dependency>
