@@ -1,0 +1,9 @@
+---------------------
+Search
+---------------------
+
+The recipe sets up most of the search functionality.
+We need to add each Content Type manually, though.
+Admin > Content Definition > Content Types > Demo Product > Index this content type in: Crane Parts
+Then update the Crane Parts index.
+Admin > Settings > Index > Update

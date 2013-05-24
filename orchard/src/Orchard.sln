@@ -162,6 +162,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap", "Orchard.Web\Th
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigFont.OpenDashboard", "Orchard.Web\Modules\BigFont.OpenDashboard\BigFont.OpenDashboard.csproj", "{F07414C9-EECA-42B5-B417-6001DB230AB7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{99300102-A76F-4A08-ABCC-C0ABCF24AAAE}"
+	ProjectSection(SolutionItems) = preProject
+		Publish.txt = Publish.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CodeCoverage|Any CPU = CodeCoverage|Any CPU

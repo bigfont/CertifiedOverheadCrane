@@ -14,14 +14,17 @@
 
   <!--Use the Bootstrap theme-->
   <Theme packageId="Orchard.Theme.Bootstrap" current="true" />
-  
+
   <Feature enable="Orchard.Alias,Orchard.Autoroute,
                    TinyMce,Orchard.Media,Orchard.MediaPicker,Orchard.ContentPicker,Orchard.PublishLater,
                    Orchard.jQuery,Orchard.Widgets,Orchard.Widgets.PageLayerHinting,Orchard.ContentTypes,
                    Orchard.Scripting,Orchard.Scripting.Lightweight,
                    PackagingServices,Orchard.Packaging,Orchard.Warmup,Orchard.Projections,Orchard.Fields, TheThemeMachine,                    
                    BigFont.OpenDashboard, BigFont.OpenDashboard.OpenTypes, 
-                   Orchard.ImportExport, Contrib.ImageField" />
+                   Orchard.ImportExport, Contrib.ImageField
+                   Orchard.Indexing, Orchard.Search, Lucene" />
+
+
 
   <Metadata>
     <Types>
@@ -52,16 +55,20 @@
     widget create HtmlWidget /Title:"Third Leader Aside" /Zone:"TripelThird" /Position:"5" /Layer:"TheHomepage" /Identity:"SetupHtmlWidget3" /UseLoremIpsumText:true
     site setting set baseurl
     menu create /MenuName:"Main Menu"
-    page create /Slug:"welcome-to-orchard" /Title:"Welcome to Orchard!" /Path:"welcome-to-orchard" /Homepage:true /Publish:true /UseWelcomeText:true /MenuText:"Home" /MenuName:"Main Menu"
+    page create /Slug:"welcome-to-orchard" /Title:"Welcome to Orchard!" /Path:"welcome-to-orchard" /Homepage:true /Publish:true /UseWelcomeText:false /MenuText:"Home" /MenuName:"Main Menu"
     widget create MenuWidget /Title:"Main Menu" /RenderTitle:false /Zone:"Navigation" /Position:"1" /Layer:"Default" /Identity:"MenuWidget1" /MenuName:"Main Menu"
     <!--Add a menu item for the open dashboard-->
     menuitem create /MenuPosition:2 /MenuText:"Dashboard" /Url:"~/Dashboard" /MenuName:"Main Menu"
     <!--Add to demo users and populate their dashboard with 30 items; first one is admin-->
-    openDashboard populate 
+    openDashboard populate
     user create /UserName:dealer1 /Password:password /Email:dealer1@bigfont.ca
     openDashboard populate /Owner:dealer1
     user create /UserName:dealer2 /Password:password /Email:dealer2@bigfont.ca
     openDashboard populate /Owner:dealer2
-  </Command>  
+    <!--Search-->
+    widget create SearchForm /Title:"Search Crane Parts" /Zone:"BeforeContent" /Position:1 /Layer:"TheHomepage" /Identity:"SearchForm1"
+    index create CraneParts
+    search use CraneParts
+  </Command>
 
 </Orchard>
