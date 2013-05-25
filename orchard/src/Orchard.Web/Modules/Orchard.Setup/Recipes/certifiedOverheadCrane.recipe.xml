@@ -13,7 +13,7 @@
   <Module packageId="Orchard.Module.BigFont.OpenDashboard" />
 
   <!--Use the Bootstrap theme-->
-  <Theme packageId="Orchard.Theme.Bootstrap" current="true" />
+  <Theme packageId="Orchard.Theme.CertifiedOverheadCrane" current="true" />
 
   <Feature enable="Orchard.Alias,Orchard.Autoroute,
                    TinyMce,Orchard.Media,Orchard.MediaPicker,Orchard.ContentPicker,Orchard.PublishLater,
@@ -50,12 +50,9 @@
     layer create Anonymous /LayerRule:"not authenticated" /Description:"The widgets in this layer are displayed when the user is anonymous"
     layer create Disabled /LayerRule:"false" /Description:"The widgets in this layer are never displayed"
     layer create TheHomepage /LayerRule:"url '~/'" /Description:"The widgets in this layer are displayed on the home page"
-    widget create HtmlWidget /Title:"First Leader Aside" /Zone:"TripelFirst" /Position:"5" /Layer:"TheHomepage" /Identity:"SetupHtmlWidget1" /UseLoremIpsumText:true
-    widget create HtmlWidget /Title:"Second Leader Aside" /Zone:"TripelSecond" /Position:"5" /Layer:"TheHomepage" /Identity:"SetupHtmlWidget2" /UseLoremIpsumText:true
-    widget create HtmlWidget /Title:"Third Leader Aside" /Zone:"TripelThird" /Position:"5" /Layer:"TheHomepage" /Identity:"SetupHtmlWidget3" /UseLoremIpsumText:true
     site setting set baseurl
     menu create /MenuName:"Main Menu"
-    page create /Slug:"welcome-to-orchard" /Title:"Welcome to Orchard!" /Path:"welcome-to-orchard" /Homepage:true /Publish:true /UseWelcomeText:false /MenuText:"Home" /MenuName:"Main Menu"
+    page create /Slug:"welcome-to-certified-overhead-crane" /Title:"Welcome to Certified Overhead Crane" /Path:"welcome-to-certified" /Homepage:true /Publish:true /UseWelcomeText:false /MenuText:"Home" /MenuName:"Main Menu"
     widget create MenuWidget /Title:"Main Menu" /RenderTitle:false /Zone:"Navigation" /Position:"1" /Layer:"Default" /Identity:"MenuWidget1" /MenuName:"Main Menu"
     <!--Add a menu item for the open dashboard-->
     menuitem create /MenuPosition:2 /MenuText:"Dashboard" /Url:"~/Dashboard" /MenuName:"Main Menu"
@@ -66,9 +63,10 @@
     user create /UserName:dealer2 /Password:password /Email:dealer2@bigfont.ca
     openDashboard populate /Owner:dealer2
     <!--Search-->
-    widget create SearchForm /Title:"Search Crane Parts" /Zone:"BeforeContent" /Position:1 /Layer:"TheHomepage" /Identity:"SearchForm1"
+    widget create SearchForm /Title:"Search Crane Parts" /Zone:"AfterContent" /Position:1 /Layer:"TheHomepage" /Identity:"SearchForm1"
     index create CraneParts
     search use CraneParts
+    
   </Command>
 
 </Orchard>

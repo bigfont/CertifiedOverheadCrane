@@ -53,6 +53,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CertifiedOverheadCrane\Scripts\bootstrap.min.js" />
+    <Content Include="CertifiedOverheadCrane\Styles\certified-overhead-crane.css" />
+    <Content Include="CertifiedOverheadCrane\Web.config" />
+    <Content Include="CertifiedOverheadCrane\Views\Web.config" />
+    <Content Include="CertifiedOverheadCrane\Scripts\Web.config" />
+    <Content Include="CertifiedOverheadCrane\Styles\Web.config" />
+    <Content Include="CertifiedOverheadCrane\Content\Web.config" />
+    <Content Include="CertifiedOverheadCrane\Theme.txt" />
+    <Content Include="CertifiedOverheadCrane\Theme.png" />
+    <Content Include="CertifiedOverheadCrane\Placement.info" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +171,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TheAdmin\Views\ErrorPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CertifiedOverheadCrane\Views\Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CertifiedOverheadCrane\Zones\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

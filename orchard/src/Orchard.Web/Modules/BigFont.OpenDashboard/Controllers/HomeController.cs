@@ -67,9 +67,7 @@ namespace BigFont.OpenDashboard.Controllers {
             if (contentItem == null)
                 return HttpNotFound();
 
-            if (!Services.Authorizer.Authorize(Permissions.ManageOpenDashboard, contentItem, T("Cannot view content"))) {
-                return new HttpUnauthorizedResult();
-            }
+            // The Display action is the only one that does NOT need a specific Permissions criteria.
 
             dynamic model = _contentManager.BuildDisplay(contentItem);
             return View((object)model);

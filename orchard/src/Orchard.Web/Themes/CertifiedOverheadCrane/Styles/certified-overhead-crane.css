@@ -1,0 +1,15 @@
+﻿/* Zone Layout */
+.zone-before-content
+{
+    margin:50px 0;
+}
+.zone-content
+{
+    margin:50px 0;
+}
+
+/* Widget Layout  */
+article.widget-search-form,
+p.search-summary {
+    float:none;
+}

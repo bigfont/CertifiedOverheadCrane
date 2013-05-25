@@ -63,6 +63,12 @@
     <References />
   </Dependency>
   <Dependency>
+    <ModuleName>CertifiedOverheadCrane</ModuleName>
+    <VirtualPath>~/Theme/CertifiedOverheadCrane</VirtualPath>
+    <LoaderName>RawThemeExtensionLoader</LoaderName>
+    <References />
+  </Dependency>
+  <Dependency>
     <ModuleName>Common</ModuleName>
     <VirtualPath>~/Core/Common</VirtualPath>
     <LoaderName>CoreExtensionLoader</LoaderName>
