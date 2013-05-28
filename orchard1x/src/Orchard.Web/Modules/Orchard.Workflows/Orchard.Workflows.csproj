@@ -55,6 +55,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\aspnetwebapi\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -126,12 +130,19 @@
     <Compile Include="Activities\BranchActivity.cs" />
     <Compile Include="Activities\AssignRoleActivity.cs" />
     <Compile Include="Activities\CloseCommentsActivity.cs" />
+    <Compile Include="Activities\TriggerActivity.cs" />
+    <Compile Include="Activities\SignalActivity.cs" />
     <Compile Include="Activities\MergeBranchActivity.cs" />
     <Compile Include="Activities\DeleteActivity.cs" />
     <Compile Include="Activities\ExclusiveBranchActivity.cs" />
     <Compile Include="Activities\IsInRoleActivity.cs" />
     <Compile Include="Activities\MailActivity.cs" />
+    <Compile Include="Activities\RedirectActivity.cs" />
     <Compile Include="Activities\TimerActivity.cs" />
+    <Compile Include="Activities\WebRequestActivity.cs" />
+    <Compile Include="Controllers\SignalController.cs" />
+    <Compile Include="Forms\SignalForms.cs" />
+    <Compile Include="Forms\RedirectActionForm.cs" />
     <Compile Include="Forms\TimerForms.cs" />
     <Compile Include="Forms\BranchForms.cs" />
     <Compile Include="Forms\MailForms.cs" />
@@ -143,6 +154,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Drivers\UserTaskDriver.cs" />
     <Compile Include="Drivers\WorkflowDriver.cs" />
+    <Compile Include="Forms\WebRequestForm.cs" />
     <Compile Include="Handlers\ContentHandler.cs" />
     <Compile Include="Handlers\WorkflowHandler.cs" />
     <Compile Include="Models\AwaitingActivityRecord.cs" />
@@ -159,6 +171,8 @@
     <Compile Include="Forms\UserTaskForms.cs" />
     <Compile Include="Forms\NotificationActivityForms.cs" />
     <Compile Include="ResourceManifest.cs" />
+    <Compile Include="Services\GenericEventService.cs" />
+    <Compile Include="Services\ISignalService.cs" />
     <Compile Include="Services\Task.cs" />
     <Compile Include="Services\Event.cs" />
     <Compile Include="Services\IActivity.cs" />
@@ -166,6 +180,7 @@
     <Compile Include="Services\IActivitiesManager.cs" />
     <Compile Include="Services\IWorkflowManager.cs" />
     <Compile Include="Services\WorkflowManager.cs" />
+    <Compile Include="Tokens\SignalTokens.cs" />
     <Compile Include="ViewModels\AdminEditViewModel.cs" />
     <Compile Include="ViewModels\AdminIndexViewModel.cs" />
     <Compile Include="ViewModels\WorkflowDefinitionViewModel.cs" />
@@ -232,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Activity-Publish.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activity-Redirect.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

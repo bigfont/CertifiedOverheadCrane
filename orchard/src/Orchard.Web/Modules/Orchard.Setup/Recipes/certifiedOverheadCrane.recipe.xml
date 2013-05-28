@@ -9,20 +9,17 @@
     <Version>1.0</Version>
   </Recipe>
 
-  <!-- We already have these installed, so do NOT download them again, 
+  <!-- If already have these downloaded then do NOT download them again, 
     because doing so will create a duplicate Feature, and will break the recipe.  
-    Comment this back in, though, if we are doing a download from the Orchard Gallery. 
+    Comment this back in, though, if we need to download the packages from the Orchard Gallery. 
     
   <Module packageId="Orchard.Module.Contrib.ImageField" />
-  <Module packageId="Orchard.Module.BigFont.OpenDashboard" />
-  -->
+  <Module packageId="Orchard.Module.BigFont.OpenDashboard" /> -->
 
-  <!--
-    Use the Bootstrap theme until we publish the OverheadCrane one,
-    because Orchard will try to download the theme from the Gallery.
-    -->
+  <!-- Download the Bootstrap theme, because the CertifiedOverheadCrane theme inherits it.
+    We set current="false" because setting it to true breaks the recipe. -->
 
-  <Theme packageId="Orchard.Theme.Bootstrap" current="true" />
+  <Theme packageId="Orchard.Theme.Bootstrap" current="false" />
 
   <Feature enable="Orchard.Alias,Orchard.Autoroute,
                    TinyMce,Orchard.Media,Orchard.MediaPicker,Orchard.ContentPicker,Orchard.PublishLater,
@@ -32,8 +29,6 @@
                    BigFont.OpenDashboard,
                    Orchard.ImportExport, Contrib.ImageField,
                    Orchard.Indexing, Orchard.Search, Lucene" />
-
-
 
   <Metadata>
     <Types>
@@ -83,9 +78,11 @@
     index create OpenDashboardIndex
     search use OpenDashboardIndex
     <!--
-      Activate the OverheadCrane theme, assuming that it's installed already.
-    -->
-    theme activate CertifiedOverheadCrane
+      Activate the OverheadCrane theme;
+      if it isn't already downloaded, or if it's being buggy,
+      then comment out this line. It's usually buggy.
+
+    theme activate CertifiedOverheadCrane -->
   </Command>
 
 </Orchard>

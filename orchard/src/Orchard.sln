@@ -162,18 +162,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap", "Orchard.Web\Th
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigFont.OpenDashboard", "Orchard.Web\Modules\BigFont.OpenDashboard\BigFont.OpenDashboard.csproj", "{F07414C9-EECA-42B5-B417-6001DB230AB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertifiedOverheadCrane", "Orchard.Web\Themes\OverheadCrane\CertifiedOverheadCrane.csproj", "{CDEF3D7E-B920-4F21-B8BD-F5592653132F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nwazet.Commerce", "Orchard.Web\Modules\Nwazet.Commerce\Nwazet.Commerce.csproj", "{909ACC2C-D672-4752-B75B-6822E05FE0E3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes and Resources", "Notes and Resources", "{CDA3B29F-C650-45F0-B7BC-D6A6E4534AA2}"
-	ProjectSection(SolutionItems) = preProject
-		Orchard.Web\Notes and Resources\Fields-PopulateInBulk.sql = Orchard.Web\Notes and Resources\Fields-PopulateInBulk.sql
-		Orchard.Web\Notes and Resources\Fields-SettingsStructure.xml = Orchard.Web\Notes and Resources\Fields-SettingsStructure.xml
-		Orchard.Web\Notes and Resources\General.txt = Orchard.Web\Notes and Resources\General.txt
-		Orchard.Web\Notes and Resources\IIS-DatabaseUser.sql = Orchard.Web\Notes and Resources\IIS-DatabaseUser.sql
-		Orchard.Web\Notes and Resources\Search-AddFields.sql = Orchard.Web\Notes and Resources\Search-AddFields.sql
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertifiedOverheadCrane", "Orchard.Web\Themes\CertifiedOverheadCrane\CertifiedOverheadCrane.csproj", "{CDEF3D7E-B920-4F21-B8BD-F5592653132F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -920,13 +911,6 @@ Global
 		{F07414C9-EECA-42B5-B417-6001DB230AB7}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
 		{F07414C9-EECA-42B5-B417-6001DB230AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F07414C9-EECA-42B5-B417-6001DB230AB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
-		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
-		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
-		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
 		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.CodeCoverage|Any CPU.Build.0 = Release|Any CPU
 		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
@@ -937,6 +921,16 @@ Global
 		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.FxCop|Any CPU.Build.0 = Release|Any CPU
 		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.CodeCoverage|Any CPU.Build.0 = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Coverage|Any CPU.Build.0 = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.FxCop|Any CPU.Build.0 = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

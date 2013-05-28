@@ -3,7 +3,7 @@ AntiForgery: enabled
 Author: Shaun @ BigFont
 Website: http://www.bigfont.ca
 Version: 1.1
-OrchardVersion: 1.x
+OrchardVersion: 1.6
 Description: Provides a simplified dashboard that permits users, who have AccessOpenDashboard permission, to create specified content types and to read, update, and delete their own content items.
 Features:
     BigFont.OpenDashboard:

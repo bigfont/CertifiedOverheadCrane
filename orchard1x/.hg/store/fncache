@@ -194,6 +194,7 @@ data/src/Orchard.Web/Modules/Orchard.Fields/Settings/MediaGalleryFieldEditorEven
 data/src/Orchard.Web/Modules/Orchard.Media/Views/EditorTemplates/Parts/Media.SiteSettings.cshtml.i
 data/lib/nhibernate/PATCH.txt.i
 data/src/Orchard.Web/Modules/Orchard.Themes/Views/Admin/Install.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Styles/orchard-oembed-admin.css.i
 data/src/Tools/Orchard/Arguments/IParser.cs.i
 data/src/Orchard.Web/Themes/Contoso/Content/Images/Gallery/feature03.jpg.i
 data/src/Orchard.Web/Modules/Orchard.Modules/Routing/FeatureNameConstraint.cs.i
@@ -216,6 +217,7 @@ data/src/Orchard.Web/Modules/Orchard.Pages/ViewModels/PageEditViewModel.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/ins.js.i
 data/src/Orchard.Web/Modules/Orchard.Projections/Handlers/ProjectionPartHandler.cs.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/plugins/autoresize/editor_plugin_src.js.i
+data/src/Orchard/Environment/FileSystems/AppDataFolder.cs.i
 data/src/Orchard/Mvc/DataAnnotations/LocalizedReularExpressionAttribute.cs.i
 data/src/Orchard/Environment/Compilation/Dependencies/DefaultAssemblyProbingFolder.cs.i
 data/src/Orchard/Security/OrchardSecurityException.cs.i
@@ -235,6 +237,7 @@ data/src/Orchard.Web/Core/Common/Models/ContentPart.cs.i
 data/src/Orchard/ContentManagement/Aspects/ICommonAspect.cs.i
 data/src/Orchard.Web/Modules/Orchard.Users/Views/Account/ChangePassword.ascx.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Styles/images/ui-icons_454545_256x240.png.i
+data/src/Orchard.Web/Themes/TheThemeMachine/Views/Pager.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.spinner.js.i
 data/src/Orchard.Web/Modules/Orchard.Fields/Drivers/InputFieldDriver.cs.i
 data/src/Orchard.Web/Modules/Contrib.Taxonomies/Handlers/TermsPartHandler.cs.i
@@ -324,6 +327,7 @@ data/src/Orchard.Tests/Stubs/StubHttpContextAccessor.cs.i
 data/src/Orchard.Azure/Storage/AzureBlobStorageProvider.cs.i
 data/src/Orchard.Web/Modules/Orchard.Media/Handlers/MediaSettingsPartHandler.cs.i
 data/src/Orchard/ContentManagement/PartDriver.cs.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Providers/OEmbedMenu.cs.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/plugins/mediapicker/editor_plugin.js.i
 data/lib/Castle 2.5.2/ReleaseNotes/BreakingChanges.txt.i
 data/src/Orchard.Web/Packages/Orchard.Wikis/Controllers/PageController.cs.i
@@ -585,6 +589,7 @@ data/src/Orchard.Web/Core/Common/Views/EditorTemplates/Fields/Common.TextField.a
 data/src/Orchard.Web/Modules/Orchard.Setup/Properties/AssemblyInfo.cs.i
 data/src/Orchard.Web/Themes/TheThemeMachine/Views/Items_Widget-Content.cshtml.i
 data/lib/tinymce/jscripts/tiny_mce/themes/simple/skins/default/content.css.i
+data/src/Orchard.Web/Modules/Orchard.Taxonomies/Drivers/TaxonomyNavigationPartDriver.cs.i
 data/src/Orchard.Web/Modules/Orchard.Fields/Views/EditorTemplates/Fields/MediaGallery.Edit.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Blogs/Views/Parts/Blogs.BlogArchives.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Sandbox/Models/SandboxSettingsRecord.cs.i
@@ -639,6 +644,7 @@ data/src/Orchard/Packaging/PackageExpander.cs.i
 data/src/Orchard.Web/Packages/Orchard.Sandbox/Views/Admin/Index.aspx.i
 data/src/Orchard.Web/Core/Messaging/ViewModels/MessageSettingsPartViewModel.cs.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.fileupload.js.i
+data/src/Orchard.Web/Modules/Orchard.Themes/Views/ThemeEntry.Current.cshtml.i
 data/src/Orchard.Web/Core/Shapes/Views/Layout.cshtml.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/table/js/cell.js.i
 data/src/Orchard/Environment/Configuration/AzureBlobTenantManager.cs.i
@@ -848,7 +854,7 @@ data/src/Orchard.Web/Modules/Orchard.Recipes/Services/RecipeJournalManager.cs.i
 data/src/Orchard.Tests/Utility/Extensions/RouteValueDictionaryExtensionsTests.cs.i
 data/lib/jquery-utils/ui.timepickr.js.i
 data/src/Orchard.Web/Modules/Orchard.Packaging/Views/Packaging/_Subnav.ascx.i
-data/src/Orchard/Recipes/Services/IRecipeParser.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Models/CacheItem.cs.i
 data/src/Orchard.Web/Themes/Green/Styles/yui.css.i
 data/src/Orchard.Web/Core/Shapes/Scripts/jquery.switchable.js.i
 data/src/Orchard/DisplayManagement/Implementation/DefaultDisplayManager.cs.i
@@ -878,6 +884,7 @@ data/src/Orchard.Web/Modules/Orchard.Taxonomies/Models/TaxonomyPartRecord.cs.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/Models/LayerPart.cs.i
 data/src/Orchard.Web/Modules/Orchard.MediaPicker/Content/Web.config.i
 data/src/Orchard.Web/Core/Shapes/CoreShapesResourceManifest.cs.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Activities/RedirectActivity.cs.i
 data/src/Orchard.Tests.Modules/Users/Controllers/AccountControllerTests.cs.i
 data/src/Orchard.Web/Modules/Orchard.DevTools/ViewModels/ContentDetailsViewModel.cs.i
 data/lib/nunit/pnunit.tests.dll.i
@@ -899,6 +906,7 @@ data/src/Orchard.Web/Modules/Orchard.Themes/Styles/admin.css.i
 data/src/Orchard.Web/Modules/Orchard.Blogs/Content/Admin/images/published.gif.i
 data/src/Orchard.Web/Modules/Orchard.ArchiveLater/Handlers/ArchiveLaterPartHandler.cs.i
 data/src/Orchard/Mvc/Html/Shapes.cs.i
+data/src/Orchard.Web/Modules/Orchard.Projections/Permissions.cs.i
 data/src/Orchard.Web/Modules/Orchard.Recipes/Commands/RecipesCommands.cs.i
 data/src/Orchard.Tests/Stubs/InMemoryWebSiteFolder.cs.i
 data/src/Orchard.Web/Themes/SafeMode/Styles/images/backgroundHeader.gif.i
@@ -1285,6 +1293,7 @@ data/src/Orchard.Web/Core/Themes/Views/Messages.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Users/Styles/menu.users-admin.css.i
 data/src/Orchard.Web/Modules/Orchard.ArchiveLater/Views/EditorTemplates/Parts/ArchiveLater.cshtml.i
 data/lib/fluentnhibernate/Castle.DynamicProxy2.xml.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Forms/RedirectActionForm.cs.i
 data/src/Orchard/Environment/Extensions/IExtensionManager.cs.i
 data/lib/mysql/README.i
 data/src/Orchard/Logging/NullLogger.cs.i
@@ -1319,6 +1328,7 @@ data/src/Orchard.Web/Modules/Orchard.Comments/Handlers/HasCommentsContainerHandl
 data/src/Orchard.Web/Modules/Orchard.Fields/Specs/Link.feature.cs.i
 data/src/Orchard.Web/Core/PublishLater/Migrations.cs.i
 data/src/Orchard.Web/Modules/Orchard.Scripting/Services/ScriptingRuntime.cs.i
+data/src/Orchard.Web/Modules/Orchard.Taxonomies/Navigation/TaxonomyNavigationProvider.cs.i
 data/src/Orchard.Web/Packages/Orchard.Users/Controllers/AccountController.cs.i
 data/src/Orchard.Web/Modules/Orchard.Media/Styles/Web.config.i
 data/src/Orchard.Web/Modules/Orchard.Lists/Controllers/AdminController.cs.i
@@ -1428,7 +1438,7 @@ data/src/Orchard.Web/Modules/Orchard.Blogs/Views/Parts/Tags.ShowTags.BlogPost.cs
 data/src/Orchard.Web/Modules/Orchard.Widgets/Views/Items/Widget.Edit.cshtml.i
 data/src/Tools/OrchardCli/app.config.i
 data/src/Orchard.Specs/Hosting/Orchard.Web/Global.asax.i
-data/src/Orchard.Web/Modules/Orchard.Taxonomies/ViewModels/TermAdminIndexViewModel.cs.i
+data/src/Orchard.Web/Core/Feeds/StandardBuilders/ItemInspector.cs.i
 data/src/Orchard/UI/Admin/AdminFilter.cs.i
 data/src/Orchard.Web/Modules/Orchard.Comments/Shapes.cs.i
 data/src/Orchard.Web/Modules/Orchard.Media/web.config.i
@@ -1686,6 +1696,7 @@ data/src/Orchard.Tests/Utility/Extensions/HttpRequestExtensionsTests.cs.i
 data/src/Orchard.Web/Modules/Orchard.Pages/Content/Admin/images/online.gif.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/table/css/row.css.i
 data/src/Orchard/DisplayManagement/HelperFactories/ShapeHelperFactory.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Views/Web.config.i
 data/src/Orchard.Web/Modules/Orchard.ImageEditor/Views/Parts/Image.Editor.EffectsOptions.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.ArchiveLater/Placement.info.i
 data/src/Orchard.Web/Modules/UpgrateTo14/Views/Admin/Index.cshtml.i
@@ -1870,8 +1881,9 @@ data/src/Orchard.Web/Modules/Orchard.DevTools/Views/Commands/Execute.ascx.i
 data/src/Orchard/DisplayManagement/Descriptors/ShapeTable.cs.i
 data/lib/sqlce/x86/Microsoft.VC90.CRT/msvcr90.dll.d
 data/src/Orchard.Web/Packages/Orchard.Blogs/Views/EditorTemplates/Parts/Blogs.BlogPost.Publish.ascx.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Services/DefaultTagCache.cs.i
 data/src/Orchard.Web/Modules/Orchard.Pages/Services/PagesHomePageProvider.cs.i
-data/src/Orchard.Web/Modules/Orchard.Projections/Tests/Orchard.Projections.Tests.csproj.i
+data/src/Orchard.Web/Modules/Orchard.Themes/Views/DisplayTemplates/Items/ContentItem.ascx.i
 data/src/Orchard.Web/Modules/Orchard.ContentQueries/Views/EditorTemplates/Parts/ContentQueries.Configuration.cshtml.i
 data/src/Orchard.Tests.Modules/Warmup/WarmupUpdaterTests.cs.i
 data/src/Orchard.Web/Modules/ArchiveLater/Content/Admin/images/scheduled.gif.i
@@ -2071,7 +2083,7 @@ data/lib/fluentnhibernate/perf-embedded-serializer-and-compiled-schema-reuse.pat
 data/lib/ravendb/Raven.Json.dll.i
 data/src/Tools/Orchard/HostContext/ICommandHostContextProvider.cs.i
 data/src/Orchard.Tests/Environment/Loaders/DynamicExtensionLoaderTests.cs.i
-data/src/Orchard.Web/Modules/Orchard.Themes/Views/HeadPreload.ascx.i
+data/src/Orchard.Web/Modules/Orchard.Projections/Styles/Web.config.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.effect-bounce.js.i
 data/src/Orchard.Web/Modules/Orchard.Indexing/Models/LuceneSearchHit.cs.i
 data/src/Orchard/Environment/Compilation/Loaders/CoreExtensionLoader.cs.i
@@ -2091,7 +2103,7 @@ data/src/Orchard.Web/Modules/Orchard.AntiSpam/Handlers/TypePadSettingsPartHandle
 data/src/Orchard.Tests.Packages/Users/Services/MembershipServiceTests.cs.i
 data/src/Orchard.Azure/FileSystems/AppData/AzureAppDataFolder.cs.i
 data/lib/tinymce/jscripts/tiny_mce/themes/advanced/link.htm.i
-data/src/Orchard.Web/Core/Feeds/Services/FeedFilter.cs.i
+data/src/Orchard.Web/Core/PublishLater/Styles/jquery-ui-1.7.2.custom.css.i
 data/src/Orchard.Web/Modules/Orchard.Warmup/Services/WarmupUpdater.cs.i
 data/src/Orchard/DisplayManagement/Implementation/IShapeDisplayEvents.cs.i
 data/src/Orchard.Web/Core/Common/Settings/BodySettings.cs.i
@@ -2134,6 +2146,7 @@ data/src/Orchard.Web/Modules/Orchard.Workflows/Services/IWorkflowManager.cs.i
 data/src/Orchard.Web/Themes/SafeMode/Content/Images/background_module.gif.i
 data/src/Orchard.Web/Modules/UpgradeTo14/Views/Route/Index.cshtml.i
 data/src/Orchard.Web/Themes/Classic/Views/Zone-Navigation.cshtml.i
+data/src/Orchard/Data/ISessionConfigurationEvents.cs.i
 data/src/Orchard/Recipes/Models/RecipeJournal.cs.i
 data/src/Orchard/Wcf/OrchardInstanceContext.cs.i
 data/src/Orchard.Web/Themes/Corporate/Views/DisplayTemplates/Items/Blogs.Blog.ascx.i
@@ -2208,6 +2221,7 @@ data/src/Orchard.Web/Modules/Futures.Modules.Packaging/Views/Packaging/Harvest.a
 data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Admin/Import.cshtml.i
 data/src/Orchard/Data/Migration/Interpreters/ICommandInterpreter.cs.i
 data/src/Orchard.Web/Modules/Orchard.Rules/Controllers/EventController.cs.i
+data/src/Orchard.Web/Modules/Orchard.DesignerTools/Scripts/jquery.scrollTo-1.4.4.min.js.i
 data/src/Tools/Orchard/Parameters/CommandLineParser.cs.i
 data/src/Orchard/UI/Zones/Obsolete/DelegateZoneItem.cs.i
 data/src/Orchard/ContentManagement/GroupInfo.cs.i
@@ -2374,6 +2388,7 @@ data/src/Orchard.Web/Modules/Orchard.ContentTypes/Views/EditorTemplates/TypePart
 data/src/Orchard.Web/Modules/Orchard.MediaProcessing/Providers/Filters/CropFilter.cs.i
 data/src/Orchard/ContentManagement/Driver/IContentActivatingFilter.cs.i
 data/src/Orchard.Tests/ContentManagement/DatabaseSetup.cs.i
+data/src/Orchard.Web/Modules/Orchard.Themes/Styles/menu.themes-admin.css.i
 data/src/Orchard/Localization/LocalizedString.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js.i
 data/src/Orchard.Web/Modules/Orchard.Workflows/Services/BaseActivity.cs.i
@@ -2470,7 +2485,7 @@ data/lib/autofac-contrib/Castle.Core.pdb.i
 data/src/Orchard.Web/Themes/TheAdmin/Views/Menu__local_admin.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Users/Views/Admin/EditorTemplates/UserCreateViewModel.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Themes/Views/Menu.ascx_.i
-data/src/Orchard.Web/Packages/Orchard.Comments/Orchard.Comments.csproj.i
+data/src/Orchard.Web/Config/Host.config.i
 data/src/Orchard.Web/Packages/Orchard.CmsPages/Models/PageRevision.cs.i
 data/src/Orchard.Web/Modules/Orchard.Projections/ViewModels/FilterEditViewModel.cs.i
 data/src/Orchard.Web/Modules/Orchard.AntiSpam/Services/ISpamEventHandler.cs.i
@@ -2637,7 +2652,7 @@ data/src/Orchard.Web/Packages/Orchard.Users/Models/User.cs.i
 data/src/Orchard.Web/Modules/Orchard.Fields/Views/Fields/MediaGallery.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.effect-explode.min.js.i
 data/src/Orchard.Web/Modules/Orchard.Themes/Services/IThemeService.cs.i
-data/src/Orchard.Web/Modules/Four2n.MiniProfiler/StepKeys.cs.i
+data/lib/tinymce/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js.i
 data/src/Orchard.Web/Core/Contents/Services/ContentsService.cs.i
 data/src/Orchard.Web/Core/Navigation/Views/EditorTemplates/Parts.ContentMenuItem.Edit.cshtml.i
 data/src/Orchard.Web/Themes/Corporate/Content/Images/icons/seal.png.i
@@ -2712,6 +2727,7 @@ data/src/Orchard.Web/Core/Contents/Views/Admin/List.ascx_.i
 data/src/Orchard.Web/Modules/Orchard.Experimental/Styles/menu.experimental-admin.css.i
 data/src/Orchard.Web/Themes/TheAdmin/Views/MenuItem.cshtml.i
 data/src/Orchard/Environment/ViewsBackgroundCompilation.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Services/IDisplayedContentItemHandler.cs.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/RuleEngine/AuthenticatedRuleProvider.cs.i
 data/src/Orchard.Web/Modules/Orchard.ContentPicker/Orchard.ContentPicker.csproj.i
 data/src/Orchard.Web/Modules/Orchard.MetaData/Views/Admin/ContentTypeList.ascx.i
@@ -2862,6 +2878,7 @@ data/src/Orchard.Web/Modules/Orchard.Modules/Models/Module.cs.i
 data/src/Orchard/Environment/OrchardHostContainerRegistry.cs.i
 data/src/Orchard.Tests/Properties/AssemblyInfo.cs.i
 data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Parts/Audio.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/ViewModels/RouteConfiguration.cs.i
 data/src/Orchard.Web/Themes/Corporate/Content/Images/menu-left-over.png.i
 data/src/Orchard.Web/Core/Localization/Views/DisplayTemplates/Parts/Localization.ContentTranslations.SummaryAdmin.ascx.i
 data/src/Orchard.Web/Packages/Orchard.Pages/Permissions.cs.i
@@ -2896,6 +2913,7 @@ data/src/Orchard.Web/Modules/Orchard.Users/Views/Account/LogOn.cshtml.i
 data/src/Orchard/ContentManagement/Parts/IRoutePart.cs.i
 data/src/Orchard.Web/Modules/Orchard.Comments/Drivers/CommentDriver.cs.i
 data/src/Orchard.Web/Packages/Orchard.CmsPages/Content/Admin/images/published.gif.i
+data/src/Orchard.Web/Config/HostComponents.config.i
 data/src/Orchard/Packaging/IPackageSourceManager.cs.i
 data/src/Orchard.Web/Core/PublishLater/ViewModels/PublishLaterViewModel.cs.i
 data/src/Orchard/Mvc/Spooling/HtmlStringWriter.cs.i
@@ -2914,6 +2932,7 @@ data/src/Orchard.Web/Packages/Orchard.Pages/Security/Authorization.cs.i
 data/src/Orchard.Web/Modules/Orchard.Modules/styles/jquery.switchable.css.i
 data/lib/autofac/Autofac.Integration.Web.Mvc.dll.i
 data/lib/lucene.net/Lucene.Net.xml.d
+data/src/Orchard/Data/FetchRequest.cs.i
 data/src/Orchard/WorkContext.cs.i
 data/lib/lucene.net/Lucene.Net.xml.i
 data/src/Orchard.Web/Modules/Contrib.Taxonomies/Controllers/TermAdminController.cs.i
@@ -2947,7 +2966,7 @@ data/src/Orchard.Web/Modules/TinyMce/Extensions/HtmlHelperExtensions.cs.i
 data/lib/specflow/IKVM.OpenJDK.Core.dll.d
 data/lib/nunit/nunit.exe.i
 data/src/Orchard.Web/Modules/Orchard.Tags/Models/TagsContentItems.cs.i
-data/src/Orchard.Web/Modules/Orchard.Messaging/Placement.info.i
+data/src/Orchard.Web/Modules/Orchard.Themes/ViewModels/PreviewViewModel.cs.i
 data/src/Orchard.Web/Modules/Orchard.Workflows/Styles/workflows-activity-publish.css.i
 data/src/Orchard.Web/Core/Navigation/Views/Menu.DeleteButton.cshtml.i
 data/src/Orchard.Web/Core/Shapes/Views/Document.cshtml.i
@@ -3058,6 +3077,7 @@ data/src/Orchard.Web/Modules/Orchard.Taxonomies/Views/TermAdmin/Index.cshtml.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin_src.js.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/Views/Widget.DeleteButton.cshtml.i
 data/src/Orchard.Web/Core/Common/Views/DisplayTemplates/Parts/Common.Body.Manage.SummaryAdmin.cshtml.i
+data/src/Orchard.Web/Themes/Green/Content/Images/logo.gif.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/tiny_mce_src.js.i
 data/src/Orchard.Web/Packages/Orchard.Media.Tests/Orchard.Media.Tests.csproj.i
 data/src/Orchard/Environment/DefaultOrchardRuntime.cs.i
@@ -3079,6 +3099,7 @@ data/src/Orchard.Specs/Comments.feature.i
 data/src/Orchard.Web/Modules/ArchiveLater/Views/DisplayTemplates/Parts/ArchiveLater.Metadata.SummaryAdmin.ascx.i
 data/src/Orchard/Time/ITimeZoneProvider.cs.i
 data/src/Orchard/ContentManagement/Drivers/AutomaticContentPartDriver.cs.i
+data/src/Orchard.Web/Themes/SafeMode/Content/Images/background_pageTop.gif.i
 data/src/Orchard.Web/Core/Contents/Styles/images/menu.content.png.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Styles/images/ui-icons_2e83ff_256x240.png.i
 data/src/Orchard.Web/Core/Localization/Services/LocalizationService.cs.i
@@ -3301,7 +3322,7 @@ data/src/Orchard.Web/Packages/Orchard.Pages/Styles/images/ui-bg_flat_75_ffffff_4
 data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Factories/MediaFactorySelectorResult.cs.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.progressbar.min.js.i
 data/src/Orchard.Web/Packages/Orchard.CmsPages/Content/Admin/images/scheduled.gif.i
-data/src/Orchard.Web/Modules/Orchard.Themes/Views/ThemeEntry.Current.cshtml.i
+data/src/Orchard.Web/Core/Feeds/Services/FeedFilter.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css.i
 data/src/Orchard/Packaging/PackageBuilder.cs.i
 data/src/Orchard.Web/Modules/Orchard.Scripting/web.config.i
@@ -3641,6 +3662,7 @@ data/src/Orchard.Web/Modules/Orchard.Alias/Views/Admin/Add.cshtml.i
 data/src/Orchard.Web/Modules/Four2n.MiniProfiler/OrchardHostProxyLogger.cs.i
 data/src/Orchard.Web/Modules/Orchard.AntiSpam/Content/Admin/Images/spam.gif.i
 data/src/Orchard/Mvc/Shapes.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Module.txt.i
 data/src/Orchard.Web/Themes/Classic/Views/Footer.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery-1.9.1.min.js.i
 data/src/Orchard.Web/Core/PublishLater/Scripts/ui.timepickr.js.i
@@ -3680,13 +3702,14 @@ data/src/Orchard.Web/Modules/Orchard.Comments/Handlers/CommentsPartHandler.cs.i
 data/src/Orchard.Web/Core/Localization/ViewModels/AddLocalizationViewModel.cs.i
 data/lib/tinymce/jscripts/tiny_mce/themes/advanced/js/image.js.i
 data/src/Orchard/UI/Zones/Obsolete/RenderStaticZoneItem.cs.i
-data/src/Orchard.Web/Modules/Orchard.Blogs/Views/Items/Content.SummaryAdmin.BlogPost.cshtml.i
+data/src/Orchard.Web/Core/Reports/Views/Web.config.i
 data/src/Orchard.Web/Modules/Markdown/Scripts/orchard-markdown.min.js.i
 data/src/Orchard.Web/Modules/Orchard.Workflows/Models/Descriptors/ActivityContext.cs.i
 data/src/Orchard.Web/Core/Shapes/Styles/Web.config.i
 data/src/Orchard.Web/Modules/Orchard.Themes/Views/Menu.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Setup/Controllers/SetupController.cs.i
 data/src/Orchard.Web/Modules/Markdown/Views/Body-Markdown.Editor.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.Themes/Views/HeadPreload.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Pages/Styles/images/ui-bg_glass_95_fef1ec_1x400.png.i
 data/src/Orchard.Web/Modules/Orchard.Fields/Fields/LinkField.cs.i
 data/src/Orchard.Web/Core/PublishLater/Module.txt.i
@@ -3841,7 +3864,7 @@ data/src/Orchard.Web/Modules/Markdown/Scripts/Markdown.Converter.js.i
 data/src/Orchard.Web/Modules/Orchard.Blogs/Routing/IRsdConstraint.CS.i
 data/src/Orchard.Tests/Models/Drivers/ModelBuilderTests.cs.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/Styles/images/all-zones.gif.i
-data/src/Orchard.Web/Modules/Orchard.Themes/Views/User.ascx_.i
+data/src/Orchard.Web/Modules/Orchard.Comments/Views/Admin/Index.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.PackageManager/Views/Admin/ThemesUpdate.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Packaging/ViewModels/PackagingHarvestViewModel.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/template/blank.htm.i
@@ -3854,7 +3877,7 @@ data/src/Orchard.Azure.Tests/Environment/Configuration/AzureShellSettingsManager
 data/lib/fluentnhibernate/Antlr3.Runtime.license.txt.i
 data/src/Orchard.Web/Modules/Contrib.Cache/Views/Web.config.i
 data/src/Orchard.Web/Modules/Orchard.Workflows/Models/TransitionRecord.cs.i
-data/src/Orchard.Web/Modules/Orchard.Themes/Styles/menu.themes-admin.css.i
+data/src/Orchard.Web/Modules/Orchard.Blogs/Views/Items/Content.SummaryAdmin.BlogPost.cshtml.i
 data/src/Orchard/ContentManagement/MetaData/IContentDefinitionManager.cs.i
 data/src/Orchard.Web/Packages/Orchard.Comments/Permissions.cs.i
 data/src/Orchard/Environment/Extensions/Loaders/WebFormsExtensionsVirtualFile.cs.i
@@ -3945,12 +3968,13 @@ data/src/Orchard.Web/Core/Shapes/Views/ErrorPage.cshtml.i
 data/src/Orchard/DisplayManagement/DisplayHelper.cs.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.effects.transfer.min.js.i
 data/src/Orchard.Web/Core/Dashboard/styles/dashboard.menu.css.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Activities/TriggerActivity.cs.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.widget.min.js.i
 data/src/Orchard/Environment/ShellBuilders/SafeModeShellContainerFactory.cs.i
 data/src/Orchard.Web/Modules/Orchard.Search/Views/EditorTemplates/Parts/Search.SearchForm.cshtml.i
 data/lib/linqnhibernate/lgpl.txt.i
 data/src/Orchard.Web/Modules/Lucene/Recipes/lucene.recipe.xml.i
-data/src/Orchard.Web/Modules/Orchard.ImageEditor/Scripts/image.editor-crop.js.i
+data/src/Orchard.Web/Modules/Orchard.MediaProcessing/Services/ImageProcessingFileNameProvider.cs.i
 data/src/Orchard.Web/Modules/Orchard.Modules/styles/images/summary-view-on.gif.i
 data/src/Orchard.Web/Packages/TinyMce/Scripts/themes/advanced/js/charmap.js.i
 data/src/Orchard.Tests.Modules/Packaging/Services/FolderUpdaterTests.cs.i
@@ -4049,7 +4073,8 @@ data/src/Orchard/Recipes/Services/IRecipeStepExecutor.cs.i
 data/src/Orchard.Web/Views/Admin/Header.aspx.i
 data/src/Orchard.Web/Modules/Orchard.Blogs/Models/BlogArchivesPartRecord.cs.i
 data/src/Orchard.Web/Modules/Orchard.Workflows/Forms/SelectRolesForms.cs.i
-data/src/Orchard.Web/Modules/Orchard.Themes/Styles/special.css.i
+data/src/Orchard.Web/Core/Containers/Views/Parts/Container.Contained.SummaryAdmin.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Parts/OEmbed.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.ImportExport/Properties/AssemblyInfo.cs.i
 data/src/Orchard.Web/Packages/Orchard.Comments/Views/Models/DisplayTemplates/HasComments.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Projections/Controllers/LayoutController.cs.i
@@ -4090,6 +4115,7 @@ data/src/Orchard.Web/Core/Common/Views/DisplayTemplates/Parts/Common.Metadata.Su
 data/src/Orchard.Tests/UI/Notify/NotifierTests.cs.i
 data/src/Orchard.Web/Modules/Orchard.Projections/Providers/Layouts/GridLayoutForms.cs.i
 data/src/Orchard.Web/Modules/Orchard.Blogs/Views/Parts/Common.Metadata.Blog.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.Taxonomies/ViewModels/TaxonomyNavigationViewModel.cs.i
 data/lib/tinymce/jscripts/tiny_mce/langs/en.js.i
 data/src/Orchard.Tests/ContentManagement/Models/AlphaPart.cs.i
 data/src/Orchard.Web/Modules/Orchard.Fields/Settings/NumericFieldSettings.cs.i
@@ -4128,6 +4154,7 @@ data/src/Orchard.Web/Core/Navigation/Module.txt.i
 data/src/Orchard/Caching/CacheModule.cs.i
 data/lib/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/ui.css.i
 data/src/Orchard.Web/Modules/Orchard.ContentTypes/Views/DisplayTemplates/Field.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/ViewModels/IndexViewModel.cs.i
 data/src/Orchard/UI/Resources/IResourceManager.cs.i
 data/src/Orchard/Environment/Extensions/OrchardFeatureAttribute.cs.i
 data/src/Orchard.Web/Core/Routable/ViewModels/RoutableEditorViewModel.cs.i
@@ -4138,6 +4165,7 @@ data/src/Orchard.Web/Core/Themes/Views/document.aspx.i
 data/lib/ravendb/Esent.Interop.dll.i
 data/src/Orchard.Web/Modules/Orchard.Packaging/Events/IExtensionDisplayEventHandler.cs.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Views/Shared/Foot.aspx.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Services/GenericEventService.cs.i
 data/src/Orchard/Data/Migration/Schema/AddIndexCommand.cs.i
 data/src/Orchard.Web/Modules/Orchard.Tags/Models/ContentTagRecord.cs.i
 data/src/Orchard/ContentManagement/Records/Utility.cs.i
@@ -4183,6 +4211,7 @@ data/src/Orchard/Mvc/FollowReturnUrl/FollowReturnUrlFilter.cs.i
 data/src/Orchard.Web/Modules/Orchard.PublishLater/Views/Parts/PublishLater.Metadata.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.AntiSpam/Models/SubmissionLimitPart.cs.i
 data/src/Orchard.Web/Modules/Orchard.Warmup/Models/ReportEntry.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Controllers/AdminController.cs.i
 data/src/Orchard.Tests/Notify/NotifierTests.cs.i
 data/src/Orchard.Web/Modules/ArchiveLater/Styles/images/ui-bg_highlight-soft_75_cccccc_1x100.png.i
 data/src/Orchard/Data/SessionLocator.cs.i
@@ -4242,6 +4271,7 @@ data/src/Orchard.Web/Modules/Orchard.Scripting.CSharp/Properties/AssemblyInfo.cs
 data/lib/ravendb/Newtonsoft.Json.dll.i
 data/src/Orchard/Environment/Extensions/Models/Extension.cs.i
 data/src/Orchard.Web/Modules/Orchard.Localization/Styles/orchard-localization-admin.css.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/ViewModels/StatisticsViewModel.cs.i
 data/src/Orchard.Web/Modules/Orchard.Recipes/Services/RecipeScheduler.cs.i
 data/src/Orchard.Tests/Records/BarRecord.cs.i
 data/lib/jquery.ui/images/ui-bg_glass_75_dadada_1x400.png.i
@@ -4324,6 +4354,7 @@ data/src/Orchard.Tests.Modules/SimpleScripting/EvaluatorTests.cs.i
 data/src/Orchard.Web/Modules/Orchard.DevTools/Properties/AssemblyInfo.cs.i
 data/src/Orchard.Web/Modules/Orchard.Alias/Implementation/Storage/AliasStorage.cs.i
 data/src/Orchard.Web/Modules/Four2n.MiniProfiler/Overrides/DefaultContentDisplay.cs.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/OEmbed/Index.cshtml.i
 data/src/Orchard.Web/Core/Common/Views/EditorTemplates/Parts.Common.Container.cshtml.i
 data/src/Orchard.Web/Modules/Contrib.Taxonomies/Handlers/TaxonomyPartHandler.cs.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.effect.js.i
@@ -4334,7 +4365,6 @@ data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Factories/IMediaFactory.cs.i
 data/src/Orchard.Web/Core/PublishLater/DataMigrations/PublishLaterDataMigration.cs.i
 data/src/Orchard.Web/Modules/Orchard.Comments/Models/CommentSettingsRecord.cs.i
 data/src/Orchard.Web/Modules/Orchard.Comments/Handlers/CommentPartHandler.cs.i
-data/src/Orchard.Web/Core/Reports/Views/Web.config.i
 data/src/Orchard.Web/Modules/Contrib.Taxonomies/Views/TermAdmin/MoveTerm.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Wikis/Models/WikiPage.cs.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Styles/ui.datepicker.css.i
@@ -4476,6 +4506,7 @@ data/src/Orchard.Profile/Scripts/dashboard.txt.i
 data/src/Orchard/Tokens/TokenBuilder.cs.i
 data/src/Orchard.Web/Core/Common/Views/DisplayTemplates/Fields/Common.TextField.cshtml.i
 data/src/Orchard/Events/DelegateHelper.cs.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Parts/OEmbed.Metadata.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Pages/Views/DisplayTemplates/Items/Pages.Page.Summary.ascx.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/plugins/imageeditor/editor_plugin_src.min.js.map.i
 data/src/Orchard.Web/Packages/Orchard.Pages/Models/Page.cs.i
@@ -4493,7 +4524,7 @@ data/src/Orchard.Web/Modules/Markdown/Scripts/orchard-markdown.js.i
 data/src/Orchard.Web/Packages/Orchard.CmsPages/Content/Site.css.i
 data/src/Orchard.Web/Packages/TinyMce/Package.txt.i
 data/src/Orchard.Web/Modules/Orchard.ImageEditor/Styles/orchard-imageeditor-admin.css.i
-data/src/Orchard/Environment/FileSystems/AppDataFolder.cs.i
+data/src/Orchard/Data/AbstractSessionInterceptor.cs.i
 data/lib/ravendb/license.txt.i
 data/src/Orchard.Web/Modules/Orchard.AntiSpam/Migrations.cs.i
 data/src/Orchard.Web/Packages/Orchard.Sandbox/Views/Models/DisplayTemplates/SandboxPageList.ascx.i
@@ -4525,6 +4556,7 @@ data/src/Orchard/Mvc/RouteDescriptor.cs.i
 data/src/Orchard.Web/Modules/Orchard.Tokens/Scripts/Web.config.i
 data/src/Orchard.Web/Core/ContentsLocation/Settings/LocationSettingsEditorEvents.cs.i
 data/src/Orchard.Web/Modules/Orchard.Workflows/Views/Activity-ContentCreated.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Models/OEmbedPart.cs.i
 data/src/Orchard.Web/Modules/Orchard.MediaProcessing/Services/IImageProcessingFileNameProvider.cs.i
 data/src/Orchard.Web/Modules/ArchiveLater/Handlers/ArchiveLaterPartHandler.cs.i
 data/src/Orchard.Web/Core/Routable/Services/RoutablePathConstraintUpdator.cs.i
@@ -4599,6 +4631,7 @@ data/src/Orchard.Web/Modules/Orchard.Search/Placement.info.i
 data/src/Orchard/Mvc/ViewEngines/ThemeAwareness/LayoutAwareViewEngine.cs.i
 data/src/Orchard.Web/Core/Common/Views/DisplayTemplates/Parts/Common.Body.ascx.i
 data/src/Orchard.Web/Modules/Orchard.MediaProcessing/Media/StorageProviderExtensions.cs.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Activities/SignalActivity.cs.i
 data/src/Orchard/Environment/Extensions/DependencyOrdering.cs.i
 data/src/Orchard.Web/Core/Navigation/Views/MenuItem.Edit.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Comments/Models/Comment.cs.i
@@ -4610,6 +4643,7 @@ data/src/Orchard.Web/Modules/Orchard.Tags/Services/ITagService.cs.i
 data/src/Orchard.Web/Themes/Corporate/Content/Images/icons/chart.png.i
 data/src/Orchard.Web/Modules/Orchard.Scripting.CSharp/Lib/Mono.CSharp.dll.i
 data/src/Orchard/Environment/Extensions/Loaders/CoreExtensionLoader.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Services/DefaultCacheStorageProvider.cs.i
 data/src/Orchard.Web/Themes/Classic/Content/Images/bodyBackgroundgrey.gif.i
 data/src/Orchard.Web/Modules/Orchard.Projections/Providers/Properties/ContentProperties.cs.i
 data/src/Orchard.Web/Modules/Orchard.Lists/Styles/menu.list-admin.css.i
@@ -4638,7 +4672,7 @@ data/src/Orchard.Web/Core/Common/Views/EditorTemplates/Parts/Common.Publish.ascx
 data/src/Orchard.Web/Modules/Orchard.Projections/FilterEditors/IFilterCoordinator.cs.i
 data/src/Orchard.Web/Modules/Orchard.Taxonomies/Helpers/PredicateBuilder.cs.i
 data/src/Orchard.Web/Modules/Orchard.MediaProcessing/Drivers/ImageProfilePartDriver.cs.i
-data/src/Orchard.Web/Themes/SafeMode/Content/Images/background_pageTop.gif.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Properties/AssemblyInfo.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin.js.i
 data/src/Orchard.Web/Modules/Orchard.ContentPicker/Models/NavigationPart.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin.js.i
@@ -4850,7 +4884,6 @@ data/src/Orchard.Web/Modules/Orchard.Search/Settings/ContentPickerFieldSettings.
 data/src/Orchard.Web/Modules/Orchard.Migrations/AdminMenu.cs.i
 data/src/Orchard.Web/Modules/UpgradeTo15/Views/Field/Index.cshtml.i
 data/src/Orchard.Web/Modules/Contrib.Taxonomies/Models/TaxonomyMenuItemPartRecord.cs.i
-data/src/Orchard.Web/Core/PublishLater/Styles/jquery-ui-1.7.2.custom.css.i
 data/src/Orchard.Tests.Modules/XmlRpc/Controllers/LiveWriterControllerTests.cs.i
 data/src/Orchard/Logging/OrchardFileAppender.cs.i
 data/src/Orchard/Data/IDataManager.cs.i
@@ -4936,6 +4969,7 @@ data/src/Orchard.Web/Packages/Orchard.Blogs/Views/BlogPost/Item.aspx.i
 data/src/Orchard.Web/Packages/TinyMce/Scripts/themes/advanced/js/link.js.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.effect-fade.min.js.i
 data/src/Orchard/WebApi/Routes/IHttpRouteProvider.cs.i
+data/src/Orchard.Web/Modules/Orchard.Taxonomies/Views/EditorTemplates/Parts/Navigation.Taxonomy.Edit.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Media/Models/FolderNavigation.cs.i
 data/src/Orchard.Web/Themes/Contoso/Content/Images/menu-divider.png.i
 data/src/Orchard.Web/Modules/Orchard.Email/Models/SmtpSettingsPart.cs.i
@@ -4943,6 +4977,7 @@ data/src/Orchard.Web/Modules/Orchard.Projections/Settings/StateValueProvider.cs.
 data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Admin/MediaManagerFolder.cshtml.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/plugins/searchreplace/css/searchreplace.css.i
 data/src/Orchard.Web/Packages/Orchard.DevTools/Views/Web.config.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Views/Activity-Redirect.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Roles/Records/PermissionRecord.cs.i
 data/src/Orchard.Web/Modules/Orchard.Tags/Orchard.Tags.csproj_.i
 data/src/Orchard/Utility/Position.cs.i
@@ -4951,7 +4986,7 @@ data/src/Orchard.Web/Modules/Orchard.ContentQueries/Module.txt.i
 data/src/Orchard.Web/Modules/Orchard.Comments/Rules/CommentsActions.cs.i
 data/lib/tinymce/jscripts/tiny_mce/themes/advanced/js/anchor.js.i
 data/src/Orchard.Web/Modules/Orchard.Projections/Properties/AssemblyInfo.cs.i
-data/src/Orchard.Web/Modules/Orchard.Themes/ViewModels/PreviewViewModel.cs.i
+data/src/Orchard.Web/Modules/Orchard.Messaging/Placement.info.i
 data/src/Orchard.Web/Modules/Orchard.Modules/ViewModels/FeaturesViewModel.cs.i
 data/src/Orchard.Web/Modules/Orchard.Workflows/Views/Activity-Branch.cshtml.i
 data/src/Orchard/Environment/Compilation/Dependencies/DefaultExtensionDependenciesManager.cs.i
@@ -5200,6 +5235,7 @@ data/src/Orchard.Web/Modules/Orchard.Autoroute/Services/AliasResolverSelector.cs
 data/src/Orchard/ContentManagement/MetaData/Models/ContentPartFieldDefinition.cs.i
 data/src/Orchard.Web/Modules/Orchard.Tags/Views/Home/Index.ascx.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Views/Shared/EditorTemplates/Blog/Detail.ascx.i
+data/src/Orchard/Recipes/Services/IRecipeParser.cs.i
 data/src/Orchard.Tests/UI/Admin/AdminAuthorizationFilterTests.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js.i
 data/src/Orchard.Web/Modules/Orchard.Search/Views/Search/Index.cshtml.i
@@ -5212,7 +5248,6 @@ data/src/Orchard.Web/Modules/Orchard.Experimental/web.config.i
 data/src/Orchard.Web/Modules/Futures.Modules.Packaging/Services/PackageBuilder.cs.i
 data/src/Orchard.Web/Packages/Orchard.Setup/Annotations/SqlDatabaseConnectionStringAttribute.cs.i
 data/src/Orchard.Web/Modules/Orchard.Comments/Views/Web.config.i
-data/src/Orchard.Web/Modules/Orchard.Comments/Views/Admin/Index.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Users/ViewModels/UserEditViewModel.cs.i
 data/src/Orchard.Web/Content/Admin/css/dark.css.i
 data/src/Orchard.Web/Packages/Orchard.Roles/Models/RoleRecord.cs.i
@@ -5293,6 +5328,7 @@ data/src/Orchard.Web/Themes/TheAdminClassic/Views/User.ascx.i
 data/src/Orchard.Web/Themes/Green/Views/DisplayTemplates/Items/Blogs.Blog.Summary.ascx.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Views/Blog/DisplayTemplates/BlogsViewModel.ascx.i
 data/src/Orchard.Web/Packages/TinyMce/Scripts/themes/simple/skins/o2k7/ui.css.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Drivers/OEmbedPartDriver.cs.i
 data/src/Orchard.Web/Themes/TheAdmin/Views/BeforeContent.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.tabs.min.js.i
 data/src/Orchard.Web/Modules/Orchard.ContentTypes/ResourceManifest.cs.i
@@ -5389,6 +5425,7 @@ data/src/Orchard.Web/Packages/TinyMce/Scripts/utils/form_utils.js.i
 data/src/Orchard.Web/Core/Contents/Module.txt.i
 data/lib/ravendb/ICSharpCode.NRefactory.dll.i
 data/src/Orchard.Web/Core/PublishLater/Handlers/PublishingTaskHandler.cs.i
+data/src/Orchard.Web/Modules/Orchard.Themes/Views/User.ascx_.i
 data/src/Orchard.Tests.Packages/Pages/Services/Templates/TemplateMetadataParserTests.cs.i
 data/src/Orchard.Web/Modules/Orchard.Packaging/Services/ExtensionReferenceRepository.cs.i
 data/src/Orchard.Web/Modules/Orchard.AntiSpam/Models/SpamFilterPartRecord.cs.i
@@ -5486,6 +5523,7 @@ data/src/Orchard.Web/Core/Routable/Views/Parts/RoutableTitle.cshtml.i
 data/src/Orchard.Web/Core/ContentsLocation/Models/LocationDefinition.cs.i
 data/src/Orchard.Web/Core/Themes/Preview/PreviewThemeFilter.cs.i
 data/src/Orchard/Caching/Weak.cs.i
+data/src/Orchard.Web/Modules/TinyMce/Scripts/themes/advanced/js/image.js.i
 data/src/Orchard.Web/Modules/Orchard.Users/Handlers/UserPartHandler.cs.i
 data/src/Orchard/ContentManagement/Handlers/IndexContentContext.cs.i
 data/src/Orchard.Web/Modules/Orchard.AntiSpam/Views/DefinitionTemplates/SubmissionLimitPartSettings.cshtml.i
@@ -5503,6 +5541,7 @@ data/lib/tinymce/jscripts/tiny_mce/plugins/template/css/template.css.i
 data/src/Orchard.Web/Core/Contents/Styles/Web.config.i
 data/src/Orchard.Web/Themes/Classic/Styles/site.css.i
 data/src/Orchard.Web/Themes/TheThemeMachine/Views/Items_Widget-HtmlWidget.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Views/Statistics/Index.cshtml.i
 data/src/Orchard.Azure/Orchard.Azure.Web/Properties/AssemblyInfo.cs.i
 data/src/Orchard.Web/Packages/Orchard.Pages/Styles/images/ui-icons_888888_256x240.png.i
 data/src/Orchard/Environment/Topology/ITopologyDescriptorCache.cs.i
@@ -5533,6 +5572,7 @@ data/src/Orchard.Web/Modules/Orchard.Workflows/Styles/admin-workflows.css.i
 data/src/Orchard.Web/Modules/Orchard.Experimental/Views/RavenDbExp/Add.cshtml.i
 data/lib/autofac/Autofac.XML.i
 data/src/Orchard.Web/Modules/Orchard.Sandbox/Properties/AssemblyInfo.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Scripts/Web.config.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js.i
 data/src/Orchard.Tests/Services/ClockTests.cs.i
 data/src/Orchard.Tests/Environment/OrchardStarterTests.cs.i
@@ -5621,6 +5661,7 @@ data/src/Orchard.Web/Modules/Orchard.Widgets/Services/WidgetService.cs.i
 data/src/Orchard.Web/Themes/Corporate/Content/Images/icons/icon-4.png.i
 data/src/Orchard.Web/Packages/TinyMce/Scripts/utils/mctabs.js.i
 data/src/Orchard/Mvc/Html/FileRegistrationContextExtensions.cs.i
+data/src/Orchard.Web/Modules/Orchard.Themes/Styles/Images/toolBarHoverButtonBackground.gif.i
 data/src/Tools/Orchard/OrchardArgumentsParser.cs.i
 data/src/Orchard.Web/Core/Navigation/Views/EditorTemplates/Parts.MenuWidget.Edit.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Pages/Models/Scheduled.cs.i
@@ -5706,6 +5747,7 @@ data/src/Orchard.Web/Modules/Orchard.Widgets/Views/Web.config.i
 data/src/Orchard.Web/Modules/ArchiveLater/Scripts/jquery.ui.core.js.i
 data/src/Orchard.Web/Modules/Markdown/Scripts/Markdown.Converter.min.js.map.i
 data/src/Orchard.Web/Modules/Orchard.Taxonomies/Views/TaxonomyItem.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Controllers/WorkflowController.cs.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Orchard.Blogs.csproj.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/SimpleScripting/ErrorAstNode.cs.i
 data/src/Orchard.Web/Modules/Orchard.Projections/FieldTypeEditors/DecimalFieldTypeEditor.cs.i
@@ -5816,6 +5858,7 @@ data/src/Orchard.Web/Modules/Orchard.Workflows/Views/Activity-Timer.cshtml.i
 data/src/Orchard/Packaging/IPackageBuilder.cs.i
 data/src/Orchard.Web/Modules/Orchard.Rules/Models/ActionContext.cs.i
 data/src/Orchard.Web/Views/Admin/Foot.aspx.i
+data/src/Orchard.Web/Modules/Orchard.Taxonomies/Models/TaxonomyNavigationPart.cs.i
 data/src/Orchard.Web/Modules/Orchard.DesignerTools/Views/ShapeTracingMeta.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Roles/ViewModels/RolesIndexViewModel.cs.i
 data/src/Orchard/DataMigration/IDataMigrationManager.cs.i
@@ -5846,7 +5889,7 @@ data/src/Orchard.Web/Core/Contents/Views/DisplayTemplates/Items/Contents.Item.Su
 data/src/Orchard.Web/Themes/Green/Views/Orchard.Search/Search/Index.ascx.i
 data/src/Orchard.Web/Core/Common/Drivers/OwnerEditorPartDriver.cs.i
 data/src/Orchard.Web/Modules/Orchard.Themes/Styles/menu.themes.css.i
-data/src/Orchard.Web/Themes/Green/Content/Images/logo.gif.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Migrations.cs.i
 data/src/Orchard.Web/Modules/Orchard.Modules/Commands/FeatureCommands.cs.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Views/Models/DisplayTemplates/BlogDetail.ascx.i
 data/src/Orchard.Web/Themes/Green/Zones/User1.html.i
@@ -5954,6 +5997,7 @@ data/src/Orchard.Web/Core/Localization/ViewModels/EditLocalizationViewModel.cs.i
 data/src/Orchard.Web/Core/Localization/Resources/LocalizationResourceManifest.cs.i
 data/src/Orchard.Web/Core/Shapes/Views/UI/Switchable.ascx.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Tokens/SignalTokens.cs.i
 data/src/Orchard.Web/Packages/Orchard.Wikis/Web.config.i
 data/src/Tools/PackageIndexReferenceImplementation/Services/MediaStorage.cs.i
 data/src/Orchard.Web/Themes/Contoso/Content/Images/menu-hover.png.i
@@ -5993,7 +6037,7 @@ data/src/Orchard/InvokeExtensions.cs.i
 data/src/Orchard.Web/Modules/Orchard.DevTools/ViewModels/MetadataIndexViewModel.cs.i
 data/src/Orchard.Web/Modules/Orchard.Packaging/Views/Gallery/Modules.ascx.i
 data/lib/nunit/nunit-agent-x86.exe.i
-data/src/Orchard.Web/Themes/TheThemeMachine/Views/Pager.cshtml.i
+data/src/Orchard.Web/Packages/Orchard.Comments/Orchard.Comments.csproj.i
 data/src/Orchard.Web/Modules/Orchard.Modules/Views/Admin/Recipes.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Wiki/Views/Admin/Index.aspx.i
 data/src/Orchard.Web/Modules/Orchard.PublishLater/Styles/Web.config.i
@@ -6007,6 +6051,7 @@ data/src/Orchard.Web/Modules/Orchard.Comments/Views/EditorTemplates/Parts/Commen
 data/src/Orchard.Web/Packages/Orchard.Roles/Models/UserRolesDriver.cs.i
 data/src/Orchard.Web/Packages/Orchard.Tags/ViewModels/TagsAdminCreateViewModel.cs.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/SimpleScripting/UnaryAstNode.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Filters/OutputCacheFilter.cs.i
 data/src/Orchard.Web/Packages/Orchard.Tags/Models/Tag.cs.i
 data/src/Orchard.Web/Core/Common/Views/DefinitionTemplates/CommonEditorsSettings.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Views/Shared/DisplayTemplates/BlogPost/Summary.ascx.i
@@ -6048,6 +6093,7 @@ data/src/Orchard.Tests.Packages/Pages/Services/PageManagerTests.cs.i
 data/src/Orchard.Web/Themes/Green/Views/Archives.ascx.i
 data/src/Orchard.Web/Modules/Orchard.ArchiveLater/Views/DisplayTemplates/Parts/ArchiveLater.Metadata.SummaryAdmin.cshtml.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/spellchecker/editor_plugin_src.js.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Models/CacheSettingsPartRecord.cs.i
 data/src/Orchard/Time/DefaultTimeZoneProvider.cs.i
 data/src/Orchard/Models/ModelExtensions.cs.i
 data/src/Orchard.Web/Modules/Orchard.Autoroute/Services/IRouteEvents.cs.i
@@ -6403,10 +6449,10 @@ data/src/Orchard/DisplayManagement/Descriptors/ShapeAttributeStrategy/ShapeAttri
 data/src/Orchard.Web/Modules/Orchard.Rules/Orchard.Rules.csproj.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/abbr.js.i
 data/src/Orchard.Tests.Modules/Media/Extensions/LongExtensionsTests.cs.i
-data/src/Orchard.Web/Core/Containers/Views/Parts/Container.Contained.SummaryAdmin.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.Themes/Styles/special.css.i
 data/src/Orchard.Web/Modules/Orchard.CodeGeneration/CodeGenerationTemplates/ViewsWebConfig.txt.i
 data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Parts/Document.SummaryAdmin.cshtml.i
-data/src/Orchard.Web/Modules/Orchard.Themes/Styles/Images/toolBarHoverButtonBackground.gif.i
+data/src/Orchard.Web/Modules/Four2n.MiniProfiler/StepKeys.cs.i
 data/src/Orchard.Web/Modules/Orchard.ContentTypes/Scripts/Web.config.i
 data/src/Orchard/ContentManagement/MetaData/Models/ContentTypePart.cs.i
 data/src/Orchard.Tests/ContentManagement/Handlers/GammaPartHandler.cs.i
@@ -6420,6 +6466,7 @@ data/src/Orchard.Web/Modules/Orchard.Tags/Module.txt.i
 data/src/Orchard.Web/Modules/Orchard.Modules/ViewModels/RecipesViewModel.cs.i
 data/src/Orchard/Environment/DefaultOrchardHostEventSink.cs.i
 data/src/Orchard.Web/Modules/Orchard.Tags/Drivers/HasTagsDriver.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Services/IOutputCacheStorageProvider.cs.i
 data/src/Orchard/Data/Builders/ISessionFactoryBuilder.cs.i
 data/src/Orchard.Web/Modules/Orchard.Taxonomies/Views/EditorTemplates/Parts/Taxonomies.Term.Fields.cshtml.i
 data/src/Orchard.Web/Core/Common/Styles/images/ui-icons_888888_256x240.png.i
@@ -6434,6 +6481,7 @@ data/src/Orchard.Web/Modules/Orchard.Tokens/Web.config.i
 data/src/Orchard.Web/Modules/Orchard.Search/Services/ISearchService.cs.i
 data/src/Orchard.Web/Modules/Orchard.Taxonomies/Module.txt.i
 data/src/Orchard.Web/Modules/Orchard.ContentTypes/ViewModels/CreatePartViewModel.cs.i
+data/src/Orchard/Mvc/ViewEngines/ThemeAwareness/ThemeViewLocationCache.cs.i
 data/src/Orchard.Web/Packages/TinyMce/Scripts/tiny_mce_src.js.i
 data/lib/wcat/report.xsl.i
 data/lib/nunit/lib/nunit.uiexception.dll.i
@@ -6444,6 +6492,7 @@ data/src/Orchard.Web/Packages/Orchard.Blogs/Styles/archives.css.i
 data/lib/Castle Windsor 2.0/bin/Castle.Core.dll.i
 data/src/Orchard.Web/Modules/Orchard.ContentTypes/Views/EditorTemplates/TypeParts.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Scripting.Dlr/Services/RubyScriptingRuntime.cs.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Media-OEmbed.Thumbnail.cshtml.i
 data/lib/jquery.ui/images/ui-icons_cd0a0a_256x240.png.i
 data/src/Orchard.Web/Modules/Orchard.Projections/FilterEditors/BooleanFilterEditor.cs.i
 data/src/Orchard.Web/Packages/Orchard.Pages/Models/ModelExtensions.cs.i
@@ -6457,6 +6506,7 @@ data/lib/sqlce/amd64/sqlceqp40.dll.d
 data/src/Orchard.Web/Modules/Orchard.Users/Views/Account/ChangePasswordSuccess.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/Controllers/AdminController.cs.i
 data/src/Orchard.Web/Core/Contents/ViewModels/CreateTypeViewModel.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Orchard.OutputCache.csproj.i
 data/src/Orchard.Web/Modules/Orchard.Modules/styles/images/update.gif.i
 data/src/Orchard/Extensions/Loaders/CoreExtensionLoader.cs.i
 data/src/Orchard.Web/Modules/Orchard.Blogs/Web.config.i
@@ -6499,7 +6549,6 @@ data/src/Orchard.Web/Packages/Orchard.Users/Views/Admin/EditorTemplates/inputTex
 data/src/Orchard.Web/Modules/Orchard.Setup/web.config.i
 data/src/Orchard.Web/Modules/Orchard.TaskLease/Models/TaskLeaseRecord.cs.i
 data/src/Orchard.Web/Core/Common/Services/BbcodeFilter.cs.i
-data/src/Orchard.Web/Modules/Orchard.Projections/Styles/Web.config.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/RuleEngine/RuleManager.cs.i
 data/src/Orchard.Web/Core/Shapes/Views/EditorTemplates/MediumString.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Packaging/Services/PackagingServices.cs.i
@@ -6546,6 +6595,7 @@ data/src/Orchard.Web/Packages/Orchard.Tags/Views/Tags/Index.aspx.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Controllers/BlogController.cs.i
 data/src/Orchard.Web/Modules/Orchard.Experimental/Handlers/DebugLinkHandler.cs.i
 data/lib/specflow/IKVM.OpenJDK.Util.dll.d
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Services/CacheService.cs.i
 data/src/Orchard.Web/Core/Containers/Drivers/ContainerPartDriver.cs.i
 data/src/Orchard.Web/Modules/Orchard.ContentTypes/Views/EditorTemplates/TypePartFields.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Recipes/web.config.i
@@ -6664,6 +6714,7 @@ data/lib/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-yell.gif.i
 data/src/Orchard.Web/Modules/Orchard.Projections/Models/NavigationQueryPartRecord.cs.i
 data/src/Orchard/Data/Migration/DataMigrationManager.cs.i
 data/src/Orchard.Web/Modules/Orchard.Taxonomies/Views/TermAdmin/RenderTermSelect.cshtml.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Models/CacheSettingsPart.cs.i
 data/src/Orchard.Web/Modules/Orchard.ImportExport/Styles/menu.importexport-admin.css.i
 data/src/Orchard.Web/Modules/Orchard.MultiTenancy/Properties/AssemblyInfo.cs.i
 data/src/Orchard.Web/Modules/UpgradeTo16/Views/Menu/Index.cshtml.i
@@ -6894,10 +6945,11 @@ data/lib/aspnetwebapi/System.Web.Http.dll.i
 data/src/Orchard/Modules/IModule.cs.i
 data/src/Orchard.Web/Packages/TinyMce/Scripts/themes/simple/img/icons.gif.i
 data/src/Orchard/Mvc/Routes/RoutePublisher.cs.i
-data/src/Orchard.Web/Modules/TinyMce/Scripts/themes/advanced/js/image.js.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Activities/WebRequestActivity.cs.i
 data/src/Orchard.Web/Modules/Orchard.Projections/FieldTypeEditors/IFieldTypeEditor.cs.i
 data/src/Orchard.Web/Modules/Orchard.Experimental/Views/Home/Index.cshtml.i
 data/src/Orchard/ContentManagement/Definition/IContentDefinitionManager.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Web.config.i
 data/src/Orchard.Web/Themes/TheAdmin/Views/Header.cshtml.i
 data/src/Orchard.Web/Orchard.Web.csproj.i
 data/src/Orchard.Web/Packages/TinyMce/Scripts/themes/advanced/js/about.js.i
@@ -6976,6 +7028,7 @@ data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Models/MediaFolder.cs.i
 data/src/Orchard.Web/Modules/Orchard.Fields/Views/EditorTemplates/Fields/Input.Edit.cshtml.i
 data/src/Orchard.Tests/Mvc/Routes/StandardPackageRouteProviderTests.cs.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Views/BlogAdmin/DisplayTemplates/Items/Blogs.Blog.Detail.ascx.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Styles/Web.config.i
 data/src/Orchard.Web/Packages/Orchard.Tags/Models/TagSettings.cs.i
 data/src/Orchard.Web/Packages/Orchard.Roles/Views/Admin/Create.aspx.i
 data/src/Orchard.Web/Core/PublishLater/Views/EditorTemplates/Parts/PublishLater.cshtml.i
@@ -7093,6 +7146,7 @@ data/src/Orchard.Web/Modules/Orchard.ImportExport/Models/ExportOptions.cs.i
 data/src/Orchard.Web/Modules/Markdown/web.config.i
 data/src/Orchard.Web/Core/Contents/Views/Admin/EditType.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Workflows/Styles/Web.config.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Providers/ClientStorageMenu.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/example/editor_plugin.js.i
 data/src/Orchard/Models/ContentItemMetadata.cs.i
 data/src/Orchard.Tests.Modules/SimpleScripting/SimpleScriptingTests.cs.i
@@ -7147,6 +7201,7 @@ data/src/Orchard.Web/Themes/Contoso/DesignerNotes/Highlights.html.i
 data/lib/autofac/Autofac.Integration.Web.pdb.i
 data/src/Orchard.Web/Modules/Orchard.Messaging/Migrations.cs.i
 data/src/Orchard.Web/Modules/Orchard.Workflows/Activities/Mail/MailForms.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Services/ITagCache.cs.i
 data/src/Orchard/Models/Driver/GetItemMetadataContext.cs.i
 data/lib/nunit/nunit-x86.exe.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/tiny_mce.js.i
@@ -7307,6 +7362,7 @@ data/src/Orchard/ContentManagement/Handlers/IContentHandler.cs.i
 data/src/Orchard.Web/Modules/Orchard.ContentTypes/Views/EditorTemplates/Field.ascx.i
 data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Styles/orchard-clientstorage-admin.css.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/paste/pasteword.htm.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Styles/menu.oembed-mediaproviders.css.i
 data/src/Orchard.Web/Core/Settings/Controllers/AdminController.cs.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/plugins/imageeditor/editor_plugin_src.min.js.i
 data/src/Orchard.Web/Packages/Orchard.Comments/Views/Shared/EditorTemplates/CommentSettingsRecord.ascx.i
@@ -7388,6 +7444,7 @@ data/src/Orchard.Web/Modules/Lucene/Services/SearchBits.cs.i
 data/lib/nunit/lib/Images/Tree/Visual Studio/Success.png.i
 data/src/Orchard.Web/Modules/Orchard.Themes/Models/Theme.cs.i
 data/src/Orchard.Web/Modules/Orchard.Recipes/Properties/AssemblyInfo.cs.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Activities/WebResponseActivity.cs.i
 data/src/Orchard.Web/Modules/Orchard.Alias/Implementation/Holder/AliasInfo.cs.i
 data/lib/ravendb/SpellChecker.Net.dll.i
 data/src/Tools/OrchardCli/CommandHostContextProvider.cs.i
@@ -7422,6 +7479,7 @@ data/src/Orchard.Web/Modules/Orchard.MediaPicker/AdminFilter.cs.i
 data/src/Orchard.Web/Modules/Orchard.Comments/ViewModels/CommentsPartSettingsViewModel.cs.i
 data/lib/yui/reset/reset.css.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-undecided.gif.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Models/CacheParameterRecord.cs.i
 data/src/Orchard/FileSystems/Media/IStorageFile.cs.i
 data/lib/tinymce/examples/skins.html.i
 data/src/Orchard.Web/Modules/Orchard.DesignerTools/Scripts/orchard-designertools-shapetracing.js.i
@@ -7596,6 +7654,7 @@ data/src/Orchard.Web/Modules/Orchard.Fields/Specs/Input.feature.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.position.min.js.i
 data/lib/Castle 2.5.2/Committers.txt.i
 data/src/Orchard.Web/Core/Common/ResourceManifest.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Handlers/DisplayedContentItemHandler.cs.i
 data/src/Orchard.Web/Modules/Orchard.Blogs/Views/DisplayTemplates/Items/Blogs.BlogPost.Summary.ascx.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/themes/advanced/editor_template.js.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/media/img/trans.gif.i
@@ -7671,6 +7730,7 @@ data/src/Orchard.Web/Core/Themes/Styles/Images/toolBarHoverButtonBackground.gif.
 data/src/Orchard.Web/Modules/Orchard.Blogs/Views/Blogs.Blog.Description.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Roles/Models/RolesPermissions.cs.i
 data/src/Orchard/ContentManagement/Driver/IContentHandler.cs.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Forms/WebRequestForm.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/emotions/emotions.htm.i
 data/src/Orchard.Web/Modules/Four2n.MiniProfiler/Filters/ProfilerFilter.cs.i
 data/src/Orchard/Properties/AssemblyInfo.cs.i
@@ -7683,6 +7743,7 @@ data/src/Orchard/Extensions/Loaders/IExtensionLoader.cs.i
 data/src/Orchard.Web/Core/Themes/Views/Header.ascx.i
 data/src/Orchard.Web/Core/XmlRpc/Models/XRpcData.cs.i
 data/src/Orchard.Web/Core/Routable/Views/Item/Display.ascx.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Controllers/SignalController.cs.i
 data/src/Orchard.Web/Modules/Orchard.Indexing/Services/LuceneSearchBuilder.cs.i
 data/src/Orchard.Tests.Packages/Pages/Services/TestExtensions.cs.i
 data/src/Orchard.Web/Modules/Orchard.Modules/Packaging/Services/PackageSourceManager.cs.i
@@ -7766,7 +7827,7 @@ data/src/Orchard/Utility/LazyField.cs.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/Views/Admin/ChooseWidget.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Warmup/Handlers/WarmupSettingsPartHandler.cs.i
 data/src/Orchard.Web/Core/Contents/Views/Content.Summary.cshtml.i
-data/src/Orchard.Web/Modules/Orchard.Themes/Views/DisplayTemplates/Items/ContentItem.ascx.i
+data/src/Orchard.Web/Modules/Orchard.Projections/Tests/Orchard.Projections.Tests.csproj.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.effect-blind.min.js.i
 data/src/Orchard.Web/Modules/Orchard.Rules/Content/Admin/images/online.gif.i
 data/src/Orchard.Web/Core/Contents/Views/Parts.Contents.Publish.cshtml.i
@@ -7782,6 +7843,7 @@ data/src/Orchard.Web/Packages/Orchard.Setup/Views/Setup/Index.ascx.i
 data/src/Orchard.Web/Core/SafeMode/Theme.txt.i
 data/src/Orchard.Web/Modules/Orchard.MediaProcessing/Providers/Filters/ResizeFilter.cs.i
 data/src/Orchard/ContentManagement/Drivers/ItemDriver.cs.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Parts/OEmbed.Summary.cshtml.i
 data/src/Orchard.Web/Modules/Orchard.Modules/Views/Web.config.i
 data/src/Orchard.Web/Core/Navigation/Services/MainMenuNavigationProvider.cs.i
 data/src/Orchard.Web/Modules/Orchard.MultiTenancy/Views/Admin/DisplayTemplates/ActionsForInvalid.cshtml.i
@@ -7798,6 +7860,7 @@ data/src/Orchard.Web/Modules/Orchard.Comments/Annotations/CommentValidationAttri
 data/src/Orchard.Web/Modules/Orchard.Projections/Views/Layout/Add.cshtml.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/plugins/mediapicker/editor_plugin_src.js.i
 data/src/Orchard.Web/Modules/Orchard.CustomForms/Views/Admin/Item.cshtml.i
+data/src/Orchard/Data/ISessionInterceptor.cs.i
 data/src/Orchard.Web/Themes/SafeMode/Styles/Web.config.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Models/BlogPostProvider.cs.i
 data/src/Orchard.Tests/DisplayManagement/ArgsUtility.cs.i
@@ -7907,6 +7970,7 @@ data/src/Orchard.Web/Modules/Orchard.Widgets/Views/EditorTemplates/Parts.Widgets
 data/src/Orchard.Web/Modules/Orchard.ContentTypes/Views/Admin/AddPartsTo.cshtml.i
 data/src/Orchard.Web/Core/Common/Models/LocationDefinition.cs.i
 data/src/Orchard.Web/Modules/Orchard.DevTools/ViewModels/CommandsExecuteViewModel.cs.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Forms/SignalForms.cs.i
 data/src/Orchard.Web/Packages/Orchard.CmsPages/Properties/AssemblyInfo.cs.i
 data/src/Orchard.Web/Content/Admin/css/images/icons.png.i
 data/lib/Castle Windsor 2.0/ReleaseNotes/InversionOfControl Release Notes.txt.i
@@ -7975,6 +8039,7 @@ data/src/Orchard.Web/Packages/Orchard.DevTools/Views/Shared/EditorTemplates/Show
 data/lib/tinymce/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js.i
 data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Parts/Media.SummaryAdmin.cshtml.i
 data/src/Orchard.Web/Modules/TinyMce/Scripts/themes/advanced/skins/highcontrast/content.css.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/ViewModels/OEmbedViewModel.cs.i
 data/src/Orchard.Web/Core/Themes/Preview/PreviewTheme.cs.i
 data/src/Orchard.Web/Core/Scheduling/Services/PublishingTaskManager.cs.i
 data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Styles/Images/ajax-loader.gif.i
@@ -7995,6 +8060,7 @@ data/src/Orchard.Web/Modules/Orchard.MetaData/Controllers/AdminController.cs.i
 data/src/Orchard.Web/Themes/TheAdminClassic/Styles/images/orchardLogo.gif.i
 data/src/Orchard/DataMigration/Schema/CreateTableCommand.cs.i
 data/src/Orchard.Web/Themes/Orchard/Styles/site.css.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Views/Parts/OEmbed.SummaryAdmin.cshtml.i
 data/src/Orchard/Mvc/ViewEngines/ThemeAwareness/CurrentTheme.cs.i
 data/src/Orchard.Web/Modules/Orchard.MediaPicker/Controllers/HomeController.cs.i
 data/src/Orchard.Web/Modules/Orchard.Blogs/Views/Items_Content_Editor-BlogPost.cshtml.i
@@ -8003,6 +8069,7 @@ data/src/Orchard.Web/Modules/Orchard.Modules/Routing/ModuleNameConstraint.cs.i
 data/src/Orchard.Web/Core/Themes/Models/ThemeRecord.cs.i
 data/src/Orchard/Mvc/Filters/FilterProvider.cs.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/SimpleScripting/Lexer.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/AdminMenu.cs.i
 data/src/Orchard.Web/Modules/Orchard.Themes/Scripts/jquery.switchable.js.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/SimpleScripting/ExpressionParser.cs.i
 data/src/Orchard.Web/Modules/Orchard.Taxonomies/Properties/AssemblyInfo.cs.i
@@ -8110,7 +8177,7 @@ data/lib/tinymce/examples/word.html.i
 data/src/Orchard.Web/Themes/Contoso/Views/Layout.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Modules/Controllers/AdminController.cs.i
 data/src/Orchard.Web/Modules/Orchard.Users/Views/Account/ChallengeEmailSent.ascx.i
-data/src/Orchard.Web/Modules/Orchard.MediaProcessing/Services/ImageProcessingFileNameProvider.cs.i
+data/src/Orchard.Web/Modules/Orchard.ImageEditor/Scripts/image.editor-crop.js.i
 data/src/Orchard.Web/Modules/Orchard.DesignerTools/Services/WidgetAlternatesFactory.cs.i
 data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Scripts/Web.config.i
 data/src/Orchard.Web/Modules/Orchard.Taxonomies/Views/Admin/Import.cshtml.i
@@ -8217,7 +8284,6 @@ data/src/Orchard.Web/Modules/Futures.Modules.Packaging/Web.config.i
 data/src/Orchard/Models/Driver/TemplateFilterBase.cs.i
 data/src/Orchard.Web/Modules/Orchard.Sandbox/Controllers/PageController.cs.i
 data/src/Orchard.Web/Modules/Orchard.Tags/Services/XmlRpcHandler.cs.i
-data/lib/tinymce/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js.i
 data/src/Orchard/Environment/Topology/ShellDescriptorCache.cs.i
 data/src/Orchard.Web/Core/Common/Models/CommonPartHandler.cs.i
 data/src/Orchard.Tests/Packages/FoldersData/Sample1/Package.txt.i
@@ -8356,6 +8422,7 @@ data/src/Orchard.Web/Modules/Orchard.MediaPicker/Views/Admin/Tab_Url.cshtml.i
 data/src/Orchard.Web/Packages/Orchard.Wiki/Orchard.Wikis.csproj.i
 data/src/Orchard.Web/Modules/Orchard.Blogs/Views/BlogPost/ListByArchive.cshtml.i
 data/src/Orchard.Web/Themes/Orange/Theme.gif.i
+data/src/Orchard.Web/Modules/Orchard.Workflows/Services/ISignalService.cs.i
 data/src/Orchard.Web/Core/Common/Views/Parts.Common.Date.Edit.cshtml.i
 data/src/Orchard/Environment/Configuration/AppDataFolder.cs.i
 data/src/Orchard.Tests/ContentManagement/ContentIdentityTests.cs.i
@@ -8393,6 +8460,7 @@ data/lib/sqlce/x86/sqlcecompact40.dll.i
 data/src/Orchard.Specs/Lists.feature.cs.i
 data/src/Tools/Orchard/Parameters/CommandParametersParser.cs.i
 data/src/Orchard.Web/Core/Common/Styles/images/ui-icons_2e83ff_256x240.png.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Services/ICacheService.cs.i
 data/src/Orchard/Mvc/ViewEngines/ThemeAwareness/ConfiguredEnginesCache.cs.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/SimpleScripting/Ast/AstVisitor.cs.i
 data/src/Orchard.Web/Core/Dashboard/Views/Helper/Index.cshtml.i
@@ -8461,6 +8529,7 @@ data/src/Orchard.Web/Packages/TinyMce/Scripts/themes/advanced/source_editor.htm.
 data/src/Orchard.Web/Modules/TinyMce/Scripts/themes/simple/skins/o2k7/content.css.i
 data/src/Orchard.Web/Themes/Contoso/Views/User.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Themes/Permissions.cs.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Views/Admin/Index.cshtml.i
 data/src/Tools/PackageIndexReferenceImplementation/Controllers/FeedController.cs.i
 data/lib/tinymce/jscripts/tiny_mce/themes/advanced/editor_template_src.js.i
 data/src/Orchard.Web/Packages/Orchard.CmsPages/Views/Templates/TwoColumns.gif.i
@@ -8481,6 +8550,7 @@ data/src/Orchard.Web/Modules/Orchard.Blogs/Views/Parts/Blogs.Blog.Manage.cshtml.
 data/src/Orchard/Models/Driver/IModelFilter.cs.i
 data/src/Orchard.Tests.Modules/Users/Services/MembershipServiceTests.cs.i
 data/lib/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Controllers/StatisticsController.cs.i
 data/src/Orchard/Orchard.csproj.vspscc.i
 data/src/Orchard.Web/Modules/Orchard.Taxonomies/Models/TaxonomyPart.cs.i
 data/src/Orchard.Web/Themes/Orchard/Content/Images/orchardLogo.jpg.i
@@ -8584,6 +8654,7 @@ data/src/Orchard.Tests/Models/Stubs/FlavoredDriver.cs.i
 data/src/Orchard.Web/Core/Dashboard/Controllers/AdminController.cs.i
 data/src/Orchard.Web/Modules/Orchard.Indexing/Services/IndexingBackgroundTask.cs.i
 data/src/Orchard/DisplayManagement/Descriptors/ShapePlacements/ShapePlacementParsingStrategy.cs.i
+data/src/Orchard.Web/Modules/Orchard.MediaLibrary/Controllers/OEmbedController.cs.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Styles/images/ui-bg_glass_55_fbf9ee_1x400.png.i
 data/src/Orchard.Web/Modules/Orchard.Forms/Properties/AssemblyInfo.cs.i
 data/src/Orchard.Web/Core/Settings/Styles/admin.css.i
@@ -8633,7 +8704,7 @@ data/src/Orchard.Web/Themes/TheAdmin/Styles/images/icon-gallery.png.i
 data/src/Orchard.Web/Modules/Orchard.jQuery/Scripts/jquery.ui.menu.min.js.i
 data/src/Orchard.Web/Packages/TinyMce/Scripts/plugins/autoresize/editor_plugin_src.js.i
 data/src/Orchard/ContentManagement/ContentItemBehavior.cs.i
-data/src/Orchard.Web/Core/Feeds/StandardBuilders/ItemInspector.cs.i
+data/src/Orchard.Web/Modules/Orchard.Taxonomies/ViewModels/TermAdminIndexViewModel.cs.i
 data/src/Orchard.Web/Packages/Orchard.Blogs/Scripts/jquery.ui.core.js.i
 data/src/Orchard.Web/Modules/Orchard.PublishLater/ViewModels/PublishLaterViewModel.cs.i
 data/src/Orchard.Web/Modules/Orchard.Packaging/AdminMenu.cs.i
@@ -8771,6 +8842,7 @@ data/src/Orchard.Web/Modules/Orchard.Blogs/Views/BlogPostAdmin/Create.ascx.i
 data/src/Orchard.Web/Modules/Orchard.Pages/Views/Admin/List.aspx.i
 data/src/Orchard.Web/Modules/Orchard.Search/Module.txt_.i
 data/src/Orchard.Web/Modules/Orchard.Taxonomies/Drivers/TermsPartDriver.cs.i
+data/src/Orchard.Web/Packages/Orchard.Comments/Package.txt.i
 data/src/Orchard.Web/Packages/Orchard.Sandbox/Views/Shared/EditorTemplates/SandboxPage.ascx.i
 data/src/Orchard.Web/Modules/Orchard.ImageEditor/Orchard.ImageEditor.csproj.i
 data/lib/Castle Windsor 2.0/bin/Castle.DynamicProxy2.xml.i
@@ -8905,7 +8977,7 @@ data/src/Orchard.Core.Tests/Indexing/DefaultSearchBuilderTests.cs.i
 data/src/Orchard/ContentManagement/Handlers/ActivatedContentContext.cs.i
 data/src/Orchard/UI/Resources/ResourceManager.cs.i
 data/src/Orchard.Web/Modules/Orchard.CodeGeneration/Services/CodeGenerationCommandInterpreter.cs.i
-data/src/Orchard.Web/Packages/Orchard.Comments/Package.txt.i
+data/src/Orchard.Web/Modules/Orchard.OutputCache/Handlers/CacheSettingsPartHandler.cs.i
 data/src/Orchard.Web/Modules/Orchard.Widgets/Drivers/WidgetBagPartDriver.cs.i
 data/src/Orchard.Web/Core/Routable/ResourceManifest.cs.i
 data/src/Orchard.Web/Modules/Orchard.Alias/Implementation/Updater/AliasUpdater.cs.i
