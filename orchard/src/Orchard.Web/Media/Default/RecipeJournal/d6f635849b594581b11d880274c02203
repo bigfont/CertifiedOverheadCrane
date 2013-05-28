@@ -1,0 +1,8 @@
+<RecipeJournal>
+  <Status>Failed</Status>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Theme.</Message>
+  <Message>Executing step Feature.</Message>
+  <Message>Recipe execution with id d6f635849b594581b11d880274c02203 was cancelled because the "Feature" step failed to execute. The following exception was thrown: Could not enable feature BigFont.OpenDashboard                    Orchard.ImportExport because it was not found.. Refer to the error logs for more information.</Message>
+</RecipeJournal>

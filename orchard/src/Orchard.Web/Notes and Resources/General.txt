@@ -1,0 +1,60 @@
+---------------------
+Before Getting Started
+---------------------
+
+Delete the existing CertifiedOverheadCrane DB.
+Delete the contents of the App_Data folder (dependencies doesn't matter, though).
+Copy the contents of Orchard.Web to the root directory.
+Setup DB permissions using IIS-DatabaseUser.sql
+Grant Access Control *Modify* permissions for the IIS Apppool for these folders.
+	App_Data
+	Media
+	Themes	
+	Modules
+
+---------------------
+Get Started
+---------------------
+
+Certified Overhead Crane
+admin
+password
+password
+Existing SQL Server Express DB
+data source=FONTY\SQLEXPRESS;initial catalog=CertifiedOverheadCrane;integrated security=True;
+Certified Overhead Crane
+
+---------------------
+Populate Test Data Fields
+---------------------
+
+Follow the instructions within Fields-PopulateInBulk.sql
+
+---------------------
+Setup Search
+---------------------
+
+While the recipe sets up most of the search functionality; we need to add Fields and Content Types.
+Run the Search-AddFields script.
+Update AND rebuild the Crane Parts index.
+
+---------------------
+Basic Testing
+---------------------
+
+Search by all the relevant parts & fields.
+
+---------------------
+Components
+---------------------
+
+Modules
+-BigFont.OpenDashboard
+-Contrib.ImageField
+
+Themes
+-Bootstrap
+-CertifiedOverheadCrane
+
+Recipes
+-certifiedOverheadCrane.reciple.xml

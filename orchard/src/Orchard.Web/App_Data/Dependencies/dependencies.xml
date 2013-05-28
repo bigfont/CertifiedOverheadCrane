@@ -36,8 +36,8 @@
   </Dependency>
   <Dependency>
     <ModuleName>BigFont.OpenDashboard</ModuleName>
-    <VirtualPath>~/Modules/BigFont.OpenDashboard/bin/BigFont.OpenDashboard.dll</VirtualPath>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/BigFont.OpenDashboard/BigFont.OpenDashboard.csproj</VirtualPath>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
     <References>
       <Reference>
         <Name>Contrib.ImageField</Name>
@@ -60,12 +60,6 @@
     <ModuleName>Bootstrap</ModuleName>
     <VirtualPath>~/Themes/Bootstrap/bin/Bootstrap.dll</VirtualPath>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <References />
-  </Dependency>
-  <Dependency>
-    <ModuleName>CertifiedOverheadCrane</ModuleName>
-    <VirtualPath>~/Theme/CertifiedOverheadCrane</VirtualPath>
-    <LoaderName>RawThemeExtensionLoader</LoaderName>
     <References />
   </Dependency>
   <Dependency>
@@ -137,6 +131,57 @@
     <VirtualPath>~/Core/Navigation</VirtualPath>
     <LoaderName>CoreExtensionLoader</LoaderName>
     <References />
+  </Dependency>
+  <Dependency>
+    <ModuleName>Orchard.Fields</ModuleName>
+    <VirtualPath>~/Modules/Orchard.Fields/bin/Orchard.Fields.dll</VirtualPath>
+    <LoaderName>PrecompiledExtensionLoader</LoaderName>
+    <References>
+      <Reference>
+        <Name>ClaySharp</Name>
+        <LoaderName>PrecompiledExtensionLoader</LoaderName>
+        <VirtualPath>~/Modules/Lucene/bin/ClaySharp.dll</VirtualPath>
+      </Reference>
+      <Reference>
+        <Name>Ionic.Zip</Name>
+        <LoaderName>PrecompiledExtensionLoader</LoaderName>
+        <VirtualPath>~/Modules/BigFont.OpenDashboard/bin/Ionic.Zip.dll</VirtualPath>
+      </Reference>
+      <Reference>
+        <Name>Orchard.Media</Name>
+        <LoaderName>PrecompiledExtensionLoader</LoaderName>
+        <VirtualPath>~/Modules/Orchard.Media/bin/Orchard.Media.dll</VirtualPath>
+      </Reference>
+    </References>
+  </Dependency>
+  <Dependency>
+    <ModuleName>Orchard.Roles</ModuleName>
+    <VirtualPath>~/Modules/Orchard.Roles/bin/Orchard.Roles.dll</VirtualPath>
+    <LoaderName>PrecompiledExtensionLoader</LoaderName>
+    <References>
+      <Reference>
+        <Name>ClaySharp</Name>
+        <LoaderName>PrecompiledExtensionLoader</LoaderName>
+        <VirtualPath>~/Modules/Lucene/bin/ClaySharp.dll</VirtualPath>
+      </Reference>
+    </References>
+  </Dependency>
+  <Dependency>
+    <ModuleName>Nwazet.Commerce</ModuleName>
+    <VirtualPath>~/Modules/Nwazet.Commerce/Nwazet.Commerce.csproj</VirtualPath>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <References>
+      <Reference>
+        <Name>Orchard.Fields</Name>
+        <LoaderName>PrecompiledExtensionLoader</LoaderName>
+        <VirtualPath>~/Modules/Orchard.Fields/bin/Orchard.Fields.dll</VirtualPath>
+      </Reference>
+      <Reference>
+        <Name>Orchard.Roles</Name>
+        <LoaderName>PrecompiledExtensionLoader</LoaderName>
+        <VirtualPath>~/Modules/Orchard.Roles/bin/Orchard.Roles.dll</VirtualPath>
+      </Reference>
+    </References>
   </Dependency>
   <Dependency>
     <ModuleName>Orchard.Alias</ModuleName>
@@ -277,18 +322,6 @@
     </References>
   </Dependency>
   <Dependency>
-    <ModuleName>Orchard.Roles</ModuleName>
-    <VirtualPath>~/Modules/Orchard.Roles/bin/Orchard.Roles.dll</VirtualPath>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <References>
-      <Reference>
-        <Name>ClaySharp</Name>
-        <LoaderName>PrecompiledExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/Lucene/bin/ClaySharp.dll</VirtualPath>
-      </Reference>
-    </References>
-  </Dependency>
-  <Dependency>
     <ModuleName>Orchard.ContentPermissions</ModuleName>
     <VirtualPath>~/Modules/Orchard.ContentPermissions/bin/Orchard.ContentPermissions.dll</VirtualPath>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
@@ -421,28 +454,6 @@
         <Name>ClaySharp</Name>
         <LoaderName>PrecompiledExtensionLoader</LoaderName>
         <VirtualPath>~/Modules/Lucene/bin/ClaySharp.dll</VirtualPath>
-      </Reference>
-    </References>
-  </Dependency>
-  <Dependency>
-    <ModuleName>Orchard.Fields</ModuleName>
-    <VirtualPath>~/Modules/Orchard.Fields/bin/Orchard.Fields.dll</VirtualPath>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <References>
-      <Reference>
-        <Name>ClaySharp</Name>
-        <LoaderName>PrecompiledExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/Lucene/bin/ClaySharp.dll</VirtualPath>
-      </Reference>
-      <Reference>
-        <Name>Ionic.Zip</Name>
-        <LoaderName>PrecompiledExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/BigFont.OpenDashboard/bin/Ionic.Zip.dll</VirtualPath>
-      </Reference>
-      <Reference>
-        <Name>Orchard.Media</Name>
-        <LoaderName>PrecompiledExtensionLoader</LoaderName>
-        <VirtualPath>~/Modules/Orchard.Media/bin/Orchard.Media.dll</VirtualPath>
       </Reference>
     </References>
   </Dependency>
@@ -1010,6 +1021,12 @@
         <VirtualPath>~/Modules/Orchard.Tokens/bin/Orchard.Tokens.dll</VirtualPath>
       </Reference>
     </References>
+  </Dependency>
+  <Dependency>
+    <ModuleName>OverheadCrane</ModuleName>
+    <VirtualPath>~/Theme/OverheadCrane</VirtualPath>
+    <LoaderName>RawThemeExtensionLoader</LoaderName>
+    <References />
   </Dependency>
   <Dependency>
     <ModuleName>Reports</ModuleName>

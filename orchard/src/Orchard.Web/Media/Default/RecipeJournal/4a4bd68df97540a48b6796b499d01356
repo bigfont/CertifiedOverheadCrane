@@ -1,0 +1,8 @@
+<RecipeJournal>
+  <Status>Failed</Status>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Theme.</Message>
+  <Message>Executing step Feature.</Message>
+  <Message>Recipe execution with id 4a4bd68df97540a48b6796b499d01356 was cancelled because the "Feature" step failed to execute. The following exception was thrown: Could not enable feature Contrib.ImageField                    Orchard.Indexing because it was not found.. Refer to the error logs for more information.</Message>
+</RecipeJournal>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<Orchard>
+  <Recipe>
+    <Name>Core</Name>
+    <Description>A recipe providing test data for the Open Dashboard.</Description>
+    <Author>Shaun Luttin</Author>
+    <WebSite>http://www.bigfont.ca</WebSite>
+    <Tags>Content</Tags>
+    <Version>1.0</Version>
+  </Recipe>
+
+  <Migration features="*" />
+
+  <Command>
+    <!--Default, create 30 products belonging to Admin-->
+    openDashboard populate
+  </Command>
+</Orchard>

@@ -1,0 +1,7 @@
+<RecipeJournal>
+  <Status>Failed</Status>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Theme.</Message>
+  <Message>Recipe execution with id 365e4da612b84693a1cdcd43093c811a was cancelled because the "Theme" step failed to execute. The following exception was thrown: Theme Orchard.Theme.CertifiedOverheadCrane was not found in the specified location.. Refer to the error logs for more information.</Message>
+</RecipeJournal>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<Orchard>
+  <Recipe>
+    <Name>Core</Name>
+    <Description>A recipe providing simple navigation to the Open Dashboard.</Description>
+    <Author>Shaun Luttin</Author>
+    <WebSite>http://www.bigfont.ca</WebSite>
+    <Tags>Content</Tags>
+    <Version>1.0</Version>
+  </Recipe>
+
+  <Migration features="*" />
+
+  <Command>
+    <!--Add a Dashboard menu item to the MainMenu at position 2-->
+    menuitem create /MenuText:"Dashboard" /Url:"~/Dashboard" /MenuName:"Main Menu" /MenuPosition:2
+  </Command>
+</Orchard>

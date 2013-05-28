@@ -2,9 +2,9 @@
 <Dependencies>
   <Dependency>
     <ExtensionId>BigFont.OpenDashboard</ExtensionId>
-    <LoaderName>PrecompiledExtensionLoader</LoaderName>
-    <VirtualPath>~/Modules/BigFont.OpenDashboard/bin/BigFont.OpenDashboard.dll</VirtualPath>
-    <Hash>24ff2caa081d724b</Hash>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/BigFont.OpenDashboard/BigFont.OpenDashboard.csproj</VirtualPath>
+    <Hash>ce542a631a247557</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Bootstrap</ExtensionId>
@@ -16,7 +16,7 @@
     <ExtensionId>Contrib.ImageField</ExtensionId>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Contrib.ImageField/bin/Contrib.ImageField.dll</VirtualPath>
-    <Hash>db973d23835be384</Hash>
+    <Hash>db9741abbc800f07</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Lucene</ExtensionId>
@@ -29,6 +29,12 @@
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Markdown/bin/Markdown.dll</VirtualPath>
     <Hash>db7e3c3b3ce6eac4</Hash>
+  </Dependency>
+  <Dependency>
+    <ExtensionId>Nwazet.Commerce</ExtensionId>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/Nwazet.Commerce/Nwazet.Commerce.csproj</VirtualPath>
+    <Hash>c9c650819b780fb7</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Orchard.Alias</ExtensionId>
@@ -112,7 +118,7 @@
     <ExtensionId>Orchard.Fields</ExtensionId>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Orchard.Fields/bin/Orchard.Fields.dll</VirtualPath>
-    <Hash>24cce3a87198fda7</Hash>
+    <Hash>24cce5ec8f0873a3</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Orchard.Forms</ExtensionId>
@@ -160,7 +166,7 @@
     <ExtensionId>Orchard.Media</ExtensionId>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Orchard.Media/bin/Orchard.Media.dll</VirtualPath>
-    <Hash>db7c3c3939740ed3</Hash>
+    <Hash>db7c3e7d56e384cf</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Orchard.MediaLibrary</ExtensionId>
@@ -172,13 +178,13 @@
     <ExtensionId>Orchard.MediaPicker</ExtensionId>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Orchard.MediaPicker/bin/Orchard.MediaPicker.dll</VirtualPath>
-    <Hash>24dd1bb8aaa3ad2e</Hash>
+    <Hash>24dd1dfcc813232a</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Orchard.MediaProcessing</ExtensionId>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Orchard.MediaProcessing/bin/Orchard.MediaProcessing.dll</VirtualPath>
-    <Hash>b794caaee7bca483</Hash>
+    <Hash>b794ccf3052c1a7f</Hash>
   </Dependency>
   <Dependency>
     <ExtensionId>Orchard.Messaging</ExtensionId>

@@ -64,7 +64,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Orchard_PopulateFieldsInBulk.sql" />
+    <Content Include="Notes.txt" />
+    <Content Include="Recipes\add-test-data.recipe.xml" />
+    <Content Include="Recipes\add-main-menu-item.recipe.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Styles\open-dashboard.css" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
@@ -131,6 +135,7 @@
   <ItemGroup>
     <Content Include="Views\Content.OpenDashboard.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

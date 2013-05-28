@@ -162,9 +162,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap", "Orchard.Web\Th
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigFont.OpenDashboard", "Orchard.Web\Modules\BigFont.OpenDashboard\BigFont.OpenDashboard.csproj", "{F07414C9-EECA-42B5-B417-6001DB230AB7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{99300102-A76F-4A08-ABCC-C0ABCF24AAAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertifiedOverheadCrane", "Orchard.Web\Themes\OverheadCrane\CertifiedOverheadCrane.csproj", "{CDEF3D7E-B920-4F21-B8BD-F5592653132F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nwazet.Commerce", "Orchard.Web\Modules\Nwazet.Commerce\Nwazet.Commerce.csproj", "{909ACC2C-D672-4752-B75B-6822E05FE0E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes and Resources", "Notes and Resources", "{CDA3B29F-C650-45F0-B7BC-D6A6E4534AA2}"
 	ProjectSection(SolutionItems) = preProject
-		Publish.txt = Publish.txt
+		Orchard.Web\Notes and Resources\Fields-PopulateInBulk.sql = Orchard.Web\Notes and Resources\Fields-PopulateInBulk.sql
+		Orchard.Web\Notes and Resources\Fields-SettingsStructure.xml = Orchard.Web\Notes and Resources\Fields-SettingsStructure.xml
+		Orchard.Web\Notes and Resources\General.txt = Orchard.Web\Notes and Resources\General.txt
+		Orchard.Web\Notes and Resources\IIS-DatabaseUser.sql = Orchard.Web\Notes and Resources\IIS-DatabaseUser.sql
+		Orchard.Web\Notes and Resources\Search-AddFields.sql = Orchard.Web\Notes and Resources\Search-AddFields.sql
 	EndProjectSection
 EndProject
 Global
@@ -912,6 +920,23 @@ Global
 		{F07414C9-EECA-42B5-B417-6001DB230AB7}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
 		{F07414C9-EECA-42B5-B417-6001DB230AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F07414C9-EECA-42B5-B417-6001DB230AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.CodeCoverage|Any CPU.Build.0 = Release|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.Coverage|Any CPU.Build.0 = Release|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.FxCop|Any CPU.Build.0 = Release|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -974,6 +999,7 @@ Global
 		{73A7688A-5BD3-4F7E-ADFA-CE36C5A10E3B} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{079DEEDE-EDA1-4810-9304-A71642FADF01} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{F07414C9-EECA-42B5-B417-6001DB230AB7} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
+		{909ACC2C-D672-4752-B75B-6822E05FE0E3} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{ABC826D4-2FA1-4F2F-87DE-E6095F653810} = {74E681ED-FECC-4034-B9BD-01B0BB1BDECA}
 		{F112851D-B023-4746-B6B1-8D2E5AD8F7AA} = {74E681ED-FECC-4034-B9BD-01B0BB1BDECA}
 		{6CB3EB30-F725-45C0-9742-42599BA8E8D2} = {74E681ED-FECC-4034-B9BD-01B0BB1BDECA}
@@ -986,6 +1012,7 @@ Global
 		{0DFA2E10-96C8-4E05-BC10-B710B97ECCDE} = {383DBA32-4A3E-48D1-AAC3-75377A694452}
 		{CB70A642-8CEC-4DDE-8C9F-AD08900EC98D} = {74492CBC-7201-417E-BC29-28B4C25A58B0}
 		{50ED7805-208C-4E35-8360-572E8B4E9CC2} = {74492CBC-7201-417E-BC29-28B4C25A58B0}
+		{CDEF3D7E-B920-4F21-B8BD-F5592653132F} = {74492CBC-7201-417E-BC29-28B4C25A58B0}
 		{94E694A2-D140-468D-A277-C5FCE1D13E9B} = {3E10BF6D-ADA5-417D-B36C-EBB0660B475E}
 		{34BE9011-A5A9-49DD-9E53-C3D5CA7D7CE3} = {3E10BF6D-ADA5-417D-B36C-EBB0660B475E}
 		{AC4402A1-61C4-4229-B840-FB1777DAE10C} = {3E10BF6D-ADA5-417D-B36C-EBB0660B475E}

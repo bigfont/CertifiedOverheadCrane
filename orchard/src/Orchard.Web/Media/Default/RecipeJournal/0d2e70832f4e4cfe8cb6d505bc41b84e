@@ -1,0 +1,12 @@
+<RecipeJournal>
+  <Status>Failed</Status>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Theme.</Message>
+  <Message>Executing step Feature.</Message>
+  <Message>Executing step Metadata.</Message>
+  <Message>Executing step Settings.</Message>
+  <Message>Executing step Migration.</Message>
+  <Message>Executing step Command.</Message>
+  <Message>Recipe execution with id 0d2e70832f4e4cfe8cb6d505bc41b84e was cancelled because the "Command" step failed to execute. The following exception was thrown: No command found matching arguments "openDashboard populate". Commands available: index create,index update,index rebuild,index query,index stats,index refresh,index delete,site setting set baseurl,autoroute create,theme list,theme activate,layer create,widget create,menuitem create,menu create,user create,import file,feature list,feature enable,feature disable,package create,package install,package uninstall,page create,recipes harvest,recipes execute,search use,warmup generate,cultures list,cultures get site culture,cultures set site culture,cultures add,help commands,help.. Refer to the error logs for more information.</Message>
+</RecipeJournal>

@@ -9,19 +9,28 @@
     <Version>1.0</Version>
   </Recipe>
 
+  <!-- We already have these installed, so do NOT download them again, 
+    because doing so will create a duplicate Feature, and will break the recipe.  
+    Comment this back in, though, if we are doing a download from the Orchard Gallery. 
+    
   <Module packageId="Orchard.Module.Contrib.ImageField" />
   <Module packageId="Orchard.Module.BigFont.OpenDashboard" />
+  -->
 
-  <!--Use the Bootstrap theme-->
-  <Theme packageId="Orchard.Theme.CertifiedOverheadCrane" current="true" />
+  <!--
+    Use the Bootstrap theme until we publish the OverheadCrane one,
+    because Orchard will try to download the theme from the Gallery.
+    -->
+
+  <Theme packageId="Orchard.Theme.Bootstrap" current="true" />
 
   <Feature enable="Orchard.Alias,Orchard.Autoroute,
                    TinyMce,Orchard.Media,Orchard.MediaPicker,Orchard.ContentPicker,Orchard.PublishLater,
                    Orchard.jQuery,Orchard.Widgets,Orchard.Widgets.PageLayerHinting,Orchard.ContentTypes,
                    Orchard.Scripting,Orchard.Scripting.Lightweight,
-                   PackagingServices,Orchard.Packaging,Orchard.Warmup,Orchard.Projections,Orchard.Fields, TheThemeMachine,                    
-                   BigFont.OpenDashboard, BigFont.OpenDashboard.OpenTypes, 
-                   Orchard.ImportExport, Contrib.ImageField
+                   PackagingServices,Orchard.Packaging,Orchard.Warmup,Orchard.Projections,Orchard.Fields, TheThemeMachine,          
+                   BigFont.OpenDashboard,
+                   Orchard.ImportExport, Contrib.ImageField,
                    Orchard.Indexing, Orchard.Search, Lucene" />
 
 
@@ -54,19 +63,29 @@
     menu create /MenuName:"Main Menu"
     page create /Slug:"welcome-to-certified-overhead-crane" /Title:"Welcome to Certified Overhead Crane" /Path:"welcome-to-certified" /Homepage:true /Publish:true /UseWelcomeText:false /MenuText:"Home" /MenuName:"Main Menu"
     widget create MenuWidget /Title:"Main Menu" /RenderTitle:false /Zone:"Navigation" /Position:"1" /Layer:"Default" /Identity:"MenuWidget1" /MenuName:"Main Menu"
-    <!--Add a menu item for the open dashboard-->
-    menuitem create /MenuPosition:2 /MenuText:"Dashboard" /Url:"~/Dashboard" /MenuName:"Main Menu"
-    <!--Add to demo users and populate their dashboard with 30 items; first one is admin-->
+    <!--
+      Add a Dashboard menu item to the MainMenu at position 2
+      -->
+    menuitem create /MenuText:"Dashboard" /Url:"~/Dashboard" /MenuName:"Main Menu" /MenuPosition:2
+    <!--
+      Populate the superuser's open dashboard with 30 items.
+      Then, add two test users and populate each's open dashboard with 30 items. 
+      -->
     openDashboard populate
     user create /UserName:dealer1 /Password:password /Email:dealer1@bigfont.ca
     openDashboard populate /Owner:dealer1
     user create /UserName:dealer2 /Password:password /Email:dealer2@bigfont.ca
     openDashboard populate /Owner:dealer2
-    <!--Search-->
-    widget create SearchForm /Title:"Search Crane Parts" /Zone:"AfterContent" /Position:1 /Layer:"TheHomepage" /Identity:"SearchForm1"
-    index create CraneParts
-    search use CraneParts
-    
+    <!--
+      Setup Search
+      -->
+    widget create SearchForm /Title:"Search" /Zone:"AfterContent" /Position:1 /Layer:"TheHomepage" /Identity:"SearchForm1"
+    index create OpenDashboardIndex
+    search use OpenDashboardIndex
+    <!--
+      Activate the OverheadCrane theme, assuming that it's installed already.
+    -->
+    theme activate CertifiedOverheadCrane
   </Command>
 
 </Orchard>

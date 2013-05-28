@@ -1,0 +1,9 @@
+﻿<settings 
+  DisplayName="Part Number" 
+  ImageFieldSettings.MaxHeight="0" 
+  ImageFieldSettings.MaxWidth="0" 
+  ImageFieldSettings.Required="False" 
+  ImageFieldSettings.AlternateText="False" 
+  ImageFieldSettings.ResizeAction="Validate" 
+  FieldIndexing.Included="True" 
+  TextFieldSettings.Required="False" />

@@ -1,0 +1,2 @@
+﻿feature enable Orchard.Packaging
+package create BigFont.OpenDashboard C:\Temp

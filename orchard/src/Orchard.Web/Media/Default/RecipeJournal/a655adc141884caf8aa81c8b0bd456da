@@ -1,0 +1,8 @@
+<RecipeJournal>
+  <Status>Failed</Status>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Module.</Message>
+  <Message>Executing step Theme.</Message>
+  <Message>Executing step Feature.</Message>
+  <Message>Recipe execution with id a655adc141884caf8aa81c8b0bd456da was cancelled because the "Feature" step failed to execute. The following exception was thrown: Sequence contains more than one matching element. Refer to the error logs for more information.</Message>
+</RecipeJournal>
