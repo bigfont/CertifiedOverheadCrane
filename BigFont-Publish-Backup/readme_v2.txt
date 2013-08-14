@@ -44,8 +44,6 @@ Theme
 - Connection string to Azure SQL Database from step (2)
 - Certified Overhead Crane (recipe)
 
-Server=tcp:my6wvevkhg.database.windows.net,1433;Database=cranes_db;User ID=bigfont@my6wvevkhg;Password=673W&7zqyhFt!F;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;
-
 7. Dashboard > Themes > The Theme Machine > Set Current
 
 8. Add test data. Follow the instructions within setup-populate-test-data-files.sql
