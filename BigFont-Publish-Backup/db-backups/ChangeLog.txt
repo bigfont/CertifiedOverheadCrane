@@ -1,0 +1,29 @@
+30 April 2013
+
+Create a brand new CertifiedOverheadCrane database.
+Point a new Orchard 1.x website at this database. 
+Repeat the actions recorded below in our 29 Apr 2013 entry,
+    but with a backup date ending in _20130430_Fonty.bak
+
+
+29 April 2013
+
+Add a Dealer role that can access the admin panel.
+Add a new User to the Dealer role: dealer1, dealer1@bigfont.ca, password=password.
+Enable users to create new accounts on the site, but require approval before login.
+Add the admin user to the Administrator role with the email admin@shaunluttin.com.
+
+Change home page content to ipsum lorum, and change the title to Welcome to Certified Overhead Crane!
+
+Enable the following modules: Indexing, Lucene, Search.
+Create a CranePart index.
+Set it as the Default search index and include Body and Title.
+
+Create a new dynamic content type named "Crane Part" with body, title, and common parts.
+Unselect the Show editor for owner boolean field of the common part.
+Set it to be part of the CranePart index.
+
+Add a search widget in the BeforeContent zone called Search Crane Parts.
+Create four new Crane Part items.
+
+Create a database backup named CertifiedOverheadCrane_20130429_Fonty.bak
